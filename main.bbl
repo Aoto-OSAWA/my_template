@@ -1,0 +1,116 @@
+\begin{thebibliography}{10}
+
+\bibitem{福田敏男1990ブラキエーション形移動ロボットの研究}
+福田敏男, 細貝英実, 近藤裕二.
+\newblock ブラキエーション形移動ロボットの研究: 第 1 報,
+  動特性の解析とシミュレーション.
+\newblock 日本機械学会論文集 C 編, Vol.~56, No. 527, pp. 1839--1846, 1990.
+
+\bibitem{福田敏男1991ブラキエーション形移動ロボットの研究2}
+福田敏男, 齋藤史倫, 新井史人, 小菅一弘.
+\newblock ブラキエーション形移動ロボットの研究: 第 3 報,
+  ヒューリスティックな駆動力波形の生成と制御.
+\newblock 日本機械学会論文集 C 編, Vol.~57, No. 541, pp. 2930--2937, 1991.
+
+\bibitem{福田敏男1992ブラキエーション形移動ロボットの研究}
+福田敏男, 齊藤史倫, 新井史人.
+\newblock ブラキエーション形移動ロボットの研究: 第 4 報,
+  小脳モデル神経回路を用いた移動制御.
+\newblock 日本機械学会論文集 C 編, Vol.~58, No. 549, pp. 1450--1457, 1992.
+
+\bibitem{齋藤史倫1993ブラキエーション形移動ロボットの研究}
+齋藤史倫, 福田敏男, 新井史人, 松浦英雄.
+\newblock ブラキエーション形移動ロボットの研究: 第 5 報, 2
+  リンクロボットによる励振と移動制御実験.
+\newblock 日本機械学会論文集 C 編, Vol.~59, No. 557, pp. 171--178, 1993.
+
+\bibitem{齋藤史倫1995学習とロボット}
+齋藤史倫, 福田敏男.
+\newblock 学習とロボット 強化学習による実ロボットの運動制御.
+\newblock 日本ロボット学会誌, Vol.~13, No.~1, pp. 82--88, 1995.
+
+\bibitem{福田敏男1996強化学習法を用いたファジィコントローラの生成}
+福田敏男, 長谷川泰久, 下島康嗣, 斎藤史倫.
+\newblock 強化学習法を用いたファジィコントローラの生成.
+\newblock 日本機械学会論文集 C 編, Vol.~62, No. 601, pp. 3565--3571, 1996.
+
+\bibitem{中西淳1998解析的手法による}
+中西淳, 福田敏男.
+\newblock 解析的手法による 2 リンクブラキエーションロボットの制御.
+\newblock 日本ロボット学会誌, Vol.~16, No.~3, pp. 361--368, 1998.
+
+\bibitem{中西淳19992}
+中西淳, 福田敏男.
+\newblock 2 リンクブラキエーションロボットの制御
+  目標ダイナミクス法の実ロボットへの適用.
+\newblock 日本ロボット学会誌, Vol.~17, No.~1, pp. 110--117, 1999.
+
+\bibitem{中西淳2001ハイブリッドコントローラによる}
+中西淳, 福田敏男.
+\newblock ハイブリッドコントローラによる 2
+  リンクブラキエーションロボットの振幅制御.
+\newblock 日本ロボット学会誌, Vol.~19, No.~5, pp. 652--659, 2001.
+
+\bibitem{福田敏男1991ブラキエーション形移動ロボットの研究}
+福田敏男, 細貝英実, 近藤裕二.
+\newblock ブラキエーション形移動ロボットの研究: 第 2 報,
+  励振シミュレーションおよび実験結果.
+\newblock 日本機械学会論文集 C 編, Vol.~57, No. 537, pp. 1639--1644, 1991.
+
+\bibitem{齋藤史倫1994ブラキエーション形移動ロボットの研究}
+齋藤史倫, 福田敏男.
+\newblock ブラキエーション形移動ロボットの研究 第 6 報, 7
+  リンクロボットのモデル化と初期コントローラによる動作シミュレーション.
+\newblock 日本機械学会論文集 C 編, Vol.~60, No. 578, pp. 3468--3475, 1994.
+
+\bibitem{長谷川泰久2001ブラキエーション形移動ロボットの研究}
+長谷川泰久, 伊藤芳邦, 福田敏男.
+\newblock ブラキエーション形移動ロボットの研究: 第 7
+  報階層形行動制御における行動学習.
+\newblock 日本機械学会論文集 C 編, Vol.~67, No. 662, pp. 3204--3211, 2001.
+
+\bibitem{山川雄司2016ブラキエーションロボットの開発と運動生成}
+山川雄司, 安宅佑樹, 石川正俊.
+\newblock ブラキエーションロボットの開発と運動生成 (第 1
+  報)―把持機構に電磁石を用いた動作手法―.
+\newblock  ロボティクス・メカトロニクス講演会講演概要集 2016, pp. 2A2--08a4.
+  一般社団法人 日本機械学会, 2016.
+
+\bibitem{山川雄司2016-2ブラキエーションロボットの開発と運動生成}
+山川雄司, 古山佳和, 石川正俊.
+\newblock ブラキエーションロボットの開発と運動生成 (第 2
+  報)―把持機構にフックを用いた動作手法―.
+\newblock  ロボティクス・メカトロニクス講演会講演概要集 2016, pp. 2A2--08a3.
+  一般社団法人 日本機械学会, 2016.
+
+\bibitem{javadi2023acromonk}
+Mahdi Javadi, Daniel Harnack, Paula Stocco, Shivesh Kumar, Shubham Vyas, Daniel
+  Pizzutilo, and Frank Kirchner.
+\newblock Acromonk: A minimalist underactuated brachiating robot.
+\newblock {\em IEEE Robotics and Automation Letters}, Vol.~8, No.~6, pp.
+  3637--3644, 2023.
+
+\bibitem{grama2024ricmonk}
+Shourie~S Grama, Mahdi Javadi, Shivesh Kumar, Hossein~Zamani Boroujeni, and
+  Frank Kirchner.
+\newblock Ricmonk: A three-link brachiation robot with passive grippers for
+  energy-efficient brachiation.
+\newblock {\em arXiv preprint arXiv:2403.15762}, 2024.
+
+\bibitem{鈴木三男2000二重振り子におけるカオス的振舞}
+鈴木三男, 増田健二.
+\newblock 二重振り子におけるカオス的振舞.
+\newblock 物理教育, Vol.~48, No.~1, pp. 1--5, 2000.
+
+\bibitem{akahane2022single}
+Hijiri Akahane and Ikuo Mizuuchi.
+\newblock Single-rod brachiation robot.
+\newblock In {\em 2022 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)}, pp. 451--456. IEEE, 2022.
+
+\bibitem{Hondo:JRSJ2011}
+本堂貴敏, 水内郁夫.
+\newblock ばねの研究.
+\newblock 日本ばね学会誌, Vol.~72, No.~3, pp. 350--355, 2011.
+
+\end{thebibliography}

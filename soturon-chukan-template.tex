@@ -1,0 +1,227 @@
+\input{tuat-common.tex}
+
+\pagenum{\bf B-208}%ページ番号 プログラムが確定したら修正を！
+\secret{b}{0mm}                 %学外秘/専攻外秘の設定．学部はb（学外秘），修士はm（専攻外秘）にする．
+                                %第2引数は位置の調整用．-側に大きくすれば左に寄る．+側に大きくすれば右に寄る．
+
+\newcommand{\FIGDIR}{./fig}	%図を置くディレクトリを指定する
+				%Makefileとは連動していないので注意
+\usepackage{pxjahyper} %% これを入れるとしおりが文字化けしない．out2uniが不要になる．
+\usepackage{ikuo}%%便利コマンド集．
+\hypersetup{
+  pdfborder={0 0 0}   % リンクの枠線を無効化
+}
+
+
+\begin{document}
+\twocolumn[%
+\title{伸縮する単リンクブラキエーションロボットの
+
+ロバストな自在移動の実現}{Realization of robust movement to arbitrary locations by an extensible single-rod brachiation robot}
+\author{水内研究室}{大澤　蒼人}{Aoto OSAWA}
+]
+\begin{small}
+\vspace{-2mm}
+\section{緒　　言}
+\vspace{-2.5mm}
+ブラキエーションは，上肢で枝を掴んでぶら下がりながら移動する方法であり，
+重力を利用することで高所を効率的に移動できる．
+これをロボットに応用することで\cite{福田敏男1990ブラキエーション形移動ロボットの研究}，送電線の点検などの高所作業への応用が期待されている．
+従来のブラキエーションロボットはテナガザルを模倣した多リンク型であった．
+しかし，多リンク型はカオス現象のような非周期的な運動が発生するため
+制御が難しいという問題がある\cite{鈴木三男2000二重振り子におけるカオス的振舞}．
+先行研究では，単リンク，すなわち棒状にすることにより問題を解決した．
+さらに振子過程で，リンクが伸縮する機構を用いてブランコを漕ぐように
+振動を拡大させ（これを励振と呼ぶ），適切なタイミングでリンクを伸ばすことで，
+ロボットの最大長と等しい距離にある同じ高さのバーへの移動を実機で実現した\cite{Hijiri:Robomech2024}．
+しかし，この移動は常にグリッパーがバーを把持しており，移動可能距離はロボットの最大長までである．
+また，2次元方向移動のみに限定されている．
+そのため，バーを離して飛び移る「空中過程」を含む移動や，3次元方向移動，
+さらには揺らぎやバーを離す際の不確実性・外乱に応じた動作再計画の実現までには至っていない．
+そこで，本研究では伸縮する棒状ブラキエーションロボットの自在移動を実現させるとともに，
+ロバスト性を高めることを目的とする．
+\vspace{-2.65mm}
+\section{実現手法}
+\vspace{-2.5mm}
+本研究では，次のバーまでの距離から
+現在把持しているバーを離す条件（バーリリース条件）を導くことで，
+最適な移動を行う．さらに，3次元方向移動を可能にする機構を構築することで
+自在な移動を実現する．また，再計画により安定した移動を実現させる．
+以下に実現手法を示す．
+\vspace{-1mm}
+\subsection{バーの認識と最適なバーリリース条件の導出}
+\subseclabel{バーリリースタイミング}
+\vspace{-1mm}
+ロボットとバーの模式図を\figref{figone}に示す．
+グリッパーの側面に測距センサを取り付け，次のバーの距離を測定し，
+グリッパーと次のバーとの距離に基づいた\equref{J}に示す評価関数$J$を考える．
+ここで，$(l_{\mathrm{bx}},l_{\mathrm{bz}})$は次のバーの座標を示し，
+$(x_{\mathrm{e}},z_{\mathrm{e}})$はグリッパーの手先座標を表す．
+手先座標は\equref{x-z}に示すように，重心座標$(x_{\mathrm{c}},z_{\mathrm{c}})$，バーリリース時のロボットの長さ$l_{\mathrm{r}}$，角度$\varphi$，角速度$\dot{\varphi}$とバーリリース後の時刻$t$から求まる．
+なお，空中過程におけるロボットの長さはバーリリース時の長さのままであるとして求める．
+% \vspace{-1mm}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{3pt}
+\begin{eqnarray}
+    \equlabel{J}
+    J(\varphi,\dot{\varphi},&t,l_{\mathrm{r}})
+    =\sqrt{(l_{\mathrm{bx}}-x_{\mathrm{e}})^2+(l_{\mathrm{bz}}-z_{\mathrm{e}})^2}
+    \equlabel{J}
+    \end{eqnarray}
+% \begin{eqnarray}
+%     \equlabel{x-z}
+%     x_{\mathrm{e}}=x_{\mathrm{e}}(\varphi,\dot{\varphi},t,l_{\mathrm{r}}),\quad z_{\mathrm{e}}=z_{\mathrm{e}}(\varphi,\dot{\varphi},t,l_{\mathrm{r}})
+%     \end{eqnarray}   
+% \vspace{-1mm} 
+\begin{eqnarray}
+        \equlabel{x-z}
+        \begin{split}
+        x_{\mathrm{e}}=x_{\mathrm{c}}(t)+l_{\mathrm{r}}\sin(\varphi+\dot{\varphi}t)/2\\
+        z_{\mathrm{e}}=z_{\mathrm{c}}(t)-l_{\mathrm{r}}\cos(\varphi+\dot{\varphi}t)/2
+        \end{split}
+        \end{eqnarray}
+        % \vspace{-1mm} 
+各角度・角速度において評価関数の最小値と，最小にする時刻が決まる．
+この時刻におけるバー把持時のバーに対するグリッパーの相対速度と
+評価関数がともに小さくなる角度・角速度の組を
+最適なバーリリース条件とする．
+\vspace{-1mm}
+\subsection{3次元方向移動機構}
+\vspace{-1mm}
+グリッパーと伸縮機構の間にモーターを取り付け，
+グリッパー回転が可能な機構を考える．
+これによりバーに応じた方向転換が可能になるが，
+現在のロボットの構造上，励振には初期振幅が必要である．
+そのため，初期振幅を生成する機構・方向転換のタイミングの検討を行う．
+\vspace{-1mm}
+\subsection{励振計画}
+\vspace{-1mm}
+\subsecref{バーリリースタイミング}にて求めた最適なバーリリース条件を基に，
+力学的エネルギーと外力による減衰量から目標振幅を求める．
+目標振幅を実現するために，
+励振過程における振幅増加量・減少量から励振計画を決定する．
+なお，ロボットの角度・角速度は慣性計測ユニット（IMU）を用いて計測し，
+最適なバーリリース条件を満たした時にバーを離し，空中過程へと移る．
+条件を満たさない場合は目標振幅を調整し，励振再計画を行う．
+また，Lieskovsk{\`y}らの研究\cite{lieskovsky2023optimal}
+を基に，IMUによるフィードバック制御でリンクを伸縮させて励振する．
+\subsection{空中過程における動作再計画}
+\vspace{-1mm}
+最適なバーリリース条件を決定した場合でも，バーリリース時のバーとの接触などの外乱により
+計画していた手先軌道からずれる可能性がある．
+そこで，計画と実際の手先軌道の誤差を基にフィードバック制御により
+ロボットの長さ変更動作の再計画を行い，手先軌道を修正する．
+手先軌道の誤差は，IMUを用いて空中過程におけるロボットの姿勢を一定時間ごとに計測することにより求める．
+\vspace{-2.5mm}
+\section{最適なバーリリース条件の導出とリリース実験}
+\vspace{-2mm}
+目標とするバー座標を(0.79m,0m)，ロボットの長さを0.74mとし，
+\subsecref{バーリリースタイミング}で示した評価関数$J$を導出した．
+バー把持可能距離を5mmとし，導出した評価関数の最小値のうち，5mm未満となった角度・角速度のプロットを\figref{fig:two}に示す．
+評価関数と，バーに対するグリッパーの相対速度がともに小さくなる組は
+(67deg, 200deg/s)であった．
+この角度・角速度でバーリリースを行い，バー把持に成功した．
+% これによりバー座標(0.79m,0m)における最適なバーリリース条件が求まった．
+\begin{figure}[t]
+    \begin{center}
+    \includegraphics[width=38mm,height=32mm]{./fig/bar-robot6.png}
+    \vspace{-5mm}
+    \caption{Schematic Diagram}
+    \vspace{-3mm}
+    \figlabel{figone}
+    \end{center}
+    \end{figure}
+\begin{figure}[t]
+    \begin{center}
+    \includegraphics[width=55mm,height=40mm]{./fig/2Dver6_4.png}
+    \vspace{-6mm}
+    \caption{Scatter Plot}
+    \vspace{-7.5mm}
+    \figlabel{fig:two}
+    \end{center}
+    \end{figure}
+\vspace{-2.8mm}
+\section{結　　言}
+\vspace{-2mm}
+本稿では，伸縮する単リンクブラキエーションロボットの
+自在移動を可能にする機構と動作計画手法，
+そして空中過程における動作再計画手法を提案した．
+また，次のバーの座標に基づいた最適なバーリリース条件の導出を行い，実機実験によりバー把持が可能であることを確認した．
+今後は，自在移動のための機構構築と，
+最適なバーリリース条件実現のための励振計画・再計画プログラムを作成する．
+さらに，空中過程での動作再計画によりロバスト性を高める．
+\vspace{-5mm}
+{
+% \small
+%  \setlength{\kanjiskip}{0.0zw plus.01zw} %
+%  \setlength{\baselineskip}{9pt}        %
+%  \setlength{\itemsep}{0.2pt}             %
+%  \setlength{\lineskip}{0pt}              %
+\scriptsize %%←どうしても入らない時は，このコメントをはずすと少し小さくなる．
+% \vspace{-2.5mm}
+\bibliographystyle{junsrt}
+% \bibliographystyle{jabbrv}
+\bibliography{reference}
+
+}
+
+
+
+%% \end{thebibliography}
+\end{small}
+\end{document}
+
+
+% \begin{figure}[t]
+%     \begin{minipage}{0.46\hsize}
+%      \begin{center}
+
+%         \includegraphics[width=40mm]{./fig/bar-robot5.png}
+     
+%     \end{center}
+%     \vspace{-3mm}
+%      \caption{Schematic Diagram}
+%      \vspace{-3mm}
+%      \figlabel{figone}
+%     \end{minipage}
+%     \begin{minipage}{0.50\hsize}
+%      \begin{center}
+      
+%         \includegraphics[width=52mm]{./fig/2Dver6_2.png}
+     
+%     \end{center}
+%     \vspace{-3mm}
+%      \caption{Scatter Plot}
+%      \vspace{-3mm}
+%      \figlabel{fig:two}
+%     %  \vspace{5mm}
+%     \end{minipage}
+%    \end{figure}
+
+% \begin{figure}[t]
+%     \begin{minipage}{0.43\hsize}
+%      \begin{center}
+
+%         \includegraphics[width=38mm]{./fig/bar-robot5.png}
+     
+%     \end{center}
+%     \vspace{-2.5mm}
+%      \caption{Schematic Diagram}
+%      \vspace{-3mm}
+%      \figlabel{figone}
+%     \end{minipage}
+%     \begin{minipage}{0.50\hsize}
+%      \begin{center}
+      
+%         \includegraphics[width=53mm]{./fig/2Dver6_3.png}
+     
+%     \end{center}
+%     \vspace{-7mm}
+%      \caption{Scatter Plot}
+%      \vspace{-3mm}
+%      \figlabel{fig:two}
+%     \end{minipage}
+%    \end{figure}
+
+%    \fig{bar-robot5.png}{width=.3\hsize}{The concept of hoge}
+%    \fig{2Dver6_2.png}{width=.7\hsize}{The concept of hoge}

@@ -1,0 +1,63 @@
+\include{my_layout_grad}
+
+
+\usepackage{ikuo}%%便利コマンド集．
+
+
+
+\usepackage[dvipdfmx]{hyperref}  % 目次や参考文献をリンクにする。
+\usepackage{pxjahyper} %% これを入れるとしおりが文字化けしない。out2uniが不要になる。
+%% \hypersetup{bookmarksnumbered=true}
+\hypersetup{colorlinks=true}
+\hypersetup{linkcolor=black}
+%% \hypersetup{linkbordercolor=black}
+\hypersetup{urlcolor=black}
+%% \hypersetup{urlbordercolor=black}
+\hypersetup{citecolor=black}
+%% \hypersetup{citebordercolor=black}
+
+\usepackage{url} % \url のために必要。パッケージが無い人は探して入れる。
+%% \url{http://nile.ulis.ac.jp/~yuka/}のようにして使う。
+
+\newcommand{\FIGDIR}{./fig}        %図を置くディレクトリを指定する
+
+\hypersetup{
+  pdfborder={0 0 0}   % リンクの枠線を無効化
+}
+
+\date{令和6年度卒業論文}
+\title{伸縮する単リンクブラキエーションロボットの自在移動の実現}
+\author{指導教員　水内　郁夫　教授 \\
+\ \\
+東京農工大学　\\
+工学部　機械システム工学科　\\
+\ \\
+令和3年度入学\\
+21265014\\
+{\bf 大澤　蒼人}}
+
+\begin{document}
+\setlength{\baselineskip}{20pt}
+\maketitle
+\tableofcontents
+
+%%各章は別ファイルにして以下にinculudeすると良い．
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{introduction}
+\include{introduction2}
+\include{fig_tab_equ}
+
+\addcontentsline{toc}{chapter}{謝辞}
+\markboth{謝辞}{謝辞}
+\include{thanks}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\markboth{参考文献}{参考文献}
+\bibliographystyle{junsrt}
+\bibliography{reference}
+
+\end{document}

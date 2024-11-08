@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  8 NOV 2024 14:45
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  8 NOV 2024 16:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -551,31 +551,32 @@ File: ./fig/photo2.jpg Graphic file (type bmp)
  [39]
 File: ./fig/photo3.jpg Graphic file (type bmp)
 <./fig/photo3.jpg>
- [40] [41]) [42] [43] [44]
+ [40] [41]) [42] [43] [44] [45
+
+
+]
 \openout2 = `thanks.aux'.
 
- (./thanks.tex [45
+ (./thanks.tex [46
+
+
+] [47] [48
+
+])
+[49] (./main.bbl [50
 
 
 
+] [51] [52
 
-] [46
-
-]) [47]
-(./main.bbl [48
-
-
-
-] [49] [50
-
-] [51]
+] [53]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 90.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 98.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 108.
-) [52] (./main.aux (./chapter1.aux)
+) [54] (./main.aux (./chapter1.aux)
 (./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
 (./introduction.aux) (./introduction2.aux) (./fig_tab_equ.aux) (./thanks.aux))
 
@@ -600,4 +601,4 @@ Here is how much of TeX's memory you used:
  264 hyphenation exceptions out of 8191
  62i,11n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (52 pages, 78308 bytes).
+Output written on main.dvi (54 pages, 78800 bytes).

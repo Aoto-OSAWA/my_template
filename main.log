@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  8 NOV 2024 16:01
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  8 NOV 2024 16:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -474,9 +474,9 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 
 ]
 
-LaTeX Warning: Reference `fig:' on page 17 undefined on input line 15.
+LaTeX Warning: Reference `fig:' on page 17 undefined on input line 16.
 
-) [17] [18]
+[17]) [18]
 \openout2 = `chapter4.aux'.
 
  (./chapter4.tex
@@ -595,10 +595,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  10810 strings out of 479850
  167272 string characters out of 5887378
- 462176 words of memory out of 5000000
+ 461176 words of memory out of 5000000
  28908 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,11n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (54 pages, 78800 bytes).
+Output written on main.dvi (54 pages, 78820 bytes).

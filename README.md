@@ -1,5 +1,5 @@
 #卒論・修論・（博論？）テンプレート
-もともと研究室サーバーにあったものをutf8にすべて変換したもの
+もともと研究室サーバーにあったものをutf8にすべて変換したものx
 ##LaTeXのインストール方法
 [研究室のWikiを参照](http://mizuuchi.lab.tuat.ac.jp/pukiwiki/index.php?%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%28programming%29%2FLaTeX)
 

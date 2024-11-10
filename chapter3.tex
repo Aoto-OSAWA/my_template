@@ -13,13 +13,13 @@
       \section{最適なバーリリース条件の導出}
         \subsection{空中過程における目標バーとグリッパーの距離と相対速度}
 
-          \figref{}に示したロボットのバーリリース時の状態から，
+          \figref{barReleasefig.png}に示したロボットのバーリリース時の状態から，
           空中過程における目標バーとグリッパーの距離，相対速度を導出する．
           座標軸は左向きを$x$軸の正方向，上向きを$z$軸の正方向に設定し，
           ロボットが把持しているバーの座標を原点$(0,0)$，
           目標バーの座標を$(l_{\mathrm{bx}},l_{\mathrm{bz}})$とする．
-          また，ロボットは姿勢$\varphi$とボディの全長$l_{\mathrm{r}}$の2変数を持つ．
-          ここで，バーをリリースした後の空中過程におけるロボットの長さ$l_{\mathrm{r}}$は
+          また，ロボットは姿勢$\varphi$とボディの全長$l_{\mathrm{r}}$の2変数を持つ．         
+          ここで，バーリリース後の空中過程におけるロボットの長さ$l_{\mathrm{r}}$は
           バーリリース時から変えずに一定であるとすると， 
           ロボットの重心の軌道はバーリリース時の角度$\varphi$，角速度$\dot{\varphi}$による放物線軌道，
           手先の軌道はバーリリース時の角速度$\dot{\varphi}$による重心周りの一定速回転軌道となる．
@@ -44,13 +44,16 @@
             &=&\sqrt{\dot{x_{\mathrm{e}}}^2+\dot{z_{\mathrm{e}}}^2}
           \end{eqnarray}  
         
-
+          
+        \fig{barReleasefig.png}{width=0.6\hsize}{Schematic Diagram}
+        
         \subsection{最適化のための評価関数}
         \seclabel{J}
         
         バーリリース条件の最適化のために，目標バーとグリッパーの距離と相対速度に基づく評価関数が最小となる条件を求める．
         評価関数$J$を\equref{Jd}，\equref{Jr}で示した距離$J_{\mathrm{d}}$と相対速度$J_{\mathrm{r}}$
-        を用いて\equref{J}とした．ここで，$K$は重み係数を表す．
+        を用いて\equref{J}とした．
+        ここで，$K$は重み係数を表し，確実な把持のためにバーとグリッパーの距離に重みづけを行う．
         \begin{eqnarray}
           \equlabel{J}
           J(\varphi,\dot{\varphi},t,l_{\mathrm{r}})=K{\times}J_{\mathrm{d}}+J_{\mathrm{r}}

@@ -1,8 +1,8 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  10 NOV 2024 20:14
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  10 NOV 2024 20:24
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**main.tex
+**main
 (./main.tex
 pLaTeX2e <2021-11-15> (based on LaTeX2e <2021-11-15> patch level 1)
 L3 programming layer <2022-01-21>
@@ -339,7 +339,12 @@ File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
 \g__pdf_backend_link_int=\count292
 \g__pdf_backend_link_sf_int=\count293
 )
-(./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux))
+(./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
+(./chapter5.aux) (./chapter6.aux) (./introduction.aux) (./fig_tab_equ.aux
+
+LaTeX Warning: Label `fig:photo.jpg' multiply defined.
+
+) (./thanks.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -365,10 +370,8 @@ LaTeX Font Info:    ... okay on input line 39.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
 Package hyperref Info: Link coloring ON on input line 39.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -400,182 +403,200 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
 
 ] [3] [4
 
-] (./main.toc)
+] (./main.toc
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [5
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
+ [6]
 \openout2 = `chapter1.aux'.
 
- (./chapter1.tex
+
+(./chapter1.tex
 第 1 章
-[5
+[7
 
 
-
-] [6
+] [8
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 7.
-
-
-LaTeX Warning: Citation `福田敏男1990ブラキエーション形移動ロボットの研究' on p
-age 7 undefined on input line 7.
-
-
-LaTeX Warning: Citation `福田敏男1991ブラキエーション形移動ロボットの研究2' on 
-page 7 undefined on input line 8.
-
-
-LaTeX Warning: Citation `福田敏男1992ブラキエーション形移動ロボットの研究' on p
-age 7 undefined on input line 8.
-
-
-LaTeX Warning: Citation `齋藤史倫1993ブラキエーション形移動ロボットの研究' on p
-age 7 undefined on input line 8.
-
-
-LaTeX Warning: Citation `齋藤史倫1995学習とロボット' on page 7 undefined on inp
-ut line 8.
-
-
-LaTeX Warning: Citation `福田敏男1996強化学習法を用いたファジィコントローラの生
-成' on page 7 undefined on input line 8.
-
-
-LaTeX Warning: Citation `中西淳1998解析的手法による' on page 7 undefined on inp
-ut line 8.
-
-
-LaTeX Warning: Citation `中西淳19992' on page 7 undefined on input line 8.
-
-
-LaTeX Warning: Citation `中西淳2001ハイブリッドコントローラによる' on page 7 un
-defined on input line 8.
-
-
-LaTeX Warning: Citation `福田敏男1991ブラキエーション形移動ロボットの研究' on p
-age 7 undefined on input line 9.
-
-
-LaTeX Warning: Citation `福田敏男1990ブラキエーション形移動ロボットの研究' on p
-age 7 undefined on input line 9.
-
-
-LaTeX Warning: Citation `齋藤史倫1994ブラキエーション形移動ロボットの研究' on p
-age 7 undefined on input line 9.
-
-
-LaTeX Warning: Citation `長谷川泰久2001ブラキエーション形移動ロボットの研究' on
- page 7 undefined on input line 9.
-
-
-LaTeX Warning: Citation `山川雄司2016ブラキエーションロボットの開発と運動生成' 
-on page 7 undefined on input line 10.
-
-
-LaTeX Warning: Citation `山川雄司2016-2ブラキエーションロボットの開発と運動生成
-' on page 7 undefined on input line 10.
-
-
-LaTeX Warning: Citation `javadi2023acromonk' on page 7 undefined on input line 
-11.
-
-
-LaTeX Warning: Citation `grama2024ricmonk' on page 7 undefined on input line 11
-.
-
-
-LaTeX Warning: Citation `鈴木三男2000二重振り子におけるカオス的振舞' on page 7 
-undefined on input line 13.
-
-
-LaTeX Warning: Citation `akahane2022single' on page 7 undefined on input line 1
-4.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [7]) [8]
+ [9]) [10]
 \openout2 = `chapter2.aux'.
 
-
-(./chapter2.tex
+ (./chapter2.tex
 第 2 章
-[9
+[11
 
 
 
 
-] [10
+] [12
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 10.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 10.
-) [11]
+) [13]
 \openout2 = `chapter3.aux'.
 
- (./chapter3.tex [12
+ (./chapter3.tex [14
 
 
 
 
 ]
 第 3 章
-[13] [14
+[15] [16
 
 ]
-
-LaTeX Warning: Reference `fig:barReleasefig.png' on page 15 undefined on input 
-line 16.
-
 File: ./fig/barReleasefig.png Graphic file (type bmp)
 <./fig/barReleasefig.png>
+ [17]
 
-LaTeX Warning: Reference `equ:J' on page 15 undefined on input line 55.
+LaTeX Warning: Reference `tab:release' on page 18 undefined on input line 69.
 
-[15]
+) [18]
+\openout2 = `chapter4.aux'.
 
-LaTeX Warning: Reference `sec:J-define' on page 16 undefined on input line 67.
+ (./chapter4.tex
+第 4 章
+[19
 
 
-LaTeX Warning: Reference `tab:release' on page 16 undefined on input line 69.
 
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.78               \hline
-                         
-? 
-! Emergency stop.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.78               \hline
-                         
-End of file on the terminal!
 
- 
+] [20
+
+]) [21]
+\openout2 = `chapter5.aux'.
+
+ (./chapter5.tex [22
+
+
+
+
+]
+第 5 章
+[23] [24
+
+]) [25]
+\openout2 = `chapter6.aux'.
+
+ (./chapter6.tex [26
+
+
+
+
+]
+第 6 章
+[27] [28
+
+]) [29]
+\openout2 = `introduction.aux'.
+
+ (./introduction.tex [30
+
+
+
+
+]
+第 7 章
+[31] [32
+
+]
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+File: ./fig/fig1.eps Graphic file (type eps)
+<./fig/fig1.eps>
+) [33] [34] [35]
+\openout2 = `fig_tab_equ.aux'.
+
+ (./fig_tab_equ.tex [36
+
+
+
+
+]
+第 8 章
+[37] [38
+
+]
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+File: ./fig/photo2.jpg Graphic file (type bmp)
+<./fig/photo2.jpg>
+ [39]
+File: ./fig/photo3.jpg Graphic file (type bmp)
+<./fig/photo3.jpg>
+ [40] [41]) [42] [43] [44]
+\openout2 = `thanks.aux'.
+
+ (./thanks.tex [45
+
+
+
+
+] [46
+
+]) [47]
+(./main.bbl [48
+
+
+
+] [49] [50
+
+] [51]
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 90.
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 98.
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 108.
+) [52] (./main.aux (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
+(./chapter6.aux) (./introduction.aux) (./fig_tab_equ.aux) (./thanks.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 39A040A08E507083816F54DA8ED4DC1A;3093.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 5 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 10561 strings out of 479850
- 160839 string characters out of 5887378
- 457699 words of memory out of 5000000
- 28716 multiletter control sequences out of 15000+600000
- 519005 words of font info for 103 fonts, out of 8000000 for 9000
+ 10821 strings out of 479850
+ 167343 string characters out of 5887378
+ 463515 words of memory out of 5000000
+ 28917 multiletter control sequences out of 15000+600000
+ 519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 62i,11n,70p,533b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
-Output written on main.dvi (15 pages, 18996 bytes).
+ 62i,11n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.dvi (52 pages, 82604 bytes).

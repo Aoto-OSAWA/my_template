@@ -53,10 +53,10 @@
         バーリリース条件の最適化のために，目標バーとグリッパーの距離と相対速度に基づく評価関数が最小となる条件を求める．
         評価関数$J$を\equref{Jd}，\equref{Jr}で示した距離$J_{\mathrm{d}}$と相対速度$J_{\mathrm{r}}$
         を用いて\equref{J}とした．
-        ここで，$K$は重み係数を表し，確実な把持のためにバーとグリッパーの距離に重みづけを行う．
+        ここで，$\alpha$は重み係数を表し，確実な把持のためにバーとグリッパーの距離に重みづけを行う．
         \begin{eqnarray}
           \equlabel{J}
-          J(\varphi,\dot{\varphi},t,l_{\mathrm{r}})=K{\times}J_{\mathrm{d}}+J_{\mathrm{r}}
+          J(\varphi,\dot{\varphi},t,l_{\mathrm{r}})=\alpha{\times}J_{\mathrm{d}}+J_{\mathrm{r}}
         \end{eqnarray}
         
         評価関数$J$が最小になるとき，目標とするバーとグリッパーの距離と相対速度がともに小さくなる条件である．
@@ -67,21 +67,46 @@
         \secref{J-define}に基づいて最適なバーリリース条件を求め，
         実機を用いてリリース実験を行った．
         実験条件を\tabref{release}に示す．
+        また，その実験条件を基に求めた最適なバーリリース条件と，評価値を\tabref{optimizedRelease}に示す．
+        \begin{table}[tb]
+          \tablabel{release}
+          \begin{center}
+            \caption{Experiment conditions}
+            \vspace{2mm}
+            \begin{tabular}{c|c}
+              \hline
+              Variables & Values \\
+              \hline
+              $l_{\mathrm{bx}}$ [m] & 0.79 \\
+              $l_{\mathrm{bz}}$ [m] & 0.00 \\
+              $\alpha$ & 1000 \\
+              \hline
+            \end{tabular}
+          \end{center}
+        \end{table}
 
-        % \begin{table}[tb]
-        %   \tablabel{release}
-        %   \begin{center}
-        %     \caption{Experiment conditions}
-        %     \begin{tabular}{c|cc}
-        %       \hline
-        %       Variables & Values 
-        %       \hline
-        %       $l_{\mathrm{bx}}$ [m] & 0.79 \\
-        %       $l_{\mathrm{bz}}$ [m] & 0.00 \\
-        %       $N$ & 1000 \\
-        %       \hline
-        %     \end{tabular}
-        %   \end{center}
-        % \end{table}
+        \begin{table}[tb]
+          \tablabel{optimizedRelease}
+          \begin{center}
+            \caption{Optimized conditions values}
+            \vspace{2mm}
+            \begin{tabular}{c|c}
+              \hline
+              \hline
+              Variables & Values \\
+              \hline
+              \hline
+              $\varphi$ [deg] & 67 \\
+              $\dot{\varphi}$ [deg/s] & 200 \\
+              $t$ &  \\
+              $l_{\mathrm{r}}$ & 0.74 \\
+              \hline
+              $J$ &  \\
+              $J_{\mathrm{d}}$ &  \\
+              $J_{\mathrm{r}}$ &  \\
+              \hline
+            \end{tabular}
+          \end{center}
+        \end{table}
         
 

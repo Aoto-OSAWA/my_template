@@ -1,14 +1,13 @@
 \contentsline {chapter}{\numberline {第1章}序論}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}研究の背景と目的}{9}{section.1.1}%
 \contentsline {section}{\numberline {1.2}本論文の構成}{10}{section.1.2}%
-\contentsline {chapter}{\numberline {第2章}本研究におけるブラキエーション動作}{11}{chapter.2}%
+\contentsline {chapter}{\numberline {第2章}本研究におけるブラキエーション動作と実機構成}{11}{chapter.2}%
 \contentsline {section}{\numberline {2.1}はじめに}{13}{section.2.1}%
 \contentsline {section}{\numberline {2.2}ブラキエーションの流れ}{13}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}ここから何か}{13}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}伸縮する単リンクブラキエーションロボットのシステムと実機構成}{13}{section.2.3}%
-\contentsline {section}{\numberline {2.4}ブラキエーションの流れ}{13}{section.2.4}%
-\contentsline {section}{\numberline {2.5}自在移動のための検討要素}{13}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}ここから何か}{13}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.3}伸縮による励振}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}伸縮する単リンクブラキエーションロボットのシステムと実機構成}{14}{section.2.4}%
+\contentsline {section}{\numberline {2.5}}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}自在移動のためのリリース条件と励振制御}{14}{section.2.6}%
 \contentsline {chapter}{\numberline {第3章}最適なバーリリース条件の導出}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}はじめに}{17}{section.3.1}%
 \contentsline {section}{\numberline {3.2}最適なバーリリース条件の導出}{17}{section.3.2}%
@@ -27,16 +26,5 @@
 \contentsline {chapter}{\numberline {第6章}結論および今後の展望}{29}{chapter.6}%
 \contentsline {section}{\numberline {6.1}はじめに}{31}{section.6.1}%
 \contentsline {section}{\numberline {6.2}考察}{31}{section.6.2}%
-\contentsline {chapter}{\numberline {第7章}長いタイトルを改行する場合はこのようにしましょう(見出し用)}{33}{chapter.7}%
-\contentsline {section}{\numberline {7.1}研究の背景と目的}{35}{section.7.1}%
-\contentsline {section}{\numberline {7.2}従来研究}{35}{section.7.2}%
-\contentsline {section}{\numberline {7.3}本論文の構成}{35}{section.7.3}%
-\contentsline {chapter}{\numberline {第8章}図の貼り方および表，式の書き方}{39}{chapter.8}%
-\contentsline {section}{\numberline {8.1}図の貼り方}{41}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}基本的な図の貼り方}{41}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}figに関連する便利コマンド}{42}{subsection.8.1.2}%
-\contentsline {section}{\numberline {8.2}表と式の書き方}{43}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}表の書き方}{43}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}式の書き方}{44}{subsection.8.2.2}%
-\contentsline {chapter}{謝辞}{47}{equation.8.2.1}%
-\contentsline {chapter}{参考文献}{50}{chapter*.2}%
+\contentsline {chapter}{謝辞}{32}{section.6.2}%
+\contentsline {chapter}{参考文献}{36}{chapter*.2}%

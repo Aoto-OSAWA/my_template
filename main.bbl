@@ -108,9 +108,22 @@ Hijiri Akahane and Ikuo Mizuuchi.
 \newblock In {\em 2022 IEEE/RSJ International Conference on Intelligent Robots
   and Systems (IROS)}, pp. 451--456. IEEE, 2022.
 
-\bibitem{Hondo:JRSJ2011}
-本堂貴敏, 水内郁夫.
-\newblock ばねの研究.
-\newblock 日本ばね学会誌, Vol.~72, No.~3, pp. 350--355, 2011.
+\bibitem{lieskovsky2023optimal}
+Juraj Lieskovsk{\`y}, Hijiri Akahane, Jaroslav Bu{\v{s}}ek, Ikuo Mizuuchi, and
+  Tom{\'a}{\v{s}} Vyhl{\'\i}dal.
+\newblock Optimal swing motion control for single-rod brachiation robot.
+\newblock {\em IFAC-PapersOnLine}, Vol.~56, No.~2, pp. 6320--6325, 2023.
+
+\bibitem{Hijiri:Robomech2024}
+赤羽聖, 水内郁夫.
+\newblock 伸縮する棒状ロボットのブラキエーション.
+\newblock {\em Proceedings of JSME Conference on Robotics and Mechatronics},
+  No. 2P1-M07, 2024.
+
+\bibitem{Hijiri:Robomech2024-1}
+赤羽聖, 水内郁夫.
+\newblock モデル予測制御による棒状ロボットのブラキエーション.
+\newblock {\em Proceedings of JSME Conference on Robotics and Mechatronics},
+  No. 2A1-N07, 2024.
 
 \end{thebibliography}

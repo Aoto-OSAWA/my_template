@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  11 NOV 2024 13:57
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  11 NOV 2024 16:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -340,11 +340,7 @@ File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
 \g__pdf_backend_link_sf_int=\count293
 )
 (./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
-(./chapter5.aux) (./chapter6.aux) (./introduction.aux) (./fig_tab_equ.aux
-
-LaTeX Warning: Label `fig:photo.jpg' multiply defined.
-
-) (./thanks.aux))
+(./chapter5.aux) (./chapter6.aux) (./thanks.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -370,8 +366,10 @@ LaTeX Font Info:    ... okay on input line 39.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
 Package hyperref Info: Link coloring ON on input line 39.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -452,23 +450,25 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 ] [12
 
 ]
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 10.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 10.
-) [13]
+File: ./fig/brachiationFig.png Graphic file (type bmp)
+<./fig/brachiationFig.png>
+ [13]) [14]
 \openout2 = `chapter3.aux'.
 
- (./chapter3.tex [14
-
-
-
-
-]
+ (./chapter3.tex
 第 3 章
-[15] [16
+[15
+
+
+
+
+] [16
 
 ]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 14.
 File: ./fig/barReleasefig.png Graphic file (type bmp)
 <./fig/barReleasefig.png>
  [17]) [18] [19]
@@ -508,88 +508,53 @@ File: ./fig/barReleasefig.png Graphic file (type bmp)
 [29] [30
 
 ]) [31]
-\openout2 = `introduction.aux'.
-
- (./introduction.tex [32
-
-
-
-
-]
-第 7 章
-[33] [34
-
-]
-File: ./fig/photo.jpg Graphic file (type bmp)
-<./fig/photo.jpg>
-File: ./fig/fig1.eps Graphic file (type eps)
-<./fig/fig1.eps>
-) [35] [36] [37]
-\openout2 = `fig_tab_equ.aux'.
-
- (./fig_tab_equ.tex [38
-
-
-
-
-]
-第 8 章
-[39] [40
-
-]
-File: ./fig/photo.jpg Graphic file (type bmp)
-<./fig/photo.jpg>
-File: ./fig/photo.jpg Graphic file (type bmp)
-<./fig/photo.jpg>
-File: ./fig/photo2.jpg Graphic file (type bmp)
-<./fig/photo2.jpg>
- [41]
-File: ./fig/photo3.jpg Graphic file (type bmp)
-<./fig/photo3.jpg>
- [42] [43]) [44] [45] [46]
 \openout2 = `thanks.aux'.
 
- (./thanks.tex [47
+ (./thanks.tex [32
 
 
 
 
-] [48
+] [33] [34
 
-]) [49]
-(./main.bbl [50
-
+]) [35] (./main.bbl [36
 
 
-] [51] [52
 
-] [53]
+] [37]
+[38
+
+] [39]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 90.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 98.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 108.
-) [54] (./main.aux (./chapter1.aux)
-(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux)
-(./chapter6.aux) (./introduction.aux) (./fig_tab_equ.aux) (./thanks.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 115.
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 120.
+ [40]
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 126.
+) [41] (./main.aux (./chapter1.aux) (./chapter2.aux)
+(./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
+(./thanks.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5FC0982992F966931E3B08631C3AF2EE;3261.
+(rerunfilecheck)             Checksum: 8F812281A0F37BC807399C14F3141A8D;2346.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10823 strings out of 479850
- 167378 string characters out of 5887378
- 463751 words of memory out of 5000000
- 28919 multiletter control sequences out of 15000+600000
+ 10735 strings out of 479850
+ 165312 string characters out of 5887378
+ 461847 words of memory out of 5000000
+ 28850 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,12n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (54 pages, 86272 bytes).
+Output written on main.dvi (41 pages, 63156 bytes).

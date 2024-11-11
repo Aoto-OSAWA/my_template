@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  11 NOV 2024 16:48
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  11 NOV 2024 23:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -450,9 +450,12 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 ] [12
 
 ]
-File: ./fig/brachiationFig.png Graphic file (type bmp)
-<./fig/brachiationFig.png>
- [13]) [14]
+File: ./fig/brachiationFig-2.png Graphic file (type bmp)
+<./fig/brachiationFig-2.png>
+ [13]
+File: ./fig/bar-robot4.png Graphic file (type bmp)
+<./fig/bar-robot4.png>
+) [14]
 \openout2 = `chapter3.aux'.
 
  (./chapter3.tex
@@ -542,19 +545,19 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
 (./thanks.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8F812281A0F37BC807399C14F3141A8D;2346.
+(rerunfilecheck)             Checksum: B7CCB4BEAF5F6F755AD590FF09CD7F81;2180.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10735 strings out of 479850
- 165312 string characters out of 5887378
- 461847 words of memory out of 5000000
- 28850 multiletter control sequences out of 15000+600000
+ 10741 strings out of 479850
+ 165463 string characters out of 5887378
+ 461785 words of memory out of 5000000
+ 28855 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,12n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (41 pages, 63156 bytes).
+Output written on main.dvi (41 pages, 63268 bytes).

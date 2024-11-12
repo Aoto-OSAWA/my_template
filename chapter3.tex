@@ -13,7 +13,7 @@
       \section{最適なバーリリース条件の導出}
         \subsection{空中過程における目標バーとグリッパーの距離と相対速度}
 
-          \figref{barReleasefig.png}に示したロボットのバーリリース時の状態から，
+          \figref{ReleaseFig2.eps}に示したロボットのバーリリース時の状態から，
           空中過程における目標バーとグリッパーの距離，相対速度を導出する．
           座標軸は左向きを$x$軸の正方向，上向きを$z$軸の正方向に設定し，
           ロボットが把持しているバーの座標を原点$(0,0)$，
@@ -45,33 +45,38 @@
           \end{eqnarray}  
         
           
-        \fig{barReleasefig.png}{width=0.6\hsize}{Schematic Diagram}
+        % \fig{barReleasefig.png}{width=0.6\hsize}{Schematic Diagram}
+        \fig{ReleaseFig2.eps}{width=0.7\hsize}{Schematic Diagram}
         
         \subsection{最適化のための評価関数}
         \seclabel{J-define}
         
-        バーリリース条件の最適化のために，目標バーとグリッパーの距離と相対速度に基づく評価関数が最小となる条件を求める．
-        評価関数$J$を\equref{Jd}，\equref{Jr}で示した距離$J_{\mathrm{d}}$と相対速度$J_{\mathrm{r}}$
+        バーを離すときの角度$\varphi$, 角速度$\dot{\varphi}$，ロボットの長さ$l_{\mathrm{r}}$の3つの値をバーリリース条件とする．
+        バーリリース条件の最適化のために，目標バーとグリッパーの距離と相対速度がともに小さくなる条件を求める．
+        ここで，評価関数$J$を\equref{Jd}，\equref{Jr}で示した距離$J_{\mathrm{d}}$と相対速度$J_{\mathrm{r}}$
         を用いて\equref{J}とした．
         ここで，$\alpha$は重み係数を表し，確実な把持のためにバーとグリッパーの距離に重みづけを行う．
         \begin{eqnarray}
           \equlabel{J}
           J(\varphi,\dot{\varphi},t,l_{\mathrm{r}})=\alpha{\times}J_{\mathrm{d}}+J_{\mathrm{r}}
         \end{eqnarray}
-        
-        評価関数$J$が最小になるとき，目標とするバーとグリッパーの距離と相対速度がともに小さくなる条件である．
-
+        評価関数が最小になるとき，目標とするバーとグリッパーの距離と相対速度がともに小さくなる．
+        ゆえに，評価関数を最小にする角度$\varphi$, 角速度$\dot{\varphi}$，ロボットの長さ$l_{\mathrm{r}}$，
+        リリース後のバー把持までの時間$t$を導出し，そのうち角度，角速度，ロボットの長さを最適なバーリリース条件とした．
+        また，時刻はグリッパーを閉じるタイミングの決定に用いた．
+        評価関数の最小化にはニュートン法と共役勾配法を組み合わせたNewton-CG法を用いた．
 
       \section{最適なバーリリース条件に基づくリリース実験}
+      
+      \secref{J-define}に基づいて最適なバーリリース条件を求め，
+      実機を用いてリリース実験を行った．  
+      
         \subsection{実験条件と最適なバーリリース条件}
-        \secref{J-define}に基づいて最適なバーリリース条件を求め，
-        実機を用いてリリース実験を行った．
-        実験条件を\tabref{release}に示す．
-        また，その実験条件を基に求めた最適なバーリリース条件と，評価値を\tabref{optimizedRelease}に示す．
         \begin{table}[tb]
-          \tablabel{release}
+          
           \begin{center}
             \caption{Experiment conditions}
+            \tablabel{ExperimentConditions}
             \vspace{2mm}
             \begin{tabular}{c|c}
               \hline
@@ -79,17 +84,18 @@
               \hline
               $l_{\mathrm{bx}}$ [m] & 0.79 \\
               $l_{\mathrm{bz}}$ [m] & 0.00 \\
-              $\alpha$ [-]& 10 \\
+              $\alpha$ [-]& 20 \\
               $g$ $\mathrm{[m/s^2]}$ & 9.81 \\
               \hline
             \end{tabular}
           \end{center}
         \end{table}
-
+  
         \begin{table}[tb]
-          \tablabel{optimizedRelease}
+          
           \begin{center}
             \caption{Optimized conditions values}
+            \tablabel{optimizedRelease}
             \vspace{2mm}
             \begin{tabular}{c|c}
               \hline
@@ -109,7 +115,10 @@
             \end{tabular}
           \end{center}
         \end{table}
+        実験条件を\tabref{ExperimentConditions}に示す．
+        また，その実験条件を基に求めた最適なバーリリース条件と，評価値を\tabref{optimizedRelease}に示す．
         
+
         \subsection{実機実験}
         
 

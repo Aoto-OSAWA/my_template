@@ -97,9 +97,9 @@ figposコマンドは第4引数が位置指定オプションに反映される�
 \subsection{表の書き方}
 表を書くときには以下のようにする．
 \begin{table}[tb]
-  \label{sample}
   \begin{center}
     \caption{各人データ}
+    \label{sample}
     \begin{tabular}{l|c|c|r}
       \hline
       名前 & 身長[cm] & 体重[kg] & 備考 \\
@@ -116,12 +116,13 @@ figposコマンドは第4引数が位置指定オプションに反映される�
 tablabelコマンドは表に対するラベルであるという情報をを自動的に付与してくれるため，これを用いることで図や式に対するラベルとごっちゃになるという問題を防ぐことができる．
 同様のコマンドとしてfiglabel(図に対するラベル)，equlabel(式に対するラベル)，chaplabel(章に対するラベル)，seclabel(節に対するラベル)，subseclabel(小節に対するラベル)などが存在するので使うと良い．
 \secref{fig}において用いたfigだとかtwofigだとかいった便利コマンドにおいてはその中でfiglabelが使用されている．
+tablabelは必ずcaptionの直後に置かないと表番号にずれが生じる．
 
 tablabelコマンドを用いた表は以下のようになる．
 \begin{table}[tb]
-  \tablabel{sample2}
   \begin{center}
     \caption{各人データ}
+    \tablabel{sample2}
     \begin{tabular}{l|c|c|r}
       \hline
       名前 & 身長[cm] & 体重[kg] & 備考 \\

@@ -7,6 +7,7 @@ A level-1 auxiliary file: chapter3.aux
 A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 A level-1 auxiliary file: chapter6.aux
+A level-1 auxiliary file: chapter7.aux
 A level-1 auxiliary file: thanks.aux
 The style file: junsrt.bst
 Database file #1: reference.bib
@@ -14,7 +15,7 @@ Warning--there's a number but no volume in Hijiri:Robomech2024
 Warning--there's a number but no volume in Hijiri:Robomech2024-1
 You've used 21 entries,
             2270 wiz_defined-function locations,
-            679 strings with 7921 characters,
+            680 strings with 7933 characters,
 and the built_in function-call counts, 8546 in all, are:
 = -- 737
 > -- 216

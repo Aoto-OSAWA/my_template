@@ -1,138 +1,21 @@
-\chapter[最適なバーリリース条件の導出]%
-{最適なバーリリース条件の導出}
-\chaplabel{chapter3}
-      \section{はじめに}
-      \seclabel{3-1}
-
-      空中過程を含むブラキエーション動作は，目標とするバーを把持することができなかった場合に落下してしまうという危険性がある．
-      確実なバー把持のための条件には，バーとグリッパーの距離に加え，バーとの衝突を考慮することも望まれる．
-      そこで，本研究では目標バーとロボットのグリッパー間の距離と，バー把持時のバーに対するグリッパーの相対速度に基づく評価関数を用いて
-      バーリリース条件を最適化することを提案する．
-      本章では，任意のバーの位置に基づくリリース条件最適化と，最適条件を基に行ったリリース実験について述べる．
-
-      \section{最適なバーリリース条件の導出}
-        \subsection{空中過程における目標バーとグリッパーの距離と相対速度}
-
-          \figref{ReleaseFig2.eps}に示したロボットのバーリリース時の状態から，
-          空中過程における目標バーとグリッパーの距離，相対速度を導出する．
-          座標軸は左向きを$x$軸の正方向，上向きを$z$軸の正方向に設定し，
-          ロボットが把持しているバーの座標を原点$(0,0)$，
-          目標バーの座標を$(l_{\mathrm{bx}},l_{\mathrm{bz}})$とする．
-          また，ロボットは姿勢$\varphi$とボディの全長$l_{\mathrm{r}}$の2変数を持つ．         
-          ここで，バーリリース後の空中過程におけるロボットの長さ$l_{\mathrm{r}}$は
-          バーリリース時から変えずに一定であるとすると， 
-          ロボットの重心の軌道はバーリリース時の角度$\varphi$，角速度$\dot{\varphi}$による放物線軌道，
-          手先の軌道はバーリリース時の角速度$\dot{\varphi}$による重心周りの一定速回転軌道となる．
-          ゆえに，バーリリースから$t$秒後の目標バーとグリッパーとの距離$J_{\mathrm{d}}$，目標バーに対するグリッパーの相対速度$J_{\mathrm{r}}$は
-          それぞれ\equref{Jd}，\equref{Jr}で表される．
-          ここで，$g$は重力加速度，$(x_{\mathrm{c}},z_{\mathrm{c}})$，$(\dot{x_{\mathrm{c}}},\dot{z_{\mathrm{c}}})$はロボットの重心の位置と速度，
-          $(x_{\mathrm{e}},z_{\mathrm{e}})$，$(\dot{x_{\mathrm{e}}},\dot{z_{\mathrm{e}}})$はグリッパーの手先の位置と速度を表す．
-          \begin{eqnarray}
-            \equlabel{x-c}
-            x_{\mathrm{c}}&=&\frac{1}{2}l_{\mathrm{r}}\dot{\varphi}\cos{(\varphi)}t+\frac{1}{2}l_{\mathrm{r}}\sin{(\varphi)}\\
-            \equlabel{z-c}
-            z_{\mathrm{c}}&=&\frac{1}{2}l_{\mathrm{r}}\dot{\varphi}\sin{(\varphi)}t-\frac{1}{2}gt^2-\frac{1}{2}l_{\mathrm{r}}\cos{(\varphi)}\\
-            \equlabel{x-e}
-            x_{\mathrm{e}}&=&x_{\mathrm{c}}+\frac{1}{2}l_{\mathrm{r}}\sin{(\varphi+\dot{\varphi}t)}\\
-            \equlabel{z-e}
-            z_{\mathrm{e}}&=&z_{\mathrm{c}}-\frac{1}{2}l_{\mathrm{r}}\cos{(\varphi+\dot{\varphi}t)}\\
-            \equlabel{Jd}
-              J_{\mathrm{d}}(\varphi,\dot{\varphi},t,l_{\mathrm{r}})
-              &=&\sqrt{(l_{\mathrm{bx}}-x_{\mathrm{e}})^2+(l_{\mathrm{bz}}-z_{\mathrm{e}})^2}\\
-            \equlabel{Jr}
-            J_{\mathrm{r}}(\varphi,\dot{\varphi},t,l_{\mathrm{r}})
-            &=&\sqrt{\dot{x_{\mathrm{e}}}^2+\dot{z_{\mathrm{e}}}^2}
-          \end{eqnarray}  
+\chapter[空中過程を含まないブラキエーション動作の伸縮制御]%
+{空中過程を含まないブラキエーション動作の\\伸縮制御}
+        \section{はじめに}
         
+        伸縮する単リンクブラキエーションロボットは，その「伸縮する」という特徴を活用することで，
+        目標のバーまでの距離に合わせて伸縮させて移動することが可能となる．
+        これにより，おもりを動かすことで励振するブラキエーションロボット\cite{akahane2022single}よりも
+        自在な移動が実現できる．
+        先行研究\cite{Hijiri:Robomech2024}では実験的に伸縮やグリッパーを閉じるタイミングを決定していた．
+        しかし，伸縮のタイミングや伸縮量が適切ではない場合，バーを把持できないだけでなく，
+        バーとロボットが衝突することで不具合が生じたり，破損してしまう．
+        そこで，本章では空中過程を含まないブラキエーション動作における，バーの位置に基づいた伸縮制御について述べる．
           
-        % \fig{barReleasefig.png}{width=0.6\hsize}{Schematic Diagram}
-        \fig{ReleaseFig2.eps}{width=0.7\hsize}{Schematic Diagram}
-        
-        \subsection{最適化のための評価関数}
-        \seclabel{J-define}
-        
-        バーを離すときの角度$\varphi$, 角速度$\dot{\varphi}$，ロボットの長さ$l_{\mathrm{r}}$の3つの値をバーリリース条件とする．
-        バーリリース条件の最適化のために，目標バーとグリッパーの距離と相対速度がともに小さくなる条件を求める．
-        ここで，評価関数$J$を\equref{Jd}，\equref{Jr}で示した距離$J_{\mathrm{d}}$と相対速度$J_{\mathrm{r}}$
-        を用いて\equref{J}とした．
-        ここで，$\alpha$は重み係数を表し，確実な把持のためにバーとグリッパーの距離に重みづけを行う．
-        \begin{eqnarray}
-          \equlabel{J}
-          J(\varphi,\dot{\varphi},t,l_{\mathrm{r}})=\alpha{\times}J_{\mathrm{d}}+J_{\mathrm{r}}
-        \end{eqnarray}
-        評価関数が最小になるとき，目標とするバーとグリッパーの距離と相対速度がともに小さくなる．
-        ゆえに，評価関数を最小にする角度$\varphi$, 角速度$\dot{\varphi}$，ロボットの長さ$l_{\mathrm{r}}$，
-        リリース後のバー把持までの時間$t$を導出し，そのうち角度，角速度，ロボットの長さを最適なバーリリース条件とした．
-        また，バー把持までの時間はグリッパーを閉じるタイミングの決定に用いた．
-        評価関数の最小化にはニュートン法と共役勾配法を組み合わせたNewton-CG法を用いた．
+        \section{}
 
-      \section{最適なバーリリース条件に基づくリリース実験}
-      
-      \secref{J-define}に基づいて最適なバーリリース条件を求め，
-      実機を用いてリリース実験を行った．  
-      
-        \subsection{実験条件と最適なバーリリース条件}
-        \begin{table}[tb]
-          
-          \begin{center}
-            \caption{Experiment conditions}
-            \tablabel{ExperimentConditions}
-            \vspace{2mm}
-            \begin{tabular}{c|c}
-              \hline
-              Variables & Values \\
-              \hline
-              $l_{\mathrm{bx}}$ [m] & 0.79 \\
-              $l_{\mathrm{bz}}$ [m] & 0.00 \\
-              $\alpha$ [-]& 20 \\
-              $g$ $\mathrm{[m/s^2]}$ & 9.81 \\
-              \hline
-            \end{tabular}
-          \end{center}
-        \end{table}
-  
-        \begin{table}[tb]
-          
-          \begin{center}
-            \caption{Optimized conditions values}
-            \tablabel{optimizedRelease}
-            \vspace{2mm}
-            \begin{tabular}{c|c}
-              \hline
-              Variables & Values \\
-              \hline
-              $\varphi$ [deg] & 56 \\
-              $\dot{\varphi}$ [deg/s] & 260 \\
-              $l_{\mathrm{r}}$ [m] & 0.68 \\
-              $t$ [s] & 0.261 \\
-              $J$ [-] & 0.0144 \\
-              $J_{\mathrm{d}}$ [m] & 0.00115 \\
-              $J_{\mathrm{r}}$ [m/s] & 0.00292 \\
-              \hline
-            \end{tabular}
-          \end{center}
-        \end{table}
-        実験条件を\tabref{ExperimentConditions}に示す．
-        また，その実験条件を基に求めた最適なバーリリース条件と評価値を\tabref{optimizedRelease}に示す．
-        目標バーとグリッパーの距離の最小値$J_{\mathrm{d}}$が約1 mmであるため，バー把持が可能であると考えられる．
-        この最適なバーリリース条件が実用的かどうかを，次節で述べるリリース実験により確認した．
+        ここにバー座標の図、座標から距離、角度、移動可能な範囲を半円で示したり（角速度はいらないかな）
+
+        その次に上から掴むか、下からか、どこで伸ばすかの議論。
+
         
-        \subsection{実機実験}
-        実験では，ロボットの長さが導出した条件で固定されるようにブラシレスモータを制御し，
-        導出した角度・角速度になる初期振幅を実験的に求めた．
-        バーリリースの指令は，IMUで角度をリアルタイムに計測し，リリース条件の角度を満たした時にグリッパーが完全に開いた状態になるように
-        グリッパーのサーボモータの回転速度を考慮して設定した．
-        同様にグリッパーを閉じるタイミングは，導出したバー把持までの時間を基にサーボモータの回転速度や空気抵抗などを考慮して
-        実験的に決定した．
-        
-        実験の様子を\figref{ReleaseExperiment.eps}に示す．
-        結果として，\secref{J-define}に基づいて導出した最適なバーリリース条件でのリリースによる
-        バー把持が可能であることを確認した．
-        また，バー把持時の衝撃が小さく，安定した把持であった．
-        これにより，評価関数に目標バーに対するグリッパーの手先の相対速度が小さくなる条件を含めることの有効性を確認した．
-        一方，バーをリリースしてからバーを把持するまでの時間は0.24 sであり，\tabref{optimizedRelease}で示したバー把持までの時間と誤差が生じた．
-        その理由として，空中過程における空気抵抗や，バーリリース時のバーとの接触などといった原因が考えられる．
-        より確実なバー把持のために，測距センサなどを用いてバーが近づいたらバーを自動的に把持するシステムなどが望まれる．
-        
-        \fig{ReleaseExperiment.eps}{width=0.7\hsize}{Release Experiment}
 

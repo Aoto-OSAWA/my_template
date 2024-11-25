@@ -2,7 +2,7 @@
 {リリース条件到達のための励振制御}
         \section{はじめに}
 
-        \chapref{chapter4}において導出した最適なバーリリース条件を得るためには，
+        \chapref{chapter4}において導出した最適なバーリリース条件を実現するためには，
         振子過程における励振調整が望まれる．
         本章では伸縮タイミングと伸縮量の調整による目標角度・角速度の実現について述べる．
           
@@ -10,59 +10,79 @@
 
           本研究では，重心を移動させることにより振子過程において励振させる．
           Lieskovsk{\`y}らの重りを動かすことによる振幅増幅率が最大となる重心移動の研究\cite{lieskovsky2023optimal}を，
-          伸縮機構に応用して励振を行う．\figref{}に伸縮する単リンクブラキエーションロボットを簡略化した，
+          伸縮機構に応用して励振を行う．\figref{brachiationFig-4.eps}に伸縮する単リンクブラキエーションロボットを簡略化した，
           伸縮する振子のモデルを示す．振子の半径方向と鉛直下向き線がなす角を$\varphi [\mathrm{rad}]$，
           振子の長さを$l [\mathrm{m}]$，振子の質量を$m [\mathrm{kg}]$，振子の重心周りの慣性モーメントを$I [\mathrm{kg}\mathrm{m}^2]$，
-          重力加速度を$g [\mathrm{m}/\mathrm{s}^2]$とする．運動方程式を以下のラグランジュの運動方程式で求める．
-
+          重力加速度を$g [\mathrm{m}/\mathrm{s}^2]$とする．
+          \figb{brachiationFig-4.eps}{width=0.9\hsize}{Brachiation motions}
+          運動方程式を以下のラグランジュの運動方程式で求める．
           \begin{eqnarray}
             \equlabel{Lagrange}
-            \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q_i}}\right)-\left(\frac{\partial L}{\partial q_i}\right)=S_i
+            \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q_i}}\right)-\frac{\partial L}{\partial q_i}=S_i
             \end{eqnarray} 
-          
-          $q_i$と$S_i$はそれぞれ一般化座標と一般化力であり，それぞれ\equref{q}\equref{S}とした．
+          $q_i$と$S_i$はそれぞれ一般化座標と一般化力であり，それぞれ\equref{qq}，\equref{SS}とした．
+          ここで，伸縮のために加える力を$u [\mathrm{N}]$とする．
           $L=T-U$はラグランジアンであり，
-          系の運動エネルギー$T$と位置エネルギー$U$で構成され，本モデルでは\equref{Tequ}\equref{Uequ}となる．  
+          系の運動エネルギー$T$と位置エネルギー$U$で構成され，本モデルでは\equref{Tequ}，\equref{U_equ}となる．
           \begin{eqnarray}
-              \equlabel{qequ}
+              \equlabel{qq}
               \begin{bmatrix}
                 q_1 \\
                 q_2 \\
                 \end{bmatrix}
-              =
+              &=&
               \begin{bmatrix}
                 \varphi \\
                 l \\
                 \end{bmatrix}\\
-
-              \equlabel{Sequ}
-              \\
+              \equlabel{SS}
+              \begin{bmatrix}
+                S_1 \\
+                S_2 \\
+                \end{bmatrix}
+              &=&
+              \begin{bmatrix}
+                0 \\
+                u \\
+                \end{bmatrix}
+                \end{eqnarray}
+              \begin{eqnarray}
               \equlabel{Tequ}
-              T = \frac{1}{2} \\
-              \equlabel{Uequ}
-              U = -gm\frac{l}{2}\cos(\varphi)
+              T &=& \frac{1}{2} m \left(\frac{l}{2} \dot{\varphi} \right)^2 + \frac{1}{2} I \dot{\varphi}^2 + \frac{1}{2} m \dot{l}^2  \\
+              \equlabel{U_equ}
+              U &=& -gm\frac{l}{2}\cos(\varphi)
               \end{eqnarray}  
           運動方程式を行列で書き表すと\equref{Matrix}となる．
           \begin{eqnarray}
             \equlabel{Matrix}
-            \left[\right]
+            \underbrace{\frac{\partial^2 L}{\partial \dot{\bm{q}}^2}}_{\bm{M}} \ddot{\bm{q}}^2 +\underbrace{\frac{\partial^2 L}{\partial \dot{\bm{q}} \partial \bm{q}} \dot{\bm{q}} - \frac{\partial L}{\partial \bm{q}}}_{\bm{c}} = 
+            \begin{bmatrix}
+              0 \\
+              u \\
+              \end{bmatrix}
             \end{eqnarray} 
-          ここで，XXXXXXXXは以下のようになる．
+          ここで，$\bm{M}(l)$，$\bm{c}(\varphi,l,\dot{\varphi},\dot{l})$は以下のようになる．
             \begin{eqnarray}
               \equlabel{M}
-              x_{\mathrm{c}}&=&\frac{1}{2}l_{\mathrm{r}}\dot{\varphi}\cos{(\varphi)}t+\frac{1}{2}l_{\mathrm{r}}\sin{(\varphi)}\\
+              \bm{M}(l)&=&
+              \begin{bmatrix}
+                M_{11}(l) & 0\\
+                0 & M_{22} \\
+                \end{bmatrix}\\
               \equlabel{C}
-              z_{\mathrm{c}}&=&\frac{1}{2}l_{\mathrm{r}}\dot{\varphi}\sin{(\varphi)}t-\frac{1}{2}gt^2-\frac{1}{2}l_{\mathrm{r}}\cos{(\varphi)}\\
+              \bm{c}(\varphi,l,\dot{\varphi},\dot{l})&=&
+              \begin{bmatrix}
+                c_{1}(\varphi,l,\dot{\varphi},\dot{l}) \\
+                c_{2}(\varphi,l,\dot{\varphi}) \\
+                \end{bmatrix}\\
               \equlabel{M11}
-              x_{\mathrm{e}}&=&x_{\mathrm{c}}+\frac{1}{2}l_{\mathrm{r}}\sin{(\varphi+\dot{\varphi}t)}\\
+              M_{11}(l) &=& \frac{1}{4}m{l(t)}^2 + I\\
               \equlabel{M22}
-              z_{\mathrm{e}}&=&z_{\mathrm{c}}-\frac{1}{2}l_{\mathrm{r}}\cos{(\varphi+\dot{\varphi}t)}\\
+              M_{22} &=& \frac{m}{4}\\
               \equlabel{C1}
-                J_{\mathrm{d}}(\varphi,\dot{\varphi},t,l_{\mathrm{r}})
-                &=&\sqrt{(l_{\mathrm{bx}}-x_{\mathrm{e}})^2+(l_{\mathrm{bz}}-z_{\mathrm{e}})^2}\\
+              c_{1}(\varphi,l,\dot{\varphi},\dot{l}) &=& \frac{1}{2}ml(t)\dot{l}(t)\dot{\varphi}(t) + \frac{1}{2}gml(t)\sin{(\varphi(t))}\\
               \equlabel{C2}
-              J_{\mathrm{r}}(\varphi,\dot{\varphi},t,l_{\mathrm{r}})
-              &=&\sqrt{\dot{x_{\mathrm{e}}}^2+\dot{z_{\mathrm{e}}}^2}
+              c_{2}(\varphi,l,\dot{\varphi}) &=& -\frac{1}{4}ml(t){\dot{\varphi}(t)}^2 - \frac{1}{2}gm\cos{(\varphi(t))}
             \end{eqnarray} 
 
 

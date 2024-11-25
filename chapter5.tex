@@ -17,7 +17,7 @@
 
           \begin{eqnarray}
             \equlabel{Lagrange}
-            \frac{\mathrm{d}}{\mathrm{d}t}\left(\flac{\partial}{{\partial}\dot{q_i}}\right)-\left(\flac{\partial L}{\partial q_i}\right)=S_i
+            \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q_i}}\right)-\left(\frac{\partial L}{\partial q_i}\right)=S_i
             \end{eqnarray} 
           
           $q_i$と$S_i$はそれぞれ一般化座標と一般化力であり，それぞれ\equref{q}\equref{S}とした．
@@ -25,7 +25,16 @@
           系の運動エネルギー$T$と位置エネルギー$U$で構成され，本モデルでは\equref{T}\equref{U}となる．  
           \begin{eqnarray}
               \equlabel{q}
-              \left[\matrix{}\right]\\
+              \begin{bmatrix}
+                q_1 \\
+                q_2 \\
+                \end{bmatrix}
+              =
+              \begin{bmatrix}
+                \varphi \\
+                l \\
+                \end{bmatrix}\\
+
               \equlabel{S}
               \\
               \equlabel{T}
@@ -36,7 +45,7 @@
           運動方程式を行列で書き表すと\equref{Matrix}となる．
           \begin{eqnarray}
             \equlabel{Matrix}
-            \left[\matrix{}\right]
+            \left[\right]
             \end{eqnarray} 
           ここで，XXXXXXXXは以下のようになる．
             \begin{eqnarray}

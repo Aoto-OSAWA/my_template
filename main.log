@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  25 NOV 2024 10:21
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  25 NOV 2024 10:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -339,20 +339,7 @@ File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
 \g__pdf_backend_link_int=\count292
 \g__pdf_backend_link_sf_int=\count293
 )
-(./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux
-
-LaTeX Warning: Label `equ:x-e' multiply defined.
-
-
-LaTeX Warning: Label `equ:z-e' multiply defined.
-
-
-LaTeX Warning: Label `equ:Jd' multiply defined.
-
-
-LaTeX Warning: Label `equ:Jr' multiply defined.
-
-) (./chapter5.aux))
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -378,8 +365,7 @@ LaTeX Font Info:    ... okay on input line 39.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
 LaTeX Font Info:    ... okay on input line 39.
 Package hyperref Info: Link coloring ON on input line 39.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -398,6 +384,10 @@ LaTeX Info: Redefining \nameref on input line 39.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
@@ -406,20 +396,23 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 42.
- [1
+[1
 
 
 ] [2
 
 ] [3] [4
 
-] (./main.toc)
+]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
 \openout2 = `chapter1.aux'.
 
- (./chapter1.tex
+(./chapter1.tex
 第 1 章
 [5
 
@@ -549,6 +542,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 11.
+
+
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 12.
+
+
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 13.
+
+
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 15.
+
+
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 16.
+
+
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 17.
+
+
+LaTeX Warning: Reference `fig:brachiationFig-4.eps' on page 11 undefined on inp
+ut line 22.
+
+
 LaTeX Warning: Citation `Hijiri:Robomech2024' on page 11 undefined on input lin
 e 26.
 
@@ -557,6 +578,10 @@ File: ./fig/brachiationFig-4.eps Graphic file (type eps)
 
 LaTeX Warning: Citation `Hijiri:Robomech2024' on page 11 undefined on input lin
 e 33.
+
+
+LaTeX Warning: Reference `fig:bar-robot4.png' on page 11 undefined on input lin
+e 34.
 
 [11]
 File: ./fig/bar-robot4.png Graphic file (type bmp)
@@ -582,10 +607,44 @@ LaTeX Warning: Citation `akahane2022single' on page 15 undefined on input line
 LaTeX Warning: Citation `Hijiri:Robomech2024' on page 15 undefined on input lin
 e 9.
 
+
+LaTeX Warning: Reference `fig:noAerialBrachiationFig.eps' on page 15 undefined 
+on input line 16.
+
+
+LaTeX Warning: Reference `fig:noAerialBrachiationFig.eps' on page 15 undefined 
+on input line 19.
+
+
+LaTeX Warning: Reference `fig:noAerialBrachiationFig.eps' on page 15 undefined 
+on input line 26.
+
+
+LaTeX Warning: Reference `fig:noAerialBrachiationFig.eps' on page 15 undefined 
+on input line 33.
+
+
+LaTeX Warning: Reference `fig:noAerialBrachiationFig.eps' on page 15 undefined 
+on input line 40.
+
 [15]
+
+LaTeX Warning: Reference `fig:noAerialBrachiationFig.eps' on page 16 undefined 
+on input line 45.
+
 File: ./fig/noAerialBrachiationFig.eps Graphic file (type eps)
 <./fig/noAerialBrachiationFig.eps>
- [16]
+
+LaTeX Warning: Reference `fig:BarPositionFig.eps' on page 16 undefined on input
+ line 57.
+
+
+LaTeX Warning: Reference `equ:barRange' on page 16 undefined on input line 64.
+
+
+LaTeX Warning: Reference `equ:theta' on page 16 undefined on input line 65.
+
+[16]
 File: ./fig/BarPositionFig.eps Graphic file (type eps)
 <./fig/BarPositionFig.eps>
 ) [17]
@@ -605,12 +664,56 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 14.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 14.
+
+
+LaTeX Warning: Reference `fig:ReleaseFig2.eps' on page 21 undefined on input li
+ne 16.
+
+
+LaTeX Warning: Reference `equ:Jd' on page 21 undefined on input line 27.
+
+
+LaTeX Warning: Reference `equ:Jr' on page 21 undefined on input line 27.
+
 File: ./fig/ReleaseFig2.eps Graphic file (type eps)
 <./fig/ReleaseFig2.eps>
- [21] [22] [23]
+
+LaTeX Warning: Reference `equ:Jd' on page 21 undefined on input line 56.
+
+
+LaTeX Warning: Reference `equ:Jr' on page 21 undefined on input line 56.
+
+
+LaTeX Warning: Reference `equ:J' on page 21 undefined on input line 57.
+
+[21]
+
+LaTeX Warning: Reference `sec:J-define' on page 22 undefined on input line 71.
+
+[22]
+
+LaTeX Warning: Reference `tab:ExperimentConditions' on page 23 undefined on inp
+ut line 115.
+
+
+LaTeX Warning: Reference `tab:optimizedRelease' on page 23 undefined on input l
+ine 116.
+
+[23]
+
+LaTeX Warning: Reference `fig:ReleaseExperiment.eps' on page 24 undefined on in
+put line 128.
+
+
+LaTeX Warning: Reference `sec:J-define' on page 24 undefined on input line 129.
+
+
+
+LaTeX Warning: Reference `tab:optimizedRelease' on page 24 undefined on input l
+ine 133.
+
 File: ./fig/ReleaseExperiment.eps Graphic file (type eps)
 <./fig/ReleaseExperiment.eps>
-
 
 LaTeX Warning: Float too large for page by 68.24203pt on input line 137.
 
@@ -628,6 +731,9 @@ LaTeX Warning: Float too large for page by 68.24203pt on input line 137.
 
 ]
 
+LaTeX Warning: Reference `chap:chapter4' on page 29 undefined on input line 5.
+
+
 LaTeX Warning: Citation `lieskovsky2023optimal' on page 29 undefined on input l
 ine 12.
 
@@ -641,10 +747,10 @@ LaTeX Warning: Reference `equ:q' on page 29 undefined on input line 23.
 LaTeX Warning: Reference `equ:S' on page 29 undefined on input line 23.
 
 
-LaTeX Warning: Reference `equ:T' on page 29 undefined on input line 25.
+LaTeX Warning: Reference `equ:Tequ' on page 29 undefined on input line 25.
 
 
-LaTeX Warning: Reference `equ:U' on page 29 undefined on input line 25.
+LaTeX Warning: Reference `equ:Uequ' on page 29 undefined on input line 25.
 
 ! Missing $ inserted.
 <inserted text> 
@@ -661,11 +767,11 @@ End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 10653 strings out of 479850
- 163219 string characters out of 5887378
- 459667 words of memory out of 5000000
- 28792 multiletter control sequences out of 15000+600000
+ 10612 strings out of 479850
+ 162698 string characters out of 5887378
+ 455287 words of memory out of 5000000
+ 28763 multiletter control sequences out of 15000+600000
  519005 words of font info for 103 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,12n,70p,529b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
-Output written on main.dvi (28 pages, 50000 bytes).
+Output written on main.dvi (28 pages, 44388 bytes).

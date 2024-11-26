@@ -84,8 +84,53 @@
               \equlabel{C2}
               c_{2}(\varphi,l,\dot{\varphi}) &=& -\frac{1}{4}ml(t){\dot{\varphi}(t)}^2 - \frac{1}{2}gm\cos{(\varphi(t))}
             \end{eqnarray} 
-
-
+          本モデルの力積は\equref{Si}で計算され，系の運動量$p_i = \frac{\partial L}{\partial \dot{q}_i}$との関係は\equref{pi}である．
+          \begin{eqnarray}
+            \equlabel{Si}
+            \hat{S}_i = \lim_{t^{+}\to t} \int_{t}^{t^{+}} S_i (\tau) \mathrm{d}\tau\\
+            \equlabel{pi}
+            p_i(t^{+})-p_i(t)=\hat{S}_i
+            \end{eqnarray}
+          本モデルにおいて，$\varphi$方向の運動量は保存されるため，\equref{impulse}が満たされる．
+          \begin{eqnarray}
+            \equlabel{impulse}
+            M_{11}(l^{+})\dot{\varphi}^{+}-M_{11}(l)\dot{\varphi}=0
+            \end{eqnarray}
+          また，状態変数を
+          \begin{eqnarray}
+            \bm{x}=
+            \begin{pmatrix}
+              x_1\\
+              x_2\\
+              x_3\\
+              x_4\\
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                \varphi\\
+                l\\
+                \dot{\varphi}\\
+                \dot{l}\\
+                \end{pmatrix}
+            \end{eqnarray}
+          とすると，状態モデルは
+          \begin{eqnarray}
+            \dot{\bm{x}}=
+            \begin{pmatrix}
+              \dot{x}_1\\
+              \dot{x}_2\\
+              \dot{x}_3\\
+              \dot{x}_4\\
+              \end{pmatrix}
+              =
+              \begin{pmatrix}
+                x_3\\
+                x_4\\
+                -M_{11}^{-1}(x_2)c_1(x_{1-4})\\
+                -M_{22}^{-1}c_2(x_{1-3})+M_{22}^{-1}u\\
+                \end{pmatrix}
+            \end{eqnarray}
+          となる．
 
 
 

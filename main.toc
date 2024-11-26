@@ -22,12 +22,12 @@
 \contentsline {chapter}{\numberline {第5章}リリース条件到達のための励振制御}{29}{chapter.5}%
 \contentsline {section}{\numberline {5.1}はじめに}{31}{section.5.1}%
 \contentsline {section}{\numberline {5.2}伸縮による励振}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}振子過程での運動方程式}{32}{section.5.3}%
-\contentsline {chapter}{\numberline {第6章}最適なバーリリース条件に基づく励振とブラキエーション動作の実験}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}はじめに}{35}{section.6.1}%
-\contentsline {section}{\numberline {6.2}考察}{35}{section.6.2}%
-\contentsline {chapter}{\numberline {第7章}結論および今後の展望}{37}{chapter.7}%
-\contentsline {section}{\numberline {7.1}はじめに}{39}{section.7.1}%
-\contentsline {section}{\numberline {7.2}考察}{39}{section.7.2}%
-\contentsline {chapter}{謝辞}{40}{section.7.2}%
-\contentsline {chapter}{参考文献}{44}{chapter*.2}%
+\contentsline {section}{\numberline {5.3}振子過程での運動方程式}{33}{section.5.3}%
+\contentsline {chapter}{\numberline {第6章}最適なバーリリース条件に基づく励振とブラキエーション動作の実験}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}はじめに}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}考察}{37}{section.6.2}%
+\contentsline {chapter}{\numberline {第7章}結論および今後の展望}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}はじめに}{41}{section.7.1}%
+\contentsline {section}{\numberline {7.2}考察}{41}{section.7.2}%
+\contentsline {chapter}{謝辞}{42}{section.7.2}%
+\contentsline {chapter}{参考文献}{46}{chapter*.2}%

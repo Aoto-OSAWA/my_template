@@ -6,11 +6,14 @@
         振子過程における励振調整が望まれる．
         本章では伸縮タイミングと伸縮量の調整による目標角度・角速度の実現について述べる．
           
-        \section{伸縮による励振}
+        \section{伸縮による励振のメカニズム}
 
           本研究では，重心を移動させることにより振子過程において励振させる．
           Lieskovsk{\`y}らの重りを動かすことによる振幅増幅率が最大となる重心移動の研究\cite{lieskovsky2023optimal}を，
-          伸縮機構に応用して励振を行う．\figref{brachiationFig-4.eps}に伸縮する単リンクブラキエーションロボットを簡略化した，
+          伸縮機構に応用して励振を行う．
+          
+          \subsection{伸縮する単リンクブラキエーションロボットのモデル化}
+          \figref{brachiationFig-4.eps}に伸縮する単リンクブラキエーションロボットを簡略化した，
           伸縮する振子のモデルを示す．振子の半径方向と鉛直下向き線がなす角を$\varphi [\mathrm{rad}]$，
           振子の長さを$l [\mathrm{m}]$，振子の質量を$m [\mathrm{kg}]$，振子の重心周りの慣性モーメントを$I [\mathrm{kg}\mathrm{m}^2]$，
           重力加速度を$g [\mathrm{m}/\mathrm{s}^2]$とする．
@@ -21,7 +24,7 @@
             \frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{\partial L}{\partial \dot{q_i}}\right)-\frac{\partial L}{\partial q_i}=S_i
             \end{eqnarray} 
           $q_i$と$S_i$はそれぞれ一般化座標と一般化力であり，それぞれ\equref{qq}，\equref{SS}とした．
-          ここで，伸縮のために加える力を$u [\mathrm{N}]$とする．
+          ここで，伸縮のために加える力を$u[\mathrm{N}]$とする．
           $L=T-U$はラグランジアンであり，
           系の運動エネルギー$T$と位置エネルギー$U$で構成され，本モデルでは\equref{Tequ}，\equref{U_equ}となる．
           \begin{eqnarray}
@@ -131,6 +134,46 @@
                 \end{pmatrix}
             \end{eqnarray}
           となる．
+          伸縮が時刻$t$秒から$t^{+}$秒の間に瞬間的に行われると仮定すると，
+          伸縮後の状態$\bm{x}^{+}$は伸縮前の状態$\bm{x}$と\equref{impulse}から
+          \equref{xx}で表される．ここで，伸びる場合は$x_2^{+}=l_{\mathrm{max}}$，
+          縮む場合は$x_2^{+}=l_{\mathrm{min}}$となる．
+          \begin{eqnarray}
+            \equlabel{xx}
+            \bm{x}^{+}=
+            \begin{pmatrix}
+                x_1\\
+                x_2^{+}\\
+                M_{11}^{-1}(x_2^{+})M_{11}(x_2)x_3\\
+                0\\
+                \end{pmatrix}
+            \end{eqnarray}
+
+          \subsection{励振シミュレーション}
+          
+          
+          
+          
+          Lieskovsk{\`y}らのおもりを動かすことによる励振の研究\cite{lieskovsky2023optimal}を
+          伸縮機構に応用し，励振のシミュレーションを行った．
+          本モデルの運動を式で表すと
+          \begin{eqnarray}
+            \equlabel{FG}
+            \left\{
+              \begin{aligned}
+                \dot{\bm{x}}= F(x),\quad\bm{x}\in C\\
+                \bm{x}^{+}= G(x),\quad\bm{x}\in D
+              \end{aligned}
+            \right.
+          \end{eqnarray} 
+          となる．フロー集合$C$における$\bm{x}$の連続ダイナミクスと，ジャンプ集合$D$における$\bm{x}^{+}$の離散ダイナミクスを
+          組み合わせたハイブリッドダイナミクスで運動を表す．ここで，$\bm{x}^{+}$は瞬間的な伸縮後の状態である．
+          また，連続ダイナミクスでは$x_2\,:\,l$は一定値に維持される．
+          ここで
+
+
+
+
 
 
 

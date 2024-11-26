@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  26 NOV 2024 12:33
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  26 NOV 2024 21:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -548,17 +548,17 @@ LaTeX Warning: Float too large for page by 68.24203pt on input line 137.
 ]
 File: ./fig/brachiationFig-4.eps Graphic file (type eps)
 <./fig/brachiationFig-4.eps>
- [31] [32]) [33]
+ [31] [32] [33]) [34]
 \openout2 = `chapter6.aux'.
 
- (./chapter6.tex [34
-
-
-
-
-]
+ (./chapter6.tex
 第 6 章
-[35] [36
+[35
+
+
+
+
+] [36
 
 ]) [37]
 \openout2 = `chapter7.aux'.
@@ -610,19 +610,19 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 676652F6FDE73261A563272D113E2E42;2659.
+(rerunfilecheck)             Checksum: 170C44DDFEB5DA2C3EA2816D893313C2;2890.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10805 strings out of 479850
- 166928 string characters out of 5887378
- 472351 words of memory out of 5000000
- 28908 multiletter control sequences out of 15000+600000
+ 10808 strings out of 479850
+ 166957 string characters out of 5887378
+ 472902 words of memory out of 5000000
+ 28911 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (51 pages, 98912 bytes).
+Output written on main.dvi (51 pages, 102912 bytes).

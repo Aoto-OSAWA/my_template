@@ -13,11 +13,11 @@
           伸縮機構に応用して励振を行う．
           
           \subsection{伸縮する単リンクブラキエーションロボットのモデル化}
-          \figref{brachiationFig-4.eps}に伸縮する単リンクブラキエーションロボットを簡略化した，
+          \figref{modelFig.eps}に伸縮する単リンクブラキエーションロボットを簡略化した，
           伸縮する振子のモデルを示す．振子の半径方向と鉛直下向き線がなす角を$\varphi [\mathrm{rad}]$，
           振子の長さを$l [\mathrm{m}]$，振子の質量を$m [\mathrm{kg}]$，振子の重心周りの慣性モーメントを$I [\mathrm{kg}\mathrm{m}^2]$，
           重力加速度を$g [\mathrm{m}/\mathrm{s}^2]$とする．
-          \figb{brachiationFig-4.eps}{width=0.9\hsize}{Brachiation motions}
+          \fig{modelFig.eps}{width=0.3\hsize}{Model of an extensible pendulum}
           運動方程式を以下のラグランジュの運動方程式で求める．
           \begin{eqnarray}
             \equlabel{Lagrange}
@@ -135,20 +135,31 @@
             \end{eqnarray}
           となる．
           伸縮が時刻$t$秒から$t^{+}$秒の間に瞬間的に行われると仮定すると，
-          伸縮後の状態$\bm{x}^{+}$は伸縮前の状態$\bm{x}$と\equref{impulse}から
+          伸縮後の状態$\bm{x}^{+}$は伸縮前の状態$\bm{x}$と\equref{impulse}を用いて
           \equref{xx}で表される．ここで，伸びる場合は$x_2^{+}=l_{\mathrm{max}}$，
-          縮む場合は$x_2^{+}=l_{\mathrm{min}}$となる．
+          縮む場合は$x_2^{+}=l_{\mathrm{min}}$となり，\equref{lchange}の条件に基づいて変化させる．
           \begin{eqnarray}
             \equlabel{xx}
-            \bm{x}^{+}=
+            \bm{x}^{+}&=&
             \begin{pmatrix}
                 x_1\\
                 x_2^{+}\\
                 M_{11}^{-1}(x_2^{+})M_{11}(x_2)x_3\\
                 0\\
-                \end{pmatrix}
+                \end{pmatrix}\\
+            \equlabel{lchange}
+                l&=&\left\{
+                l_{\mathrm{min}}\quad \mathrm{if}\,\varphi \dot{\varphi}>0\\
+                l_{\mathrm{max}}\quad \mathrm{if}\,\varphi \dot{\varphi}<0\\
+                \right\}
             \end{eqnarray}
-
+          この瞬間的な伸縮により系の運動エネルギー$T$と位置エネルギー$U$は次のように変化する．
+          \begin{eqnarray}
+            \equlabel{dT}
+            \Delta T_t^{t^{+}}&=&\left(\frac{M_{11}(x_2)}{M_{11}(x_2^{+})}-1\right)\frac{1}{2}M_{11}(x_2)x_3^2\\
+            \equlabel{dU}
+            \Delta U_t^{t^{+}}&=&gm(x_2^{+}-x_2)\cos{x_1}            
+            \end{eqnarray}
           \subsection{励振シミュレーション}
           
           

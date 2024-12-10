@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  28 NOV 2024 14:55
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  10 DEC 2024 17:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -352,7 +352,14 @@ LaTeX Warning: Label `equ:Jd' multiply defined.
 
 LaTeX Warning: Label `equ:Jr' multiply defined.
 
-) (./chapter5.aux) (./chapter6.aux) (./chapter7.aux) (./thanks.aux))
+) (./chapter5.aux
+
+LaTeX Warning: Label `fig:photo3.jpg' multiply defined.
+
+
+LaTeX Warning: Label `fig:photo3.jpg' multiply defined.
+
+) (./chapter6.aux) (./chapter7.aux) (./thanks.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -527,51 +534,80 @@ LaTeX Warning: Float too large for page by 68.24203pt on input line 136.
 File: ./fig/modelFig.eps Graphic file (type eps)
 <./fig/modelFig.eps>
  [31] [32]
+File: ./fig/photo3.jpg Graphic file (type bmp)
+<./fig/photo3.jpg>
+File: ./fig/photo3.jpg Graphic file (type bmp)
+<./fig/photo3.jpg>
+ [33] [34]
 
-LaTeX Warning: Reference `fig:' on page 33 undefined on input line 169.
+LaTeX Warning: Reference `fig:' on page 35 undefined on input line 226.
 
-[33]) [34]
+File: ./fig/photo3.jpg Graphic file (type bmp)
+<./fig/photo3.jpg>
+
+LaTeX Warning: Reference `fig:' on page 35 undefined on input line 231.
+
+
+LaTeX Warning: Reference `fig:' on page 35 undefined on input line 231.
+
+
+LaTeX Warning: Reference `fig:' on page 35 undefined on input line 232.
+
+
+LaTeX Warning: Reference `fig:' on page 35 undefined on input line 235.
+
+[35]
+
+LaTeX Warning: Reference `fig:' on page 36 undefined on input line 257.
+
+
+LaTeX Warning: Reference `fig:' on page 36 undefined on input line 260.
+
+
+LaTeX Warning: Reference `fig:' on page 36 undefined on input line 262.
+
+[36]) [37]
 \openout2 = `chapter6.aux'.
 
- (./chapter6.tex
+ (./chapter6.tex [38
+
+
+
+
+]
 第 6 章
-[35
+[39] [40
 
-
-
-
-] [36
-
-]) [37]
+]) [41]
 \openout2 = `chapter7.aux'.
 
- (./chapter7.tex [38
+ (./chapter7.tex [42
 
 
 
 
 ]
 第 7 章
-[39] [40
+[43] [44
 
-]) [41]
+]) [45]
 \openout2 = `thanks.aux'.
 
- (./thanks.tex [42
+ (./thanks.tex [46
 
 
 
 
-] [43] [44
+] [47] [48
 
-]) [45] (./main.bbl [46
+]) [49] (./main.bbl [50
 
 
 
-] [47]
-[48
+] [51]
+[52
 
-] [49]
+] [53]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 90.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -582,10 +618,10 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 115.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 120.
- [50]
+ [54]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 126.
-) [51] (./main.aux (./chapter1.aux) (./chapter2.aux)
+) [55] (./main.aux (./chapter1.aux) (./chapter2.aux)
 (./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
 (./chapter7.aux) (./thanks.aux))
 
@@ -595,19 +631,19 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 170C44DDFEB5DA2C3EA2816D893313C2;2890.
+(rerunfilecheck)             Checksum: EEA531FF01E327E3EF5C5FA5557B13E2;3407.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10818 strings out of 479850
- 167127 string characters out of 5887378
- 472148 words of memory out of 5000000
- 28920 multiletter control sequences out of 15000+600000
+ 10830 strings out of 479850
+ 167338 string characters out of 5887378
+ 472749 words of memory out of 5000000
+ 28930 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (51 pages, 102904 bytes).
+Output written on main.dvi (55 pages, 119304 bytes).

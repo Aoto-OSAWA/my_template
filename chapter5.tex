@@ -9,7 +9,7 @@
         \section{伸縮による励振のメカニズム}
 
           本研究では，重心を移動させることにより振子過程において励振させる．
-          Lieskovsk{\`y}らの重りを動かすことによる振幅増幅率が最大となる重心移動の研究\cite{lieskovsky2023optimal}を，
+          Lieskovsk{\`y}らの重りを動かすことによる振幅増加率が最大となる重心移動の研究\cite{lieskovsky2023optimal}を，
           伸縮機構に応用して励振を行う．
           
           \subsection{伸縮する単リンクブラキエーションロボットのモデル化}
@@ -166,7 +166,12 @@
             \end{eqnarray}
           本実験で用いる実機に基づき，各パラメータと初期状態$(\varphi_{\mathrm{ini}},l_{\mathrm{ini}},\dot{\varphi}_{\mathrm{ini}},\dot{l}_{\mathrm{ini}})$
           を\tabref{parameter}としてルンゲクッタ法を用いてシミュレータを作成した．
-          その結果を\figref{}に示す．
+          その結果を\figref{photo3.jpg}に示す．
+          横軸は時間$t$，縦軸はそれぞれ力学的エネルギー$E$・運動エネルギー$T$・ポテンシャルエネルギー$U$，
+          角度$\varphi$・角速度$\dot{\varphi}$を示す．
+          これにより，伸縮することによる重心移動でも励振が可能であることが確認できる．
+          これらの内容はLieskovsk{\`y}らのおもりを動かすことによる励振の研究\cite{lieskovsky2023optimal}を
+          伸縮機構に応用したものである．
           \begin{table}[tb]
             \begin{center}
               \caption{Simulation parameters}
@@ -188,22 +193,122 @@
               \end{tabular}
             \end{center}
           \end{table}
+          \fig{photo3.jpg}{width=0.3\hsize}{Excitation simulation of extensible brachiation robot}
+          
+          また，伸縮時の最大長$l_{\mathrm{max}}$を0.59 mから0.74 mまで3 cm刻みで
+          変化させた場合の励振シミュレーションを\figref{photo3.jpg}に示す．
+          横軸は時間，縦軸は力学的エネルギーと角度を示している．
+          このシミュレーション結果から，伸縮量を大きくするほど振幅増加量が大きくなり，伸縮量を小さくするほど伸縮増加量が小さくなることが分かる．
+          ゆえに，伸縮量調整によって励振時の振幅操作が可能であると考えられる．
+          \fig{photo3.jpg}{width=0.3\hsize}{Excitation simulation with changing the max length}
+              
+        \section{励振制御の流れ}
+          
+
+          XXXXXXXXXXXXXXXXXXXXXXXX
+          
+          \chapref{chapter4}で目標角度角速度が与えられる
+          その条件を満たす初期振幅を決定する
+          その振幅に近づくまでは最大伸縮量で
+          その初期振幅になるようにリアルタイムで減衰・励振の調整をする
+
+          
+        \subsection{目標初期角度の導出}
+          
+          \equref{Matrix}は減衰を考慮していない運動方程式であるため，
+          伸縮せず，角速度のみに比例する減衰を仮定すると
+          次のように表される．ここで，$b$は減衰係数を表す．
+          \begin{eqnarray}
+            \equlabel{dampingEquation}
+            M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
+            \end{eqnarray}
+          実機を用いた減衰計測データを基に，減衰係数$b$を求めた．
+          \figref{}に減衰計測データ（角度・角速度）を示す．
+          なお，ロボットの長さを0.74 m，初期角度を130 degとした．
+          \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
+          この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.0591$であった．
+          求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
+          \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
+          \figref{}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
+          このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
+          しかし，本実験では目標初期角度の導出には振動の半周期分しか用いず，
+          \figref{}において時間経過後も振動数はほとんど一致しているため，適用可能であると考えた．
+
+          調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件を満たす，目標初期角度を求めた．
+          \tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
+          目標初期角度は$\varphi_{\mathrm{ref}}=-89\,\mathrm{deg}$であった．
+          
+
+          \section{目標初期角度実現のための励振制御}
+          次に，求めた目標初期角度にするための励振制御方法について述べる．
+          振子過程ではロボットの現在の振幅と目標初期角度の差が大きい場合は最大伸縮量で励振を行い，
+          差が小さい場合は，その差に基づいて減衰・励振の決定を行う．
+          このとき，リアルタイムで減衰・励振の選択を行うためには計算速度が重要となる．
+          \equref{dampingEquation}で振動を表現すると数値解析する必要があるため，計算に時間がかかる．
+          本研究では振子の小角近似モデルである\equref{Approximation Model}に示す形式のモデル化を試みた．
+          ここで初期振幅，減衰率，減衰調和振動の固有角振動数をそれぞれ$\varphi_{\mathrm{ini}}$，$\lambda$，$\omega$として
+          $t$秒後の変位$\varphi(t)$を表す．
+          \begin{eqnarray}
+            \equlabel{Approximation Model}
+            \varphi(t)=\varphi_{\mathrm{ini}}e^{-\lambda t}\cos{(\omega t)}
+          \end{eqnarray}
+          \subsection{減衰データのフィッティング}
+            まず，減衰率$\lambda=0.05$，単振動の固有角振動数$w_0=\sqrt{l/g}$，減衰調和振動の固有角振動数$w=\sqrt{w_{0}^2-\lambda^2}$を用いた
+            \equref{Approximation Model}によるモデルと実験データをプロットした図を\figref{}に示す．
+            この段階では振幅，振動数ともに実験データとのずれがある．
+            そこで，振幅で区間を分け，区間ごとに減衰率と固有角振動数を調整することで
+            \figref{}に示すようにフィッティングを行った．なお，振幅の区間分けとそれぞれの区間における
+            減衰率と固有振動数を\tabref{DampingFitting}に示す．
+            \figref{}における赤色破線は振幅に応じた区間切り替えが行われた時刻を表す．
+            \begin{table}[tb]
+              \begin{center}
+                \caption{Damping fitting values}
+                \tablabel{DampingFitting}
+                \vspace{2mm}
+                \begin{tabular}{c|c|c}
+                  \hline
+                  Amplitude $\varphi_{\mathrm{ini}}$ [deg] & $\lambda$ [1/s] & $\omega$ [rad/s]\\
+                  \hline
+                  $\varphi_{\mathrm{ini}}\ge100$ & 0.070 & 3.31 \\
+                  $100>\varphi_{\mathrm{ini}}\ge75$ & 0.057 & 3.77 \\
+                  $75>\varphi_{\mathrm{ini}}$ & 0.055 & 4.00 \\                   
+                  \hline
+                \end{tabular}
+              \end{center}
+            \end{table}
+
+          \subsection{励振データのフィッティング}
+            励振には
+          
+
+          
+
+
+
+          
+
           
           
           
           
-          これらの内容はLieskovsk{\`y}らのおもりを動かすことによる励振の研究\cite{lieskovsky2023optimal}を
-          伸縮機構に応用したものである．
+            \equref{dampingEquation}を4次のルンゲクッタ法で解き，最適なバーリリース条件を満たす初期振幅を求める．
+          
           
 
 
+          \tabref{optimizedRelease}
+          1周期または半周期後の振幅が分かればいい
+          振子過程の運動方程式
+          減衰係数決定のために参考として減衰データ-170のやつ
+          フィッティング
 
 
+          
 
+        \subsection{励振データのフィッティング}
+        
+          励振
 
-
-            
-        \section{振子過程での運動方程式}
         振子過程のシミュレーション説明
         2つの過程で調整を行う
           減衰
@@ -214,5 +319,6 @@
           励振
 
           調整プログラム
+        \section{励振制御の実機実験}
 
 

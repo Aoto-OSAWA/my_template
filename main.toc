@@ -24,12 +24,18 @@
 \contentsline {section}{\numberline {5.2}伸縮による励振のメカニズム}{31}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}伸縮する単リンクブラキエーションロボットのモデル化}{31}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}励振シミュレーション}{33}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}振子過程での運動方程式}{34}{section.5.3}%
-\contentsline {chapter}{\numberline {第6章}最適なバーリリース条件に基づく励振とブラキエーション動作の実験}{35}{chapter.6}%
-\contentsline {section}{\numberline {6.1}はじめに}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}考察}{37}{section.6.2}%
-\contentsline {chapter}{\numberline {第7章}結論および今後の展望}{39}{chapter.7}%
-\contentsline {section}{\numberline {7.1}はじめに}{41}{section.7.1}%
-\contentsline {section}{\numberline {7.2}考察}{41}{section.7.2}%
-\contentsline {chapter}{謝辞}{42}{section.7.2}%
-\contentsline {chapter}{参考文献}{46}{chapter*.2}%
+\contentsline {section}{\numberline {5.3}励振制御の流れ}{34}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}目標初期角度の導出}{35}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}目標初期角度実現のための励振制御}{36}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}減衰データのフィッティング}{36}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}励振データのフィッティング}{37}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}励振データのフィッティング}{37}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}励振制御の実機実験}{37}{section.5.5}%
+\contentsline {chapter}{\numberline {第6章}最適なバーリリース条件に基づく励振とブラキエーション動作の実験}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}はじめに}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}考察}{41}{section.6.2}%
+\contentsline {chapter}{\numberline {第7章}結論および今後の展望}{43}{chapter.7}%
+\contentsline {section}{\numberline {7.1}はじめに}{45}{section.7.1}%
+\contentsline {section}{\numberline {7.2}考察}{45}{section.7.2}%
+\contentsline {chapter}{謝辞}{46}{section.7.2}%
+\contentsline {chapter}{参考文献}{50}{chapter*.2}%

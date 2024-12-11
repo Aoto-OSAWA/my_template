@@ -29,8 +29,8 @@
 \contentsline {section}{\numberline {5.4}目標初期角度実現のための励振制御}{36}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}減衰データのフィッティング}{36}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}励振データのフィッティング}{37}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}励振データのフィッティング}{37}{subsection.5.4.3}%
-\contentsline {section}{\numberline {5.5}励振制御の実機実験}{37}{section.5.5}%
+\contentsline {subsection}{\numberline {5.4.3}dd}{38}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}励振制御の実機実験}{38}{section.5.5}%
 \contentsline {chapter}{\numberline {第6章}最適なバーリリース条件に基づく励振とブラキエーション動作の実験}{39}{chapter.6}%
 \contentsline {section}{\numberline {6.1}はじめに}{41}{section.6.1}%
 \contentsline {section}{\numberline {6.2}考察}{41}{section.6.2}%

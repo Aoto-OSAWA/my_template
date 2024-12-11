@@ -258,7 +258,7 @@
             この段階では振幅，振動数ともに実験データとのずれがある．
             そこで，振幅で区間を分け，区間ごとに減衰率と固有角振動数を調整することで
             \figref{}に示すようにフィッティングを行った．なお，振幅の区間分けとそれぞれの区間における
-            減衰率と固有振動数を\tabref{DampingFitting}に示す．
+            減衰率と固有角振動数を\tabref{DampingFitting}に示す．
             \figref{}における赤色破線は振幅に応じた区間切り替えが行われた時刻を表す．
             \begin{table}[tb]
               \begin{center}
@@ -278,8 +278,52 @@
             \end{table}
 
           \subsection{励振データのフィッティング}
-            励振には
-          
+            
+            励振データ計測のために実機実験を行った．
+            伸縮時の最小の長さは0.56 mで固定し，最大長のみ0.74 mから0.02 mずつ短くし，それぞれの長さでの励振計測を行った．
+            励振計測データを\figref{}に示す．なお，最大長が0.66 mの場合は励振をせず，0.66 mより短い場合は減衰した．
+            減衰データのフィッティングと同様にして\equref{Approximation Model}を用いて励振データへのフィッティングを行った．
+            ここで，角振動数$\omega$は伸縮量に依らず，振幅のみに依存するとみなした．
+            また，励振では減衰率は負の値となり，振幅に依らず，伸縮量のみに依存するとみなした．
+            \figref{}にフィッティング結果，\tabref{ExcitationParameters}に振幅の区間分けとそれぞれの区間における
+            固有角振動数，\tabref{ExcitationRate}に最大長ごとの減衰率を示す．
+            \begin{table}[tb]
+              \begin{center}
+                \caption{Excitation fitting values}
+                \tablabel{ExcitationParameters}
+                \vspace{2mm}
+                \begin{tabular}{c|c}
+                  \hline
+                  Amplitude $\varphi_{\mathrm{ini}}$ [deg] & $\omega$ [rad/s]\\
+                  \hline
+                  $\varphi_{\mathrm{ini}}\ge90$ & 3.35 \\
+                  $90>\varphi_{\mathrm{ini}}\ge85$ & 3.50 \\
+                  $85>\varphi_{\mathrm{ini}}\ge70$ & 3.70 \\
+                  $70>\varphi_{\mathrm{ini}}$ & 3.90 \\                   
+                  \hline
+                \end{tabular}
+              \end{center}
+            \end{table}
+            \begin{table}[tb]
+              \begin{center}
+                \caption{Excitation rate}
+                \tablabel{ExcitationRate}
+                \vspace{2mm}
+                \begin{tabular}{c|c}
+                  \hline
+                  Length $l$ [m] & $\lambda$ [1/s] \\
+                  \hline
+                  0.74 & -0.15 \\
+                  0.72 & -0.14 \\
+                  0.70 & -0.13 \\
+                  0.68 & -0.090 \\
+                  0.66 & -0.0010 \\                     
+                  \hline
+                \end{tabular}
+              \end{center}
+            \end{table}
+            
+
 
           
 
@@ -305,9 +349,9 @@
 
           
 
-        \subsection{励振データのフィッティング}
+        \subsection{dd}
         
-          励振
+          
 
         振子過程のシミュレーション説明
         2つの過程で調整を行う

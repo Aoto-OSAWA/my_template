@@ -201,9 +201,134 @@
           このシミュレーション結果から，伸縮量を大きくするほど振幅増加量が大きくなり，伸縮量を小さくするほど伸縮増加量が小さくなることが分かる．
           ゆえに，伸縮量調整によって励振時の振幅操作が可能であると考えられる．
           \fig{photo3.jpg}{width=0.3\hsize}{Excitation simulation with changing the max length}
-              
-        \section{励振制御の流れ}
+        
           
+
+        \section{励振制御の流れ}
+
+        \section{目標振幅の導出}
+          
+          まず，最適なバーリリース条件である角度$\varphi_{\mathrm{ref}}$・角速度$\dot{\varphi}_{\mathrm{ref}}$になるために必要な目標振幅を求める．
+          \equref{Matrix}は減衰を考慮していない運動方程式であるため，
+          伸縮せず，角速度のみに比例する減衰を仮定すると
+          次のように表される．ここで，$b$は減衰係数を表す．
+          \begin{eqnarray}
+            \equlabel{dampingEquation}
+            M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
+            \end{eqnarray}
+          実機を用いた減衰計測データを基に，減衰係数$b$を求めた．
+          \figref{}に減衰計測データ（角度・角速度）を示す．
+          なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
+          \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
+          この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
+          求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
+          \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
+          \figref{}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
+          このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
+          しかし，本実験では目標振幅の導出には振動の半周期分しか用いず，
+          \figref{}において時間経過後も振動数はほとんど一致しているため，適用可能であると考えた．
+          調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件に最も近い目標振幅を求めた．
+          なお，\equref{error}に示す誤差$e$が最小となる初期角度を目標振幅とした．
+          \begin{eqnarray}
+            \equlabel{error}
+            e=\sqrt{(\varphi_{\mathrm{ref}}-\varphi)^2+(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi})^2}
+            \end{eqnarray}
+          \tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
+          目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$であった．
+
+        \section{励振制御}
+          次に，求めた目標振幅にするための励振制御方法について述べる．
+          振子過程では現在の振幅と目標振幅の比に基づいて伸縮量を調整し，励振制御を行う．
+          リアルタイムで伸縮量調整を行うために，伸縮量と半周期後の振幅の変化率の関係式を求める．
+          実機の振動を，振動が微小であるとみなした近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
+          ここで現在の振幅，減衰率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
+          $t$秒後の変位$A(t)$を表す．なお，励振においては減衰率は負の値で表される．また，現在の振幅と半周期後の振幅の比は\equref{amp rate}となる．
+          \begin{eqnarray}
+            \equlabel{Approximation Model}
+            A(t)=A_{\mathrm{now}}e^{-\lambda t}\cos{(\omega t)}\\
+            \equlabel{amp rate}
+            \frac{A(t)}{A_{\mathrm{now}}}=e^{-\lambda \frac{\pi}{\omega}}
+          \end{eqnarray}
+          よって，半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な減衰率は\equref{lambda}で表される．
+          \begin{eqnarray}
+            \equlabel{lambda}
+            \lambda=\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{now}}}{A_{\mathrm{ref}}}\right)}
+          \end{eqnarray}
+
+        \subsection{近似モデルの励振データへのフィッティング}
+          
+          実機の励振データの取得のために，伸縮時の最小長は0.56 mで固定し，
+          最大長のみ0.74 m，0.70 m，0.68 m，0.66 mと変化させ，それぞれの長さでの励振計測を行った．
+          励振計測データを\figref{}に示す．
+          ここで，近似モデルをフィッティングさせるために，
+          なお，微小角近似ができない振幅になると角振動数は小さくなるため，単純化のために振幅で区間を分け，
+          区間ごとに角振動数を調整することで近似モデルを実験データにフィッティングさせた．
+          \figref{}にフィッティング結果，\tabref{ExcitationParameters}に振幅の区間分けとそれぞれの区間における
+          固有角振動数，\tabref{ExcitationRate}に最大長ごとの減衰率を示す．
+          \begin{table}[tb]
+            \begin{center}
+              \caption{Excitation fitting values}
+              \tablabel{ExcitationParameters}
+              \vspace{2mm}
+              \begin{tabular}{c|c}
+                \hline
+                Amplitude $A_{\mathrm{now}}$ [deg] & $\omega$ [rad/s]\\
+                \hline
+                $A_{\mathrm{now}}\ge90$ & 3.35 \\
+                $90>A_{\mathrm{now}}\ge85$ & 3.50 \\
+                $85>A_{\mathrm{now}}\ge70$ & 3.70 \\
+                $70>A_{\mathrm{now}}$ & 3.90 \\                   
+                \hline
+              \end{tabular}
+            \end{center}
+          \end{table}
+          \begin{table}[tb]
+            \begin{center}
+              \caption{Excitation rate}
+              \tablabel{ExcitationRate}
+              \vspace{2mm}
+              \begin{tabular}{c|c}
+                \hline
+                Length $l$ [m] & $\lambda$ [1/s] \\
+                \hline
+                0.74 & -0.15 \\
+                0.72 & -0.14 \\
+                0.70 & -0.13 \\
+                0.68 & -0.090 \\
+                0.66 & -0.0010 \\                     
+                \hline
+              \end{tabular}
+            \end{center}
+          \end{table}
+        \figref{}に示すように，縦軸を減衰率，横軸を最大長さとして\tabref{ExcitationRate}のデータをプロットし，線形近似した．
+        近似式は\equref{length relation}となった．
+        \begin{eqnarray}
+          \equlabel{length relation}
+          l=d
+        \end{eqnarray}
+
+        \subsection{励振制御}
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+          ロボットの現在の振幅と目標初期角度の差が大きい場合は最大伸縮量で励振を行い，
+          差が小さい場合は，その差に基づいて減衰・励振の決定を行う．
+          このとき，リアルタイムで減衰・励振の選択を行うためには計算速度が重要となる．
+          \equref{dampingEquation}で振動を表現すると数値解析する必要があるため，計算に時間がかかる．
+          本研究では振子の小角近似モデルである\equref{Approximation Model}に示す形式のモデル化を試みた．
+          ここで初期振幅，減衰率，減衰調和振動の固有角振動数をそれぞれ$\varphi_{\mathrm{ini}}$，$\lambda$，$\omega$として
+          $t$秒後の変位$\varphi(t)$を表す．
+          \begin{eqnarray}
+            \equlabel{Approximation Model}
+            \varphi(t)=\varphi_{\mathrm{ini}}e^{-\lambda t}\cos{(\omega t)}
+          \end{eqnarray}
+          
+
+        \subsection{伸縮量と減衰率の関係式}
+        励振データのフィッティング
 
           XXXXXXXXXXXXXXXXXXXXXXXX
           
@@ -240,18 +365,7 @@
           
 
           \section{目標初期角度実現のための励振制御}
-          次に，求めた目標初期角度にするための励振制御方法について述べる．
-          振子過程ではロボットの現在の振幅と目標初期角度の差が大きい場合は最大伸縮量で励振を行い，
-          差が小さい場合は，その差に基づいて減衰・励振の決定を行う．
-          このとき，リアルタイムで減衰・励振の選択を行うためには計算速度が重要となる．
-          \equref{dampingEquation}で振動を表現すると数値解析する必要があるため，計算に時間がかかる．
-          本研究では振子の小角近似モデルである\equref{Approximation Model}に示す形式のモデル化を試みた．
-          ここで初期振幅，減衰率，減衰調和振動の固有角振動数をそれぞれ$\varphi_{\mathrm{ini}}$，$\lambda$，$\omega$として
-          $t$秒後の変位$\varphi(t)$を表す．
-          \begin{eqnarray}
-            \equlabel{Approximation Model}
-            \varphi(t)=\varphi_{\mathrm{ini}}e^{-\lambda t}\cos{(\omega t)}
-          \end{eqnarray}
+          
           \subsection{減衰データのフィッティング}
             まず，減衰率$\lambda=0.05$，単振動の固有角振動数$w_0=\sqrt{l/g}$，減衰調和振動の固有角振動数$w=\sqrt{w_{0}^2-\lambda^2}$を用いた
             \equref{Approximation Model}によるモデルと実験データをプロットした図を\figref{}に示す．
@@ -267,11 +381,11 @@
                 \vspace{2mm}
                 \begin{tabular}{c|c|c}
                   \hline
-                  Amplitude $\varphi_{\mathrm{ini}}$ [deg] & $\lambda$ [1/s] & $\omega$ [rad/s]\\
+                  Amplitude $A_{\mathrm{now}}$ [deg] & $\lambda$ [1/s] & $\omega$ [rad/s]\\
                   \hline
-                  $\varphi_{\mathrm{ini}}\ge100$ & 0.070 & 3.31 \\
-                  $100>\varphi_{\mathrm{ini}}\ge75$ & 0.057 & 3.77 \\
-                  $75>\varphi_{\mathrm{ini}}$ & 0.055 & 4.00 \\                   
+                  $A_{\mathrm{now}}\ge100$ & 0.070 & 3.31 \\
+                  $100>A_{\mathrm{now}}\ge75$ & 0.057 & 3.77 \\
+                  $75>A_{\mathrm{now}}$ & 0.055 & 4.00 \\                   
                   \hline
                 \end{tabular}
               \end{center}
@@ -287,41 +401,7 @@
             また，励振では減衰率は負の値となり，振幅に依らず，伸縮量のみに依存するとみなした．
             \figref{}にフィッティング結果，\tabref{ExcitationParameters}に振幅の区間分けとそれぞれの区間における
             固有角振動数，\tabref{ExcitationRate}に最大長ごとの減衰率を示す．
-            \begin{table}[tb]
-              \begin{center}
-                \caption{Excitation fitting values}
-                \tablabel{ExcitationParameters}
-                \vspace{2mm}
-                \begin{tabular}{c|c}
-                  \hline
-                  Amplitude $\varphi_{\mathrm{ini}}$ [deg] & $\omega$ [rad/s]\\
-                  \hline
-                  $\varphi_{\mathrm{ini}}\ge90$ & 3.35 \\
-                  $90>\varphi_{\mathrm{ini}}\ge85$ & 3.50 \\
-                  $85>\varphi_{\mathrm{ini}}\ge70$ & 3.70 \\
-                  $70>\varphi_{\mathrm{ini}}$ & 3.90 \\                   
-                  \hline
-                \end{tabular}
-              \end{center}
-            \end{table}
-            \begin{table}[tb]
-              \begin{center}
-                \caption{Excitation rate}
-                \tablabel{ExcitationRate}
-                \vspace{2mm}
-                \begin{tabular}{c|c}
-                  \hline
-                  Length $l$ [m] & $\lambda$ [1/s] \\
-                  \hline
-                  0.74 & -0.15 \\
-                  0.72 & -0.14 \\
-                  0.70 & -0.13 \\
-                  0.68 & -0.090 \\
-                  0.66 & -0.0010 \\                     
-                  \hline
-                \end{tabular}
-              \end{center}
-            \end{table}
+            
             
 
 

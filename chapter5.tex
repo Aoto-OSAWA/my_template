@@ -166,9 +166,9 @@
             \end{eqnarray}
           本実験で用いる実機に基づき，各パラメータと初期状態$(\varphi_{\mathrm{ini}},l_{\mathrm{ini}},\dot{\varphi}_{\mathrm{ini}},\dot{l}_{\mathrm{ini}})$
           を\tabref{parameter}としてルンゲクッタ法を用いてシミュレータを作成した．
-          その結果を\figref{photo3.jpg}に示す．
-          横軸は時間$t$，縦軸はそれぞれ力学的エネルギー$E$・運動エネルギー$T$・ポテンシャルエネルギー$U$，
-          角度$\varphi$・角速度$\dot{\varphi}$を示す．
+          その結果を\figref{ExcitationSimulation.eps}に示す．
+          横軸は時間$t$，縦軸はそれぞれ角度$\varphi$・角速度$\dot{\varphi}$・
+          力学的エネルギー$E$・運動エネルギー$T$・ポテンシャルエネルギー$U$を示す．
           これにより，伸縮することによる重心移動でも励振が可能であることが確認できる．
           これらの内容はLieskovsk{\`y}らのおもりを動かすことによる励振の研究\cite{lieskovsky2023optimal}を
           伸縮機構に応用したものである．
@@ -193,14 +193,14 @@
               \end{tabular}
             \end{center}
           \end{table}
-          \fig{photo3.jpg}{width=0.3\hsize}{Excitation simulation of extensible brachiation robot}
+          \fig{ExcitationSimulation.eps}{width=1\hsize}{Excitation simulation of extensible brachiation robot}
           
           また，伸縮時の最大長$l_{\mathrm{max}}$を0.59 mから0.74 mまで3 cm刻みで
-          変化させた場合の励振シミュレーションを\figref{photo3.jpg}に示す．
+          変化させた場合の励振シミュレーションを\figref{changingLengthExcitation.eps}に示す．
           横軸は時間，縦軸は力学的エネルギーと角度を示している．
           このシミュレーション結果から，伸縮量を大きくするほど振幅増加量が大きくなり，伸縮量を小さくするほど伸縮増加量が小さくなることが分かる．
           ゆえに，伸縮量調整によって励振時の振幅操作が可能であると考えられる．
-          \fig{photo3.jpg}{width=0.3\hsize}{Excitation simulation with changing the max length}
+          \fig{changingLengthExcitation.eps}{width=1\hsize}{Excitation simulation with changing the max length}
         
           
 
@@ -216,25 +216,28 @@
             \equlabel{dampingEquation}
             M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
             \end{eqnarray}
-          実機を用いた減衰計測データを基に，減衰係数$b$を求めた．
-          \figref{}に減衰計測データ（角度・角速度）を示す．
-          なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
-          \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
-          この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
-          求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
-          \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
-          \figref{}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
+          実機を用いた減衰計測データに近い振動になるように減衰係数$b$を調整し，
+          \equref{dampingEquation}を4次のルンゲクッタ法で解いた結果と減衰計測データを\figref{DampingData.eps}に示す．
+          ここで，減衰係数は$b=0.050$ [Ns/m]とした．
+          \fig{DampingData.eps}{width=1\hsize}{Damping experiment data and simulation}
+          % \figref{}に減衰計測データ（角度・角速度）を示す．
+          % なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
+          % \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
+          % この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
+          % 求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
+          % \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
+          \figref{DampingData.eps}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
           このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
-          しかし，本実験では目標振幅の導出には振動の半周期分しか用いず，
-          \figref{}において時間経過後も振動数はほとんど一致しているため，適用可能であると考えた．
+          しかし，本実験では目標振幅の導出には振動の半周期分かつ，主に45 deg以上の振幅のみを用いる．
+          \figref{DampingData.eps}において時間経過後も振動数はほとんど一致しており，45 deg以上の範囲では振幅が一致していることから，適用可能であると考えた．
           調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件に最も近い目標振幅を求めた．
           なお，\equref{error}に示す誤差$e$が最小となる初期角度を目標振幅とした．
           \begin{eqnarray}
             \equlabel{error}
             e=\sqrt{(\varphi_{\mathrm{ref}}-\varphi)^2+(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi})^2}
             \end{eqnarray}
-          \tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
-          目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$であった．
+          これにより，\tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
+          目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$と求まった．
 
         \section{励振制御}
           次に，求めた目標振幅にするための励振制御方法について述べる．

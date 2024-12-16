@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {6.1}はじめに}{43}{section.6.1}%
 \contentsline {section}{\numberline {6.2}考察}{43}{section.6.2}%
 \contentsline {chapter}{\numberline {第7章}結論および今後の展望}{45}{chapter.7}%
-\contentsline {section}{\numberline {7.1}はじめに}{47}{section.7.1}%
-\contentsline {section}{\numberline {7.2}考察}{47}{section.7.2}%
+\contentsline {section}{\numberline {7.1}結論}{47}{section.7.1}%
+\contentsline {section}{\numberline {7.2}今後の展望}{47}{section.7.2}%
 \contentsline {chapter}{謝辞}{48}{section.7.2}%
 \contentsline {chapter}{参考文献}{52}{chapter*.2}%

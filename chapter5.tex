@@ -245,14 +245,15 @@
           リアルタイムで伸縮量調整を行うために，伸縮量と半周期後の振幅の変化率の関係式を求める．
           実機の振動を，振動が微小であるとみなした近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
           ここで現在の振幅，減衰率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
-          $t$秒後の変位$A(t)$を表す．なお，励振においては減衰率は負の値で表される．また，現在の振幅と半周期後の振幅の比は\equref{amp rate}となる．
+          $t$秒後の変位$\varphi(t)$を表す．なお，励振においては減衰率は負の値で表される．
+          また，半周期後の振幅を$A_{\mathrm{next}}$とすると，\equref{amp rate}となる．
           \begin{eqnarray}
             \equlabel{Approximation Model}
-            A(t)=A_{\mathrm{now}}e^{-\lambda t}\cos{(\omega t)}\\
+            \varphi(t)&=&A_{\mathrm{now}}e^{-\lambda t}\cos{(\omega t)}\\
             \equlabel{amp rate}
-            \frac{A(t)}{A_{\mathrm{now}}}=e^{-\lambda \frac{\pi}{\omega}}
+            A_{\mathrm{next}}&=&\left|\varphi\left(\frac{\pi}{\omega}\right)\right|=A_{\mathrm{now}}e^{-\lambda \frac{\pi}{\omega}}
           \end{eqnarray}
-          よって，半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な減衰率は\equref{lambda}で表される．
+          よって，現在の振幅$A_{\mathrm{now}}$から半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な減衰率は\equref{lambda}で表される．
           \begin{eqnarray}
             \equlabel{lambda}
             \lambda=\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{now}}}{A_{\mathrm{ref}}}\right)}

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  17 DEC 2024 16:10
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  20 DEC 2024 14:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -339,7 +339,21 @@ File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
 \g__pdf_backend_link_int=\count292
 \g__pdf_backend_link_sf_int=\count293
 )
-(./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux
+(./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter4.aux) (./chapter5.aux
+
+LaTeX Warning: Label `equ:l status' multiply defined.
+
+
+LaTeX Warning: Label `fig:photo.jpg' multiply defined.
+
+
+LaTeX Warning: Label `fig:photo.jpg' multiply defined.
+
+) (./chapter6.aux
+
+LaTeX Warning: Label `fig:photo.jpg' multiply defined.
+
+) (./chapter3.aux
 
 LaTeX Warning: Label `equ:x-e' multiply defined.
 
@@ -352,14 +366,7 @@ LaTeX Warning: Label `equ:Jd' multiply defined.
 
 LaTeX Warning: Label `equ:Jr' multiply defined.
 
-) (./chapter5.aux
-
-LaTeX Warning: Label `equ:Approximation Model' multiply defined.
-
-
-LaTeX Warning: Label `equ:dampingEquation' multiply defined.
-
-) (./chapter6.aux) (./chapter7.aux) (./thanks.aux))
+) (./chapter7.aux) (./thanks.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -471,13 +478,18 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 ]
 File: ./fig/brachiationFig-4.eps Graphic file (type eps)
 <./fig/brachiationFig-4.eps>
- [13]
-File: ./fig/bar-robot4.png Graphic file (type bmp)
-<./fig/bar-robot4.png>
-) [14]
-\openout2 = `chapter3.aux'.
 
- (./chapter3.tex
+
+LaTeX Warning: Reference `fig:bar-robot4.png' on page 13 undefined on input lin
+e 34.
+
+[13]
+File: ./fig/photo4.jpg Graphic file (type bmp)
+<./fig/photo4.jpg>
+) [14]
+\openout2 = `chapter4.aux'.
+
+ (./chapter4.tex
 第 3 章
 [15
 
@@ -486,24 +498,6 @@ File: ./fig/bar-robot4.png Graphic file (type bmp)
 
 ] [16
 
-] [17]
-File: ./fig/noAerialBrachiationFig.eps Graphic file (type eps)
-<./fig/noAerialBrachiationFig.eps>
- [18]
-File: ./fig/BarPositionFig.eps Graphic file (type eps)
-<./fig/BarPositionFig.eps>
-) [19]
-\openout2 = `chapter4.aux'.
-
- (./chapter4.tex [20
-
-
-
-
-]
-第 4 章
-[21] [22
-
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 14.
@@ -511,122 +505,117 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 14.
 File: ./fig/ReleaseFig2.eps Graphic file (type eps)
 <./fig/ReleaseFig2.eps>
- [23] [24] [25]
+ [17] [18] [19]
 File: ./fig/ReleaseExperiment.eps Graphic file (type eps)
 <./fig/ReleaseExperiment.eps>
 
 
 LaTeX Warning: Float too large for page by 68.24203pt on input line 136.
 
-) [26] [27]
+) [20] [21]
 \openout2 = `chapter5.aux'.
 
- (./chapter5.tex [28
+ (./chapter5.tex [22
+
+
+
+
+]
+第 4 章
+[23] [24
+
+]
+File: ./fig/modelFig.eps Graphic file (type eps)
+<./fig/modelFig.eps>
+ [25] [26]
+File: ./fig/ExcitationSimulation.eps Graphic file (type eps)
+<./fig/ExcitationSimulation.eps>
+File: ./fig/changingLengthExcitation.eps Graphic file (type eps)
+<./fig/changingLengthExcitation.eps>
+ [27] [28] [29] [30]
+File: ./fig/DampingData.eps Graphic file (type eps)
+<./fig/DampingData.eps>
+ [31] [32]
+
+LaTeX Warning: Reference `fig:' on page 33 undefined on input line 294.
+
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+
+LaTeX Warning: Reference `fig:' on page 33 undefined on input line 332.
+
+[33]
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+ [34] [35] [36]
+
+LaTeX Warning: Reference `fig:' on page 37 undefined on input line 357.
+
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+) [37]
+\openout2 = `chapter6.aux'.
+
+ (./chapter6.tex [38
 
 
 
 
 ]
 第 5 章
-[29] [30
+[39] [40
 
 ]
-File: ./fig/modelFig.eps Graphic file (type eps)
-<./fig/modelFig.eps>
- [31] [32]
-File: ./fig/ExcitationSimulation.eps Graphic file (type eps)
-<./fig/ExcitationSimulation.eps>
-File: ./fig/changingLengthExcitation.eps Graphic file (type eps)
-<./fig/changingLengthExcitation.eps>
- [33] [34]
-File: ./fig/DampingData.eps Graphic file (type eps)
-<./fig/DampingData.eps>
- [35] [36] [37]
+File: ./fig/photo.jpg Graphic file (type bmp)
+<./fig/photo.jpg>
+) [41]
+\openout2 = `chapter3.aux'.
 
-LaTeX Warning: Reference `fig:' on page 38 undefined on input line 266.
+ (./chapter3.tex [42
 
 
-LaTeX Warning: Reference `fig:' on page 38 undefined on input line 270.
 
 
-LaTeX Warning: Reference `fig:' on page 38 undefined on input line 307.
-
-[38] [39]
-
-LaTeX Warning: Reference `fig:' on page 40 undefined on input line 355.
-
-File: ./fig/photo3.jpg Graphic file (type bmp)
-<./fig/photo3.jpg>
-
-LaTeX Warning: Reference `fig:' on page 40 undefined on input line 360.
-
-
-LaTeX Warning: Reference `fig:' on page 40 undefined on input line 360.
-
-
-LaTeX Warning: Reference `fig:' on page 40 undefined on input line 361.
-
-
-LaTeX Warning: Reference `fig:' on page 40 undefined on input line 364.
-
-[40]
-
-LaTeX Warning: Reference `fig:' on page 41 undefined on input line 375.
-
-
-LaTeX Warning: Reference `fig:' on page 41 undefined on input line 378.
-
-
-LaTeX Warning: Reference `fig:' on page 41 undefined on input line 380.
-
-
-LaTeX Warning: Reference `fig:' on page 41 undefined on input line 402.
-
-
-LaTeX Warning: Reference `fig:' on page 41 undefined on input line 406.
-
-[41]) [42]
-\openout2 = `chapter6.aux'.
-
- (./chapter6.tex
+]
 第 6 章
-[43
+[43] [44
 
-
-
-
-] [44
-
-]) [45]
+] [45]
+File: ./fig/noAerialBrachiationFig.eps Graphic file (type eps)
+<./fig/noAerialBrachiationFig.eps>
+ [46]
+File: ./fig/BarPositionFig.eps Graphic file (type eps)
+<./fig/BarPositionFig.eps>
+) [47]
 \openout2 = `chapter7.aux'.
 
- (./chapter7.tex [46
+ (./chapter7.tex [48
 
 
 
 
 ]
 第 7 章
-[47] [48
+[49] [50
 
-]) [49]
+]) [51]
 \openout2 = `thanks.aux'.
 
- (./thanks.tex [50
+ (./thanks.tex [52
 
 
 
 
-] [51] [52
+] [53] [54
 
-]) [53] (./main.bbl [54
+]) [55] (./main.bbl [56
 
 
-
-] [55]
-[56
 
 ] [57]
+[58
+
+] [59]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 90.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -637,11 +626,11 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 115.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 120.
- [58]
+ [60]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 126.
-) [59] (./main.aux (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux) (./chapter4.aux) (./chapter5.aux) (./chapter6.aux)
+) [61] (./main.aux (./chapter1.aux) (./chapter2.aux)
+(./chapter4.aux) (./chapter5.aux) (./chapter6.aux) (./chapter3.aux)
 (./chapter7.aux) (./thanks.aux))
 
 LaTeX Warning: There were undefined references.
@@ -650,7 +639,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B74A1249AEF12893D6ED4F296C9B12C0;3767.
+(rerunfilecheck)             Checksum: 56420D336CF5D3F1AA58D4D295E19F80;3152.
  )
 (\end occurred inside a group at level 1)
 
@@ -658,11 +647,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### bottom level 
 Here is how much of TeX's memory you used:
  10853 strings out of 479850
- 168000 string characters out of 5887378
- 473507 words of memory out of 5000000
- 28950 multiletter control sequences out of 15000+600000
+ 167987 string characters out of 5887378
+ 474042 words of memory out of 5000000
+ 28951 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (59 pages, 136704 bytes).
+Output written on main.dvi (61 pages, 127672 bytes).

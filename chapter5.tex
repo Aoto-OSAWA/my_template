@@ -1,9 +1,12 @@
-\chapter[リリース条件到達のための励振調整]%
-{リリース条件到達のための励振調整}
+\chapter[伸縮量制御による振幅調整]%
+{伸縮量制御による振幅調整}
         \section{はじめに}
 
+        ロバストなブラキエーション動作を行うために，
+        本章では，伸縮量を制御することによる振幅調整システムについて述べる．
+
         \chapref{chapter4}において導出した最適なバーリリース条件を実現するためには，
-        振子過程における励振調整が望まれる．
+        振子過程における振幅調整が望まれる．
         本章では伸縮タイミングと伸縮量の調整による目標角度・角速度の実現について述べる．
           
         \section{伸縮による励振のメカニズム}
@@ -207,12 +210,9 @@
         \section{励振調整の流れ}
 
           本研究では振幅を基に伸縮量を制御し，励振調整を行う．
-          なお，IMUを用いたリアルタイム計測において，振幅の計測，すなわち
-          角速度の正負が切り替わるタイミングでの角度計測は，
-          角速度が大幅な増減をしているタイミングでの計測よりも正確であると考えた．
           以下に励振調整の流れを示す．
           \begin{enumerate}
-            \item 最適なバーリリース条件から目標振幅を求める
+            \item 目標振幅を
             \item IMUを用いてロボットの角度・角速度を計測
             \item 角速度の正負が入れ替わる時の角度を現在振幅とする
             \item 現在振幅に基づく伸縮量制御
@@ -229,65 +229,32 @@
             \item 目標振幅に到達したら伸縮量制御を終了
           \end{enumerate}
 
-        \section{目標振幅の導出}
-          
-          \seclabel{目標振幅の導出}
-          まず，最適なバーリリース条件である角度$\varphi_{\mathrm{ref}}$・角速度$\dot{\varphi}_{\mathrm{ref}}$になるために必要な目標振幅を求める．
-          \equref{Matrix}は減衰を考慮していない運動方程式であるため，
-          伸縮せず，粘性減衰減衰を仮定すると
-          次のように表される．ここで，$b$は粘性減衰係数を表す．
-          \begin{eqnarray}
-            \equlabel{dampingEquation}
-            M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
-            \end{eqnarray}
-          実機を用いた減衰計測データに近い振動になるように減衰係数$b$を調整し，
-          \equref{dampingEquation}を4次のルンゲクッタ法で解いた結果と減衰計測データを\figref{DampingData.eps}に示す．
-          ここで，減衰係数は$b=0.050$ [Ns/m]とした．
-          \fig{DampingData.eps}{width=1\hsize}{Damping experiment data and simulation}
-          % \figref{}に減衰計測データ（角度・角速度）を示す．
-          % なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
-          % \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
-          % この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
-          % 求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
-          % \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
-          \figref{DampingData.eps}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
-          このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
-          しかし，本実験では目標振幅の導出には振動の半周期分かつ，主に45 deg以上の振幅のみを用いる．
-          \figref{DampingData.eps}において時間経過後も振動数はほとんど一致しており，45 deg以上の範囲では振幅が一致していることから，適用可能であると考えた．
-          調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件に最も近い目標振幅を求めた．
-          なお，\equref{error}に示す誤差$e$が最小となる初期角度を目標振幅とした．
-          \begin{eqnarray}
-            \equlabel{error}
-            e=\sqrt{(\varphi_{\mathrm{ref}}-\varphi)^2+(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi})^2}
-            \end{eqnarray}
-          これにより，\tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
-          目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$と求まった．
-          ここで，最適なバーリリース条件の角度は正であるため，目標振幅は振子の負の範囲における振幅である．
+          \section{伸縮量制御}
 
-        \section{伸縮量制御}
-          次に，求めた目標振幅にするための伸縮量制御方法について述べる．
-          振子過程では現在振幅と目標振幅の比に基づいて伸縮量を制御し，励振調整を行う．
-          リアルタイムで伸縮量調整を行うために，伸縮量と半周期後の振幅の変化率の関係式を求める．
+          リアルタイムで伸縮量調整を行うために，半周期後の振幅の変化率と伸縮量の関係式を求める．
           実機の振動を，振幅が微小であるとみなした近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
-          ここで現在振幅，減衰率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
-          $t$秒後の変位$\varphi(t)$を表す．なお，励振においては減衰率は負の値で表される．
+          ここで現在振幅，振幅増加率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
+          $t$秒後の変位$\varphi(t)$を表す．
           また，半周期後の振幅を$A_{\mathrm{next}}$とすると，\equref{amp rate}となる．
           \begin{eqnarray}
             \equlabel{Approximation Model}
-            \varphi(t)&=&A_{\mathrm{now}}e^{-\lambda t}\cos{(\omega t)}\\
+            \varphi(t)&=&A_{\mathrm{now}}e^{\lambda t}\cos{(\omega t)}\\
             \equlabel{amp rate}
-            A_{\mathrm{next}}&=&\left|\varphi\left(\frac{\pi}{\omega}\right)\right|=A_{\mathrm{now}}e^{-\lambda \frac{\pi}{\omega}}
+            A_{\mathrm{next}}&=&\left|\varphi\left(\frac{\pi}{\omega}\right)\right|=A_{\mathrm{now}}e^{\lambda \frac{\pi}{\omega}}
           \end{eqnarray}
           よって，現在振幅$A_{\mathrm{now}}$から半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な減衰率は\equref{lambda}で表される．
           \begin{eqnarray}
             \equlabel{lambda}
-            \lambda=\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{now}}}{A_{\mathrm{ref}}}\right)}
+            \lambda=\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}
           \end{eqnarray}
 
         \subsection{近似モデルの励振データへのフィッティング}
           
-          実機の励振データの取得のために，伸縮時の最小長は0.56 mで固定し，
-          最大長のみ0.74 m，0.70 m，0.68 m，0.66 mと変化させ，それぞれの長さでの励振計測を行った．
+          実機の励振データの取得のために励振計測を行った．
+          伸縮時の最小長は0.56 mで固定し，
+          最大長のみ0.74 m，0.70 m，0.68 m，0.66 mと変化させた．
+
+          
           ここで，近似モデルをフィッティングさせるために，
           なお，微小角近似ができない振幅になると角振動数は小さくなるため，単純化のために振幅で区間を分け，
           区間ごとに角振動数を調整することで近似モデルを実験データにフィッティングさせた．
@@ -356,6 +323,44 @@
         ここで，現在振幅と目標振幅の許容誤差は3 degとした．
         実験結果を\figref{}に示す．
         \fig{photo.jpg}{width=1\hsize}{Excitation adjustment experiment}
+
+
+        \section{目標振幅の導出}
+          
+          \seclabel{目標振幅の導出}
+          まず，最適なバーリリース条件である角度$\varphi_{\mathrm{ref}}$・角速度$\dot{\varphi}_{\mathrm{ref}}$になるために必要な目標振幅を求める．
+          \equref{Matrix}は減衰を考慮していない運動方程式であるため，
+          伸縮せず，粘性減衰減衰を仮定すると
+          次のように表される．ここで，$b$は粘性減衰係数を表す．
+          \begin{eqnarray}
+            \equlabel{dampingEquation}
+            M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
+            \end{eqnarray}
+          実機を用いた減衰計測データに近い振動になるように減衰係数$b$を調整し，
+          \equref{dampingEquation}を4次のルンゲクッタ法で解いた結果と減衰計測データを\figref{DampingData.eps}に示す．
+          ここで，減衰係数は$b=0.050$ [Ns/m]とした．
+          \fig{DampingData.eps}{width=1\hsize}{Damping experiment data and simulation}
+          % \figref{}に減衰計測データ（角度・角速度）を示す．
+          % なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
+          % \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
+          % この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
+          % 求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
+          % \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
+          \figref{DampingData.eps}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
+          このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
+          しかし，本実験では目標振幅の導出には振動の半周期分かつ，主に45 deg以上の振幅のみを用いる．
+          \figref{DampingData.eps}において時間経過後も振動数はほとんど一致しており，45 deg以上の範囲では振幅が一致していることから，適用可能であると考えた．
+          調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件に最も近い目標振幅を求めた．
+          なお，\equref{error}に示す誤差$e$が最小となる初期角度を目標振幅とした．
+          \begin{eqnarray}
+            \equlabel{error}
+            e=\sqrt{(\varphi_{\mathrm{ref}}-\varphi)^2+(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi})^2}
+            \end{eqnarray}
+          これにより，\tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
+          目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$と求まった．
+          ここで，最適なバーリリース条件の角度は正であるため，目標振幅は振子の負の範囲における振幅である．
+
+        
 
 
 

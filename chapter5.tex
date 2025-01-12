@@ -262,7 +262,7 @@
             \equlabel{T2omega}
             \omega=\frac{\pi}{t}
           \end{eqnarray}
-          \fig{Adjust4-2.svg}{width=1\hsize}{Excitation experiment data and fitting data}
+          \fig{Adjust42.png}{width=1\hsize}{Excitation experiment data and fitting data}
           近似結果より，振幅と角振動数の関係は\equref{A2ome}となった．
           \begin{eqnarray}
             \equlabel{A2ome}
@@ -298,7 +298,7 @@
             l_{\mathrm{max}}=0.99\lambda+0.60
           \end{eqnarray}
           \equref{lambda}，\equref{A2ome}\equref{length relation}をまとめると\equref{l status}となり，
-          半周期後に現在振幅から目標振幅に到達するために必要な最大長$l_{\mathrm{max}}$は振幅から求めることができる．
+          半周期後に現在振幅から目標振幅に到達するために必要なリンク最大長$l_{\mathrm{max}}$は振幅から求めることができる．
           \begin{eqnarray}
             \equlabel{l status}
             l_{\mathrm{max}}=\frac{0.99(-0.0126A_{\mathrm{now}}+4.64)}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}+0.60
@@ -307,14 +307,38 @@
         \subsection{振幅調整実験}
         
         現在の振幅と目標振幅の値を基に伸縮量制御し，励振調整を行った．
-        ここで，\equref{l status}において求められた最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長0.74 mとし，
+        ここで，\equref{l status}において求められたリンク最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長0.74 mとし，
         伸縮可能最小長0.56 mを下回った場合は最大長0.56 mとし，
         次の半周期で目標振幅への到達を試みる．
-        なお，最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
-        実験では，目標振幅を
-        計測した角度と長さ指令値のデータを\figref{}に示す．
-
-
+        なお，リンク最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
+        実験では目標角度を-120 deg，すなわち振子角度の負の範囲での目標振幅が120 degになるように振幅調整を行った．
+        また，目標振幅との許容誤差を2 degとし，目標振幅到達後はリンク最大長を0.68 mになるように指令し，．
+        計測した角度と最大長指令値の時間変化データを\figref{Adjust41.eps}(実験1)，\figref{Adjust42.eps}(実験2)に示す．
+        なお，黒色一点鎖線は目標角度，赤色一点鎖線は目標振幅到達時刻を示す．
+        振幅調整終了時の振幅はそれぞれ，実験1は118.1 deg，実験2は120.3 degとなり，
+        誤差はそれぞれ1.6 $\%$，0.25 $\%$であった．
+        これにより，
+        \fig{Adjust41.eps}{width=0.6\hsize}{Amplitude adjustment experiment 1}
+        \fig{Adjust42.eps}{width=0.6\hsize}{Amplitude adjustment experiment 2}
+        \begin{table}[tb]
+          \begin{center}
+            \caption{Excitation rate}
+            \tablabel{}
+            \vspace{2mm}
+            \begin{tabular}{c|c}
+              \hline
+              Length $l_{\mathrm{max}}$ [m] & $\lambda$ [1/s] \\
+              \hline
+              0.74 &  0.132\\
+              0.72 &  0.123\\
+              0.70 &  0.115\\
+              0.68 &  0.089\\
+              0.66 &  0.025\\
+              0.56 &  -0.02\\                       
+              \hline
+            \end{tabular}
+          \end{center}
+        \end{table}
         まず，\secref{目標振幅の導出}で導出した目標振幅$A_{\mathrm{ref}}=89 deg$に基づき，励振調整実験を行った．
         ロボットの角度・角速度をIMUを用いてリアルタイムに計測し，角速度の正負が切り替わるタイミングの角度を現在振幅とした．
         ここで，現在振幅と目標振幅の許容誤差は3 degとした．
@@ -355,7 +379,7 @@
             \end{eqnarray}
           これにより，\tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
           目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$と求まった．
-          ここで，最適なバーリリース条件の角度は正であるため，目標振幅は振子の負の範囲における振幅である．
+          ここで，最適なバーリリース条件の角度は正であるため，目標振幅は振子角度の負の範囲における振幅である．
 
         
 

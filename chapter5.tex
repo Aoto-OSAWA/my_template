@@ -218,20 +218,20 @@
             \item 現在振幅に基づく伸縮量制御
             \begin{enumerate}
               \item 現在振幅が目標振幅から遠い場合
-              \begin{enumerate}
-              \item 伸縮可能最大長で励振
-              \end{enumerate}
-              \item 現在振幅が目標振幅に近い場合
-              \begin{enumerate}
-                \item 現在振幅と目標振幅の比に基づいて伸縮量を制御
-              \end{enumerate}
+              % \begin{enumerate}
+              % \item 伸縮可能最大長で励振
+              % \end{enumerate}
+              % \item 現在振幅が目標振幅に近い場合
+              % \begin{enumerate}
+              %   \item 現在振幅と目標振幅の比に基づいて伸縮量を制御
+              % \end{enumerate}
             \end{enumerate}
             \item 目標振幅に到達したら伸縮量制御を終了
           \end{enumerate}
 
           \section{伸縮量制御}
 
-          リアルタイムで伸縮量調整を行うために，半周期後の振幅の変化率と伸縮量の関係式を求める．
+          まず，半周期後の振幅の変化率と伸縮量の関係式を求める．
           実機の振動を，振幅が微小であるとみなした近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
           ここで現在振幅，振幅増加率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
           $t$秒後の変位$\varphi(t)$を表す．
@@ -252,33 +252,25 @@
           
           実機の励振データの取得のために励振計測を行った．
           伸縮時の最小長は0.56 mで固定し，
-          最大長のみ0.74 m，0.70 m，0.68 m，0.66 mと変化させた．
-
-
-          ここで，近似モデルをフィッティングさせるために，
-          なお，微小角近似ができない振幅になると角振動数は小さくなるため，
-          
-          単純化のために振幅で区間を分け，
-          区間ごとに角振動数を調整することで近似モデルを実験データにフィッティングさせた．
-          \figref{}に計測データとフィッティング結果，\tabref{ExcitationParameters}に振幅の区間分けとそれぞれの区間における
-          固有角振動数，\tabref{ExcitationRate}に最大長ごとの減衰率を示す．
-          \begin{table}[tb]
-            \begin{center}
-              \caption{Excitation fitting values}
-              \tablabel{ExcitationParameters}
-              \vspace{2mm}
-              \begin{tabular}{c|c}
-                \hline
-                Amplitude $A_{\mathrm{now}}$ [deg] & $\omega$ [rad/s]\\
-                \hline
-                $A_{\mathrm{now}}\ge90$ & 3.35 \\
-                $90>A_{\mathrm{now}}\ge85$ & 3.50 \\
-                $85>A_{\mathrm{now}}\ge70$ & 3.70 \\
-                $70>A_{\mathrm{now}}$ & 3.90 \\                   
-                \hline
-              \end{tabular}
-            \end{center}
-          \end{table}
+          最大長のみ0.74 m，0.70 m，0.68 m，0.66 m，0.56 mと変化させた． 計測データを\figref{}に示す．    
+          \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
+          なお，微小角近似ができない振幅になると周期は振幅に依存し，非線形効果が現れる．
+          そこで，近似モデルをフィッティングさせるために振幅と角振動数の関係式を求めた．
+          最大長0.74 mでの励振データから，半周期ごとの経過時間$t_{\mathrm{half}}$ [s]と振幅$A$ [deg]を求め，
+          \equref{T2omega}で示すように角振動数$\omega$を求め，\figref{}に示すようにプロットして線形近似を行った．
+          \begin{eqnarray}
+            \equlabel{T2omega}
+            \omega=\frac{\pi}{t}
+          \end{eqnarray}
+          \fig{Adjust4-2.svg}{width=1\hsize}{Excitation experiment data and fitting data}
+          近似結果より，振幅と角振動数の関係は\equref{A2ome}となった．
+          \begin{eqnarray}
+            \equlabel{A2ome}
+            \omega=-0.0126A+4.64
+          \end{eqnarray}
+          次に，最大長ごとに振幅増加率を調整し，計測データへの近似モデルのフィッティングを行った．
+          振幅増加率はそれぞれ\tabref{ExcitationRate}とした．
+          フィッティング結果を\figref{}に示す．
           \begin{table}[tb]
             \begin{center}
               \caption{Excitation rate}
@@ -286,39 +278,42 @@
               \vspace{2mm}
               \begin{tabular}{c|c}
                 \hline
-                Length $l$ [m] & $\lambda$ [1/s] \\
+                Length $l_{\mathrm{max}}$ [m] & $\lambda$ [1/s] \\
                 \hline
-                0.74 & -0.15 \\
-                0.72 & -0.14 \\
-                0.70 & -0.13 \\
-                0.68 & -0.090 \\
-                0.66 & -0.0010 \\                     
+                0.74 &  0.132\\
+                0.72 &  0.123\\
+                0.70 &  0.115\\
+                0.68 &  0.089\\
+                0.66 &  0.025\\
+                0.56 &  -0.02\\                       
                 \hline
               \end{tabular}
             \end{center}
           \end{table}
           \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
-        \figref{}に示すように，縦軸を減衰率，横軸を最大長さとして\tabref{ExcitationRate}のデータをプロットし，線形近似した．
-        近似式は\equref{length relation}となった．
-        \begin{eqnarray}
-          \equlabel{length relation}
-          \lambda=-1.45l+0.907
-        \end{eqnarray}
-        \equref{lambda}，\equref{length relation}をまとめると\equref{l status}となり，
-        半周期後に現在振幅から目標振幅に到達するために必要な最大長は振幅から求めることができる．
-        \begin{eqnarray}
-          \equlabel{l status}
-          l=\frac{1}{1.45}\left(0.907-\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{now}}}{A_{\mathrm{ref}}}\right)}\right)
-        \end{eqnarray}
-        \fig{photo.jpg}{width=1\hsize}{Relationship between maximum length and damping rate}
+          \figref{}に示すように，縦軸を減衰率，横軸を最大長として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
+          近似式は\equref{length relation}となった．
+          \begin{eqnarray}
+            \equlabel{length relation}
+            l_{\mathrm{max}}=0.99\lambda+0.60
+          \end{eqnarray}
+          \equref{lambda}，\equref{A2ome}\equref{length relation}をまとめると\equref{l status}となり，
+          半周期後に現在振幅から目標振幅に到達するために必要な最大長$l_{\mathrm{max}}$は振幅から求めることができる．
+          \begin{eqnarray}
+            \equlabel{l status}
+            l_{\mathrm{max}}=\frac{0.99(-0.0126A_{\mathrm{now}}+4.64)}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}+0.60
+          \end{eqnarray}
+          
+        \subsection{振幅調整実験}
         
-
-        \subsection{励振調整}
-        
-        \equlabel{l status}を用いて，現在の振幅と目標振幅の値を基に伸縮量制御し，励振調整を行う．
-        ここで，現在振幅の値により必要な最大長がロボットの伸縮可能最大長0.74 mを超えた場合は0.74 mで励振を行い，
+        現在の振幅と目標振幅の値を基に伸縮量制御し，励振調整を行った．
+        ここで，\equref{l status}において求められた最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長0.74 mとし，
+        伸縮可能最小長0.56 mを下回った場合は最大長0.56 mとし，
         次の半周期で目標振幅への到達を試みる．
-        また，最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
+        なお，最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
+        実験では，目標振幅を
+        計測した角度と長さ指令値のデータを\figref{}に示す．
+
 
         まず，\secref{目標振幅の導出}で導出した目標振幅$A_{\mathrm{ref}}=89 deg$に基づき，励振調整実験を行った．
         ロボットの角度・角速度をIMUを用いてリアルタイムに計測し，角速度の正負が切り替わるタイミングの角度を現在振幅とした．

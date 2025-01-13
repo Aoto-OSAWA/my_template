@@ -273,7 +273,7 @@
           フィッティング結果を\figref{}に示す．
           \begin{table}[tb]
             \begin{center}
-              \caption{Excitation rate}
+              \caption{Amplitude increase rate}
               \tablabel{ExcitationRate}
               \vspace{2mm}
               \begin{tabular}{c|c}
@@ -291,7 +291,7 @@
             \end{center}
           \end{table}
           \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
-          \figref{}に示すように，縦軸を減衰率，横軸を最大長として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
+          \figref{}に示すように，縦軸をリンク最大長，横軸を振幅増加率として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
           近似式は\equref{length relation}となった．
           \begin{eqnarray}
             \equlabel{length relation}
@@ -315,35 +315,19 @@
         また，目標振幅との許容誤差を2 degとし，目標振幅到達後はリンク最大長を0.68 mになるように指令し，．
         計測した角度と最大長指令値の時間変化データを\figref{Adjust41.eps}(実験1)，\figref{Adjust42.eps}(実験2)に示す．
         なお，黒色一点鎖線は目標角度，赤色一点鎖線は目標振幅到達時刻を示す．
-        振幅調整終了時の振幅はそれぞれ，実験1は118.1 deg，実験2は120.3 degとなり，
-        誤差はそれぞれ1.6 $\%$，0.25 $\%$であった．
-        これにより，
+        振幅調整終了時の振幅はそれぞれ，実験1は118.1 deg，実験2は120.3 degであり，
+        誤差はそれぞれ1.6 $\%$，0.25 $\%$であるため許容できると考えた．また，目標振幅との許容誤差をより小さくすることで，
+        振幅調整精度を上げることができるが，目標振幅到達までの時間が長くなると考えられる．
+        また，実験1は一回の伸縮量調整で目標振幅に到達したが，
+        実験2では複数回の伸縮量調整が行われた．
+        これは，実験2では計算上の振幅変化と実際の振幅変化の間のずれが大きくなったことを示しており，
+        その原因としてグリッパーとバーの摩擦や，ロボットの構造上のずれやケーブルなどの干渉といった可能性が考えられる．
+        一方で，複数回の伸縮量調整によって最終的には目標振幅に到達することができているため，
+        ロバスト性が高いことが確認できた．
         \fig{Adjust41.eps}{width=0.6\hsize}{Amplitude adjustment experiment 1}
         \fig{Adjust42.eps}{width=0.6\hsize}{Amplitude adjustment experiment 2}
-        \begin{table}[tb]
-          \begin{center}
-            \caption{Excitation rate}
-            \tablabel{}
-            \vspace{2mm}
-            \begin{tabular}{c|c}
-              \hline
-              Length $l_{\mathrm{max}}$ [m] & $\lambda$ [1/s] \\
-              \hline
-              0.74 &  0.132\\
-              0.72 &  0.123\\
-              0.70 &  0.115\\
-              0.68 &  0.089\\
-              0.66 &  0.025\\
-              0.56 &  -0.02\\                       
-              \hline
-            \end{tabular}
-          \end{center}
-        \end{table}
-        まず，\secref{目標振幅の導出}で導出した目標振幅$A_{\mathrm{ref}}=89 deg$に基づき，励振調整実験を行った．
-        ロボットの角度・角速度をIMUを用いてリアルタイムに計測し，角速度の正負が切り替わるタイミングの角度を現在振幅とした．
-        ここで，現在振幅と目標振幅の許容誤差は3 degとした．
-        実験結果を\figref{}に示す．
-        \fig{photo.jpg}{width=1\hsize}{Excitation adjustment experiment}
+        
+        
 
 
         \section{目標振幅の導出}

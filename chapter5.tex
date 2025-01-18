@@ -207,25 +207,15 @@
         
           
         \newpage
-        \section{励振調整の流れ}
+        \section{振幅調整の流れ}
 
-          本研究では振幅を基に伸縮量を制御し，励振調整を行う．
-          以下に励振調整の流れを示す．
+          本研究では振幅を基に伸縮量を制御し，振幅調整を行う．
+          以下に振幅調整の流れを示す．
           \begin{enumerate}
             \item 目標振幅を
             \item IMUを用いてロボットの角度・角速度を計測
             \item 角速度の正負が入れ替わる時の角度を現在振幅とする
-            \item 現在振幅に基づく伸縮量制御
-            \begin{enumerate}
-              \item 現在振幅が目標振幅から遠い場合
-              % \begin{enumerate}
-              % \item 伸縮可能最大長で励振
-              % \end{enumerate}
-              % \item 現在振幅が目標振幅に近い場合
-              % \begin{enumerate}
-              %   \item 現在振幅と目標振幅の比に基づいて伸縮量を制御
-              % \end{enumerate}
-            \end{enumerate}
+            \item 目標振幅に到達するまで現在振幅に基づく伸縮量制御を行う
             \item 目標振幅に到達したら伸縮量制御を終了
           \end{enumerate}
 
@@ -318,7 +308,7 @@
         振幅調整終了時の振幅はそれぞれ，実験1は118.1 deg，実験2は120.3 degであり，
         誤差はそれぞれ1.6 $\%$，0.25 $\%$であるため許容できると考えた．また，目標振幅との許容誤差をより小さくすることで，
         振幅調整精度を上げることができるが，目標振幅到達までの時間が長くなると考えられる．
-        また，実験1は一回の伸縮量調整で目標振幅に到達したが，
+        実験1は一回の伸縮量調整で目標振幅に到達したが，
         実験2では複数回の伸縮量調整が行われた．
         これは，実験2では計算上の振幅変化と実際の振幅変化の間のずれが大きくなったことを示しており，
         その原因としてグリッパーとバーの摩擦や，ロボットの構造上のずれやケーブルなどの干渉といった可能性が考えられる．
@@ -326,45 +316,6 @@
         ロバスト性が高いことが確認できた．
         \fig{Adjust41.eps}{width=0.6\hsize}{Amplitude adjustment experiment 1}
         \fig{Adjust42.eps}{width=0.6\hsize}{Amplitude adjustment experiment 2}
-        
-        
-
-
-        \section{目標振幅の導出}
-          
-          \seclabel{目標振幅の導出}
-          まず，最適なバーリリース条件である角度$\varphi_{\mathrm{ref}}$・角速度$\dot{\varphi}_{\mathrm{ref}}$になるために必要な目標振幅を求める．
-          \equref{Matrix}は減衰を考慮していない運動方程式であるため，
-          伸縮せず，粘性減衰減衰を仮定すると
-          次のように表される．ここで，$b$は粘性減衰係数を表す．
-          \begin{eqnarray}
-            \equlabel{dampingEquation}
-            M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
-            \end{eqnarray}
-          実機を用いた減衰計測データに近い振動になるように減衰係数$b$を調整し，
-          \equref{dampingEquation}を4次のルンゲクッタ法で解いた結果と減衰計測データを\figref{DampingData.eps}に示す．
-          ここで，減衰係数は$b=0.050$ [Ns/m]とした．
-          \fig{DampingData.eps}{width=1\hsize}{Damping experiment data and simulation}
-          % \figref{}に減衰計測データ（角度・角速度）を示す．
-          % なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
-          % \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
-          % この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
-          % 求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
-          % \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
-          \figref{DampingData.eps}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
-          このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
-          しかし，本実験では目標振幅の導出には振動の半周期分かつ，主に45 deg以上の振幅のみを用いる．
-          \figref{DampingData.eps}において時間経過後も振動数はほとんど一致しており，45 deg以上の範囲では振幅が一致していることから，適用可能であると考えた．
-          調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件に最も近い目標振幅を求めた．
-          なお，\equref{error}に示す誤差$e$が最小となる初期角度を目標振幅とした．
-          \begin{eqnarray}
-            \equlabel{error}
-            e=\sqrt{(\varphi_{\mathrm{ref}}-\varphi)^2+(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi})^2}
-            \end{eqnarray}
-          これにより，\tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
-          目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$と求まった．
-          ここで，最適なバーリリース条件の角度は正であるため，目標振幅は振子角度の負の範囲における振幅である．
-
         
 
 

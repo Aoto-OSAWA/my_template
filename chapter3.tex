@@ -9,6 +9,7 @@
         先行研究\cite{Hijiri:Robomech2024}では実験的にリンクを伸ばすタイミングを決定していた．
         しかし，伸ばすタイミングや長さが適切ではない場合，バーを把持できないだけでなく，
         バーとロボットが衝突することで不具合が生じたり，破損してしまう．
+        また，目標バーを異なる位置にした場合，再び実験的にリンクを伸ばすタイミングを模索しなければならない．
         そこで，本章ではバーの位置に基づいた空中過程を含まないブラキエーション動作について述べる．
           
         \section{伸縮タイミングの検討}
@@ -67,7 +68,7 @@
                 \equlabel{barRange}
                 l_{\mathrm{rMin}} &\le& \sqrt{l_{\mathrm{bx}}^2+l_{\mathrm{bz}}^2} \le l_{\mathrm{rMax}}\\
                 \equlabel{theta}
-                \theta&=&\arctan{\left(\frac{l_{\mathrm{bz}}}{l_{\mathrm{bx}}}\right)}
+                \theta&=&90+\arctan{\left(\frac{l_{\mathrm{bz}}}{l_{\mathrm{bx}}}\right)}
                 \end{eqnarray}  
         
 

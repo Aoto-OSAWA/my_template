@@ -1,8 +1,44 @@
-\chapter[励振調整を用いたブラキエーション実験]%
-{励振調整を用いたブラキエーション実験}
+\chapter[空中過程を含むブラキエーション実験]%
+{空中過程を含むブラキエーション実験}
         \section{はじめに}
         \seclabel{5-1}
 
         \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
+        \section{目標振幅の導出}
+          
+        \seclabel{目標振幅の導出}
+        まず，最適なバーリリース条件である角度$\varphi_{\mathrm{ref}}$・角速度$\dot{\varphi}_{\mathrm{ref}}$になるために必要な目標振幅を求める．
+        \equref{Matrix}は減衰を考慮していない運動方程式であるため，
+        伸縮せず，粘性減衰減衰を仮定すると
+        次のように表される．ここで，$b$は粘性減衰係数を表す．
+        \begin{eqnarray}
+          \equlabel{dampingEquation}
+          M_{11}(l)\ddot{\varphi}+b\dot{\varphi}+\frac{1}{2}mgl\sin{(\varphi)}=0          
+          \end{eqnarray}
+        実機を用いた減衰計測データに近い振動になるように減衰係数$b$を調整し，
+        \equref{dampingEquation}を4次のルンゲクッタ法で解いた結果と減衰計測データを\figref{DampingData.eps}に示す．
+        ここで，減衰係数は$b=0.050$ [Ns/m]とした．
+        \fig{DampingData.eps}{width=1\hsize}{Damping experiment data and simulation}
+        % \figref{}に減衰計測データ（角度・角速度）を示す．
+        % なお，ロボットの長さを0. 74 m，初期角度を130 degとした．
+        % \fig{photo3.jpg}{width=0.3\hsize}{Damped vibration}
+        % この減衰データを基に最小二乗法を用いて指数近似を行うことで減衰係数を求めたところ$b=0.059$であった．
+        % 求めた減衰係数を用いて\equref{dampingEquation}を4次のルンゲクッタ法で解いた結果を減衰計測データとともに
+        % \figref{}に示す．全体的に振幅のずれがあるため，減衰係数を調整して$b=0.050$とした結果が\figref{}である．
+        \figref{DampingData.eps}から，時間が経過するほど数値解と計測データとの間に振幅のずれが生じることが確認できた．
+        このことから，実際の減衰では角速度比例だけではない減衰があると考えられる．
+        しかし，本実験では目標振幅の導出には振動の半周期分かつ，主に45 deg以上の振幅のみを用いる．
+        \figref{DampingData.eps}において時間経過後も振動数はほとんど一致しており，45 deg以上の範囲では振幅が一致していることから，適用可能であると考えた．
+        調整した減衰係数を用いて\equref{dampingEquation}を初期角度を変えながら4次のルンゲクッタ法で解き，\chapref{chapter4}で求めた最適なバーリリース条件に最も近い目標振幅を求めた．
+        なお，\equref{error}に示す誤差$e$が最小となる初期角度を目標振幅とした．
+        \begin{eqnarray}
+          \equlabel{error}
+          e=\sqrt{(\varphi_{\mathrm{ref}}-\varphi)^2+(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi})^2}
+          \end{eqnarray}
+        これにより，\tabref{ExperimentConditions}，\tabref{optimizedRelease}の条件では，
+        目標振幅は$A_{\mathrm{ref}}=89\,\mathrm{deg}$と求まった．
+        ここで，最適なバーリリース条件の角度は正であるため，目標振幅は振子角度の負の範囲における振幅である．
+
+      
 
         \section{考察}

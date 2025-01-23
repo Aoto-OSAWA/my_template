@@ -212,7 +212,7 @@
           本研究では振幅を基に伸縮量を制御し，振幅調整を行う．
           以下に振幅調整の流れを示す．
           \begin{enumerate}
-            \item 目標振幅を
+            \item 目標振幅を決定
             \item IMUを用いてロボットの角度・角速度を計測
             \item 角速度の正負が入れ替わる時の角度を現在振幅とする
             \item 目標振幅に到達するまで現在振幅に基づく伸縮量制御を行う
@@ -232,7 +232,7 @@
             \equlabel{amp rate}
             A_{\mathrm{next}}&=&\left|\varphi\left(\frac{\pi}{\omega}\right)\right|=A_{\mathrm{now}}e^{\lambda \frac{\pi}{\omega}}
           \end{eqnarray}
-          よって，現在振幅$A_{\mathrm{now}}$から半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な減衰率は\equref{lambda}で表される．
+          よって，現在振幅$A_{\mathrm{now}}$から半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な振幅増加率は\equref{lambda}で表される．
           \begin{eqnarray}
             \equlabel{lambda}
             \lambda=\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}
@@ -242,15 +242,30 @@
           
           実機の励振データの取得のために励振計測を行った．
           伸縮時の最小長は0.56 mで固定し，
-          最大長のみ0.74 m，0.70 m，0.68 m，0.66 m，0.56 mと変化させた． 計測データを\figref{}に示す．    
-          \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
+          最大長のみ0.74 m，0.72 m，0.70 m，0.68 m，0.66 m，0.56 mと変化させた． 計測データを\figref{excitationdata.eps}に示す．    
+          \begin{figure}[h]
+            \centering
+            \begin{minipage}[b]{1\columnwidth}
+                \centering
+                \includegraphics[width=0.3\columnwidth]{fig/fig1.eps}
+                \caption{左上}
+                \label{fig:a}
+                \vfill
+                \includegraphics[width=0.3\columnwidth]{fig/fig1.eps}
+                \caption{左下}
+                \label{fig:b}
+            \end{minipage}
+            \end{figure}
+          \fig{test4.png}{width=0.6\hsize}{Excitation experiment data}
+          \fig{test4.png}{width=0.6\hsize}{Excitation experiment data}
+          \fig{excitationdata.eps}{width=1\hsize}{Excitation experiment data}
           なお，微小角近似ができない振幅になると周期は振幅に依存し，非線形効果が現れる．
           そこで，近似モデルをフィッティングさせるために振幅と角振動数の関係式を求めた．
           最大長0.74 mでの励振データから，半周期ごとの経過時間$t_{\mathrm{half}}$ [s]と振幅$A$ [deg]を求め，
           \equref{T2omega}で示すように角振動数$\omega$を求め，\figref{}に示すようにプロットして線形近似を行った．
           \begin{eqnarray}
             \equlabel{T2omega}
-            \omega=\frac{\pi}{t}
+            \omega=\frac{\pi}{t_{\mathrm{half}}}
           \end{eqnarray}
           \fig{Adjust42.png}{width=1\hsize}{Excitation experiment data and fitting data}
           近似結果より，振幅と角振動数の関係は\equref{A2ome}となった．
@@ -260,7 +275,7 @@
           \end{eqnarray}
           次に，最大長ごとに振幅増加率を調整し，計測データへの近似モデルのフィッティングを行った．
           振幅増加率はそれぞれ\tabref{ExcitationRate}とした．
-          フィッティング結果を\figref{}に示す．
+          角度へのフィッティング結果を\figref{}に示す．
           \begin{table}[tb]
             \begin{center}
               \caption{Amplitude increase rate}
@@ -281,6 +296,13 @@
             \end{center}
           \end{table}
           \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
+          また，\equref{Approximation Model}時間微分することにより，角速度は\equref{Approximation Angular velocity}となる．
+          角速度データへのフィッティング結果を\figref{}に示す．
+          \begin{eqnarray}
+            \equlabel{Approximation Angular velocity}
+            \dot{\varphi(t)}=A_{\mathrm{now}}e^{\lambda t}\{\lambda\cos{(\omega t)}-\omega\sin{(\omega t)}\}
+          \end{eqnarray}
+          
           \figref{}に示すように，縦軸をリンク最大長，横軸を振幅増加率として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
           近似式は\equref{length relation}となった．
           \begin{eqnarray}

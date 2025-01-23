@@ -1,11 +1,35 @@
 \chapter[空中過程を含むブラキエーション実験]%
 {空中過程を含むブラキエーション実験}
         \section{はじめに}
-        \seclabel{5-1}
+        
+          \chapref{chapter4}において導出した最適なバーリリース条件を実現するために，
+          振子過程における角度・角速度調整が望まれる．そこで，本研究では\chapref{chapter3}で提案した振幅調整手法を用いて
+          バーリリース条件を満たす振幅に到達するように調整し，
+          実機を用いた空中過程を含むブラキエーション実験を行った．
+          本章では目標振幅の決定と実験結果について述べる．
 
-        \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
         \section{目標振幅の導出}
-          
+
+          まず，\chapref{chapter4}において導出した最適なバーリリース条件になる目標振幅を決めた．
+          \equref{Approximation model}，\equref{Approximation angular velocity}を用いて，
+          \equref{error}に示す評価関数$J_{\mathrm{e}}$を定義した．ここで，バーリリース条件の角度・角速度をそれぞれ
+          $\varphi_{\mathrm{ref}}$，$\dot{\varphi}_{\mathrm{ref}}$とする．
+          \begin{eqnarray}
+            \equlabel{error}
+            J_{\mathrm{e}}=\sqrt{\left(\varphi_{\mathrm{ref}}-\varphi(t)\right)^2+\left(\dot{\varphi}_{\mathrm{ref}}-\dot{\varphi(t)}\right)^2}
+          \end{eqnarray}
+          目標振幅からリリース条件到達までリンク長は一定であると仮定すると，
+          伸縮を行わない単純な減衰振動となる．
+          よって\equref{Approximation model}，\equref{Approximation angular velocity}における振幅増加率$\lambda$は
+          \equref{length relation}で$l_{\mathrm{max}}=0.56$ mとすることで$\lambda=-0.04$と求まる．
+          これを基に，半周期の間に評価関数$J_{\mathrm{e}}$を最小にする振幅$A$と時間$t$を求めた．
+          評価関数の最小化には\chapref{chapter4}と同様にNewton-CG法を用いた．
+          これにより\tabref{optimizedRelease}のリリース条件では振幅は98 degと求まった．
+
+          ここで，求めた振幅において
+
+
+
         \seclabel{目標振幅の導出}
         まず，最適なバーリリース条件である角度$\varphi_{\mathrm{ref}}$・角速度$\dot{\varphi}_{\mathrm{ref}}$になるために必要な目標振幅を求める．
         \equref{Matrix}は減衰を考慮していない運動方程式であるため，

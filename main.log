@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  23 JAN 2025 20:22
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  26 JAN 2025 01:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -345,20 +345,19 @@ LaTeX Warning: Label `fig:test4.png' multiply defined.
 
 ) (./chapter3.aux) (./chapter4.aux
 
-LaTeX Warning: Label `equ:x-e' multiply defined.
+LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
 
-LaTeX Warning: Label `equ:z-e' multiply defined.
+LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
 
-LaTeX Warning: Label `equ:Jd' multiply defined.
+LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
 
-LaTeX Warning: Label `equ:Jr' multiply defined.
+LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
-) (./chapter6.aux
 
-LaTeX Warning: Label `equ:error' multiply defined.
+LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
 ) (./chapter7.aux) (./thanks.aux))
 \openout1 = `main.aux'.
@@ -457,13 +456,7 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 3.
-
-Overfull \hbox (372.1458pt too wide) in paragraph at lines 30--32
-[]\OT1/cmr/m/n/10.95 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- []
-
-[9]) [10]
+ [9]) [10]
 \openout2 = `chapter2.aux'.
 
  (./chapter2.tex
@@ -564,65 +557,81 @@ File: ./fig/Adjust42.eps Graphic file (type eps)
 File: ./fig/noAerialBrachiationFig.eps Graphic file (type eps)
 <./fig/noAerialBrachiationFig.eps>
  [36]
+
+LaTeX Warning: Reference `fig:' on page 37 undefined on input line 78.
+
+
+LaTeX Warning: Reference `fig:' on page 37 undefined on input line 79.
+
 File: ./fig/BarPositionFig.eps Graphic file (type eps)
 <./fig/BarPositionFig.eps>
-) [37]
+File: ./fig/noAerialAmp.eps Graphic file (type eps)
+<./fig/noAerialAmp.eps>
+[37] [38]
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 112--142
+[][]$[]$[] []$[]$[] 
+ []
+
+) [39]
 \openout2 = `chapter4.aux'.
 
- (./chapter4.tex [38
+ (./chapter4.tex [40
 
 
 
 
 ]
 第 5 章
-[39] [40
+[41] [42
 
-]
+] [43]
 File: ./fig/ReleaseFig2.eps Graphic file (type eps)
 <./fig/ReleaseFig2.eps>
- [41] [42]) [43]
-\openout2 = `chapter6.aux'.
+ [44]
 
- (./chapter6.tex [44
-
+LaTeX Warning: Reference `fig:' on page 45 undefined on input line 94.
 
 
+LaTeX Warning: Reference `fig:' on page 45 undefined on input line 94.
 
-]
-第 6 章
-[45] [46
+File: ./fig/2Dver5.png Graphic file (type bmp)
+<./fig/2Dver5.png>
+File: ./fig/2Dver5.png Graphic file (type bmp)
+<./fig/2Dver5.png>
+[45]
 
-]
-
-LaTeX Warning: Reference `equ:Approximation model' on page 47 undefined on inpu
-t line 14.
-
-
-LaTeX Warning: Reference `equ:Approximation angular velocity' on page 47 undefi
-ned on input line 14.
+LaTeX Warning: Reference `fig:' on page 46 undefined on input line 154.
 
 
-LaTeX Warning: Reference `equ:Approximation model' on page 47 undefined on inpu
-t line 23.
+LaTeX Warning: Reference `fig:' on page 46 undefined on input line 154.
+
+[46] [47]
+
+LaTeX Warning: Reference `fig:' on page 48 undefined on input line 161.
 
 
-LaTeX Warning: Reference `equ:Approximation angular velocity' on page 47 undefi
-ned on input line 23.
+LaTeX Warning: Reference `fig:' on page 48 undefined on input line 161.
 
-File: ./fig/DampingData.eps Graphic file (type eps)
-<./fig/DampingData.eps>
-[47] [48]) [49]
+[48]
+File: ./fig/2Dver5.png Graphic file (type bmp)
+<./fig/2Dver5.png>
+File: ./fig/2Dver5.png Graphic file (type bmp)
+<./fig/2Dver5.png>
+File: ./fig/2Dver5.png Graphic file (type bmp)
+<./fig/2Dver5.png>
+File: ./fig/2Dver5.png Graphic file (type bmp)
+<./fig/2Dver5.png>
+) [49] [50]
 \openout2 = `chapter7.aux'.
 
- (./chapter7.tex [50
+ (./chapter7.tex
+第 6 章
+[51
 
 
 
 
-]
-第 7 章
-[51] [52
+] [52
 
 ]) [53]
 \openout2 = `thanks.aux'.
@@ -656,8 +665,8 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 126.
 ) [63] (./main.aux (./chapter1.aux) (./chapter2.aux)
-(./chapter5.aux) (./chapter3.aux) (./chapter4.aux) (./chapter6.aux)
-(./chapter7.aux) (./thanks.aux))
+(./chapter5.aux) (./chapter3.aux) (./chapter4.aux) (./chapter7.aux)
+(./thanks.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -665,19 +674,19 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8F3FDB7FD64A3AB6C18330923F6B818E;3077.
+(rerunfilecheck)             Checksum: 2F6EAABD60A8355EE5B8ECB571456355;3003.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10889 strings out of 479850
- 168655 string characters out of 5887378
- 474476 words of memory out of 5000000
- 28981 multiletter control sequences out of 15000+600000
+ 10866 strings out of 479850
+ 167960 string characters out of 5887378
+ 473153 words of memory out of 5000000
+ 28964 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (63 pages, 134348 bytes).
+Output written on main.dvi (63 pages, 140692 bytes).

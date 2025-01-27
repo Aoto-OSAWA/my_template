@@ -2,12 +2,9 @@
 {伸縮量制御による振幅調整}
         \section{はじめに}
 
-        ロバストなブラキエーション動作を行うために，
-        本章では，伸縮量を制御することによる振幅調整システムについて述べる．
-
-        \chapref{chapter4}において導出した最適なバーリリース条件を実現するためには，
-        振子過程における振幅調整が望まれる．
-        本章では伸縮タイミングと伸縮量の調整による目標角度・角速度の実現について述べる．
+        目標バーの位置に基づいて伸縮タイミングやリリースの条件を決定する場合，
+        振子過程においてその条件を実現することが望まれる．
+        本章では，伸縮量を制御することによる振幅調整システムについて述べる．．
           
         \section{伸縮による励振のメカニズム}
 
@@ -242,32 +239,17 @@
           
           実機の励振データの取得のために励振計測を行った．
           伸縮時の最小長は0.56 mで固定し，
-          最大長のみ0.74 m，0.72 m，0.70 m，0.68 m，0.66 m，0.56 mと変化させた． 計測データを\figref{excitationdata.eps}に示す．    
-          \begin{figure}[h]
-            \centering
-            \begin{minipage}[b]{1\columnwidth}
-                \centering
-                \includegraphics[width=0.3\columnwidth]{fig/fig1.eps}
-                \caption{左上}
-                \label{fig:a}
-                \vfill
-                \includegraphics[width=0.3\columnwidth]{fig/fig1.eps}
-                \caption{左下}
-                \label{fig:b}
-            \end{minipage}
-            \end{figure}
-          \fig{test4.png}{width=0.6\hsize}{Excitation experiment data}
-          \fig{test4.png}{width=0.6\hsize}{Excitation experiment data}
+          最大長のみ0.74 m，0.72 m，0.70 m，0.68 m，0.66 m，0.56 mと変化させた． 計測データ(角度・角速度)を\figref{excitationdata.eps}に示す．    
           \fig{excitationdata.eps}{width=1\hsize}{Excitation experiment data}
           なお，微小角近似ができない振幅になると周期は振幅に依存し，非線形効果が現れる．
           そこで，近似モデルをフィッティングさせるために振幅と角振動数の関係式を求めた．
           最大長0.74 mでの励振データから，半周期ごとの経過時間$t_{\mathrm{half}}$ [s]と振幅$A$ [deg]を求め，
-          \equref{T2omega}で示すように角振動数$\omega$を求め，\figref{}に示すようにプロットして線形近似を行った．
+          \equref{T2omega}で示すように角振動数$\omega$を求め，\figref{OmegaAmp.eps}に示すようにプロットして線形近似を行った．
           \begin{eqnarray}
             \equlabel{T2omega}
             \omega=\frac{\pi}{t_{\mathrm{half}}}
           \end{eqnarray}
-          \fig{Adjust42.png}{width=1\hsize}{Excitation experiment data and fitting data}
+          \fig{OmegaAmp.eps}{width=0.6\hsize}{Relationship between angular frequency and amplitude}
           近似結果より，振幅と角振動数の関係は\equref{A2ome}となった．
           \begin{eqnarray}
             \equlabel{A2ome}
@@ -275,8 +257,9 @@
           \end{eqnarray}
           次に，最大長ごとに振幅増加率を調整し，計測データへの近似モデルのフィッティングを行った．
           振幅増加率はそれぞれ\tabref{ExcitationRate}とした．
-          角度へのフィッティング結果を\figref{}に示す．
-          \begin{table}[tb]
+          角度へのフィッティング結果を\figref{excitationfittingAngle.eps}に示す．
+          % \newpage
+          \begin{table}[b]
             \begin{center}
               \caption{Amplitude increase rate}
               \tablabel{ExcitationRate}
@@ -295,15 +278,23 @@
               \end{tabular}
             \end{center}
           \end{table}
-          \fig{photo.jpg}{width=1\hsize}{Excitation experiment data and fitting data}
+          \fig{excitationfittingAngle.eps}{width=1\hsize}{Fitting results of angle}
+          \fig{excitationfittingAngular.eps}{width=1\hsize}{Fitting results of angular velocity }
           また，\equref{Approximation Model}時間微分することにより，角速度は\equref{Approximation Angular velocity}となる．
-          角速度データへのフィッティング結果を\figref{}に示す．
+          角速度データへのフィッティング結果を\figref{excitationfittingAngular.eps}に示す．
           \begin{eqnarray}
             \equlabel{Approximation Angular velocity}
             \dot{\varphi(t)}=A_{\mathrm{now}}e^{\lambda t}\{\lambda\cos{(\omega t)}-\omega\sin{(\omega t)}\}
           \end{eqnarray}
-          
-          \figref{}に示すように，縦軸をリンク最大長，横軸を振幅増加率として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
+          \newpage
+          フィッティング結果より，リンク最大長が短くなるほど計測データとの誤差が生じている．
+          原因として，リンク最大長を0.74 mとしたときの計測データを基に角振動数と振幅の関係式を決定していることが挙げられる．
+          リンク最大長が異なることにより伸縮に要する時間が異なり，実際は角振動数と振幅の関係式もリンク最大長によって変わると考えられる．
+          特にリンク最大長0.56 mにおけるフィッティング結果は，時間が経つにつれて大幅なずれが見られる．
+          しかし，本研究では振動の半周期分の値のみを振幅調整に用いるため，適用できるとみなした．
+
+          次に\figref{RateLength.eps}に示すように，縦軸をリンク最大長，横軸を振幅増加率として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
+          \fig{RateLength.eps}{width=0.7\hsize}{Relationship between maximum link length and amplitude increase rate}
           近似式は\equref{length relation}となった．
           \begin{eqnarray}
             \equlabel{length relation}
@@ -319,7 +310,7 @@
         \subsection{振幅調整実験}
         
         現在の振幅と目標振幅の値を基に伸縮量制御し，励振調整を行った．
-        ここで，\equref{l status}において求められたリンク最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長0.74 mとし，
+        ここで，\equref{l status}において求められたリンク最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長0.74 m，
         伸縮可能最小長0.56 mを下回った場合は最大長0.56 mとし，
         次の半周期で目標振幅への到達を試みる．
         なお，リンク最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
@@ -336,8 +327,8 @@
         その原因としてグリッパーとバーの摩擦や，ロボットの構造上のずれやケーブルなどの干渉といった可能性が考えられる．
         一方で，複数回の伸縮量調整によって最終的には目標振幅に到達することができているため，
         ロバスト性が高いことが確認できた．
-        \fig{Adjust41.eps}{width=0.6\hsize}{Amplitude adjustment experiment 1}
-        \fig{Adjust42.eps}{width=0.6\hsize}{Amplitude adjustment experiment 2}
+        \fig{Adjust41.eps}{width=0.7\hsize}{Amplitude adjustment experiment 1}
+        \fig{Adjust42.eps}{width=0.7\hsize}{Amplitude adjustment experiment 2}
         
 
 

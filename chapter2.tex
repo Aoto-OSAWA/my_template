@@ -31,17 +31,18 @@
         \section{伸縮する単リンクブラキエーションロボットの実機構成}
           
           本研究では\cite{Hijiri:Robomech2024}で使用していた実機を用いた．
-          \figref{bar-robot4.png}に全体図を示す．重さは3.0 kgであり，幅・奥行・高さは
+          \figref{robot.eps}に全体図を示す．重さは3.0 kgであり，幅・奥行・高さは
           最も縮めた場合は$150{\times}80{\times}560$ mm，最も伸ばした場合は$150{\times}80{\times}740$ mmである．
           伸縮にはラックピニオン機構が用いられており，中心部のブラシレスDCモータ(MAXON EC22 40W, ギアヘッドギア比128)によって歯車を回転させる．
           ブラシレスDCモータはモータドライバ(EPOS2 24/5)を介してロボット全体の制御を行うArduino Unoに接続されている．
-          また，グリッパーは把持部品がサーボモジュール(双葉電子工業 RS406CB)で駆動する．
+          また，グリッパーは把持部品がサーボモジュール(双葉電子工業 RS406CB)で駆動する(\figref{gripper.eps})．
           なお，グリッパーに用いているサーボモータの回転速度は0.11s/60degであり，
           グリッパー開状態は0 deg，グリッパー閉状態は100 degであるため
           グリッパーを開く/閉じるために必要なモータ回転量100 degの回転に要する時間は
           $100/60\times0.11\approx$0.183 sである．
           ロボット全体の姿勢取得にはIMU(Adafruit BNO055)を用いている．
           
-          \fig{photo4.jpg}{width=0.5\hsize}{Overall view of extensible brachiation robot}
+          \fig{robot.eps}{width=0.7\hsize}{Overall view of extensible brachiation robot}
+          \fig{gripper.eps}{width=0.5\hsize}{Gripper configuration}
 
             

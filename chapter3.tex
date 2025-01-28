@@ -82,7 +82,7 @@
         \begin{enumerate}
                 \item 振幅$A_0$になるように振幅調整
                 \item 目標リンク長(目標バーまでの距離)に伸縮調整
-                \item 振幅$A_1$に到達したらグリッパーを閉じ始める
+                \item 角速度の正負が入れ替わるタイミング(振幅$A_1$)でグリッパーを閉じ始める
                 \item 目標バーの位置$\theta$でグリッパーを閉じ終える
         \end{enumerate}      
         グリッパーを閉じる時間と\equref{Approximation Model}を基に目標振幅となる$A_0$を求めた．
@@ -142,8 +142,51 @@
               \end{table}
         また，計測データ(角度)とリンク最大長指令値の時間変化を\figref{NoAerial1data.eps}と\figref{NoAerial2data.eps}，
         実験の様子を\figref{NoAerial.eps}に示す．なお，実験の様子は\figref{NoAerial1data.eps}，\figref{NoAerial2data.eps}において
-        赤線で示した時刻からの様子である．
+        赤線で示した時刻からの様子である．振幅$A_1$，目標振幅$A_0$は実験結果では\tabref{A0A1}に示すように
+        それぞれ$A_{\mathrm{1Real}}$，$A_{\mathrm{0Real}}$となった．なお，\tabref{ex1}\tabref{ex2}に示した振幅との誤差を括弧の数字で表す．
+        目標振幅の誤差は実験1，実験2ともに小さく，提案した振幅調整法の有効性を確認できた．
+        一方で，振幅$A_1$との誤差はかなり大きく，バーとの摩擦により想定よりも減衰したと考えられる．
+        
+        ブラキエーション実験の成功率としては実験1，実験2のどちらの条件においても約60％であった．
+        実験1の条件における失敗時の角度データと振幅$A_1$・目標振幅$A_0$の実験結果をそれぞれ\figref{NoAerialFailed.eps}，\tabref{failed}に示す．
+        \tabref{failed}より，振幅$A_{\mathrm{1Real}}$が目標バーの位置$\theta$よりも小さく，グリッパーが閉じ始めた時には目標バーを下回っていたとみられる．
+        その原因として，目標バーとの接触が挙げられる．\figref{NoAerialFailed.eps}において目標バーと衝突した時刻を赤線で示した．
+        グリッパーの構造上，振子の回転軸方向に振動が発生しているため，
+        \figref{bar-gripper.jpg}に示すように，グリッパーの歯車部分が目標バーと接触してしまう状態であったと考えられる．
+        \begin{table}[bh]
+                \begin{center}
+                  \caption{No aerial phase experiment amplitude data}
+                  \tablabel{A0A1}
+                  \vspace{2mm}
+                  \begin{tabular}{c|cc}
+                    \hline
+                     & Experiment 1 & Experiment 2\\
+                    \hline
+                    $A_{\mathrm{1Real}}$ & 94.1 (12.9％)& 100.8 (16％)\\
+                    $A_{\mathrm{0Real}}$ & 112.9 (0.0％)& 128.7 (2.1％)\\                      
+                    \hline
+                  \end{tabular}
+                \end{center}
+              \end{table}
         \newpage
         \fig{NoAerial1data.eps}{width=0.6\hsize}{No aerial phase experiment 1}
         \fig{NoAerial2data.eps}{width=0.6\hsize}{No aerial phase experiment 2}
         \fig{NoAerial.eps}{width=0.65\hsize}{No aerial phase experiment flow}
+        \clearpage
+        \begin{table}[t]
+                \begin{center}
+                  \caption{No aerial phase failed experiment amplitude data}
+                  \tablabel{failed}
+                  \vspace{2mm}
+                  \begin{tabular}{c|c}
+                    \hline
+                    $A_{\mathrm{1Real}}$ & 87.1 (19.4％)\\
+                    $A_{\mathrm{0Real}}$ & 114.6 (1.4％)\\                      
+                    \hline
+                  \end{tabular}
+                \end{center}
+              \end{table}
+        \fig{NoAerialFailed.eps}{width=0.6\hsize}{No aerial phase failed experiment data}
+        \fig{bar-gripper.jpg}{width=0.5\hsize}{Contact with the bar}
+        
+              

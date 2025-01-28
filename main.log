@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  27 JAN 2025 20:05
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  28 JAN 2025 14:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -531,62 +531,67 @@ File: ./fig/Adjust42.eps Graphic file (type eps)
 File: ./fig/noAerialBrachiationFig.eps Graphic file (type eps)
 <./fig/noAerialBrachiationFig.eps>
  [36]
-
-LaTeX Warning: Reference `fig:' on page 37 undefined on input line 78.
-
-
-LaTeX Warning: Reference `fig:' on page 37 undefined on input line 79.
-
 File: ./fig/BarPositionFig.eps Graphic file (type eps)
 <./fig/BarPositionFig.eps>
 File: ./fig/noAerialAmp.eps Graphic file (type eps)
 <./fig/noAerialAmp.eps>
-[37] [38]
+ [37] [38]
 Overfull \hbox (2.43332pt too wide) in paragraph at lines 112--142
 [][]$[]$[] []$[]$[] 
  []
 
-) [39]
+[39]
+File: ./fig/NoAerial1data.eps Graphic file (type eps)
+<./fig/NoAerial1data.eps>
+File: ./fig/NoAerial2data.eps Graphic file (type eps)
+<./fig/NoAerial2data.eps>
+File: ./fig/NoAerial.eps Graphic file (type eps)
+<./fig/NoAerial.eps>
+
+
+LaTeX Warning: Float too large for page by 54.66548pt on input line 149.
+
+) [40] [41]
 \openout2 = `chapter4.aux'.
 
- (./chapter4.tex [40
+ (./chapter4.tex [42
 
 
 
 
 ]
 第 5 章
-[41] [42
+[43] [44
 
-] [43]
+] [45]
 File: ./fig/ReleaseFig2.eps Graphic file (type eps)
 <./fig/ReleaseFig2.eps>
- [44]
+ [46]
 
-LaTeX Warning: Reference `fig:' on page 45 undefined on input line 94.
+LaTeX Warning: Reference `fig:' on page 47 undefined on input line 94.
 
 
-LaTeX Warning: Reference `fig:' on page 45 undefined on input line 94.
+LaTeX Warning: Reference `fig:' on page 47 undefined on input line 94.
 
 File: ./fig/2Dver5.png Graphic file (type bmp)
 <./fig/2Dver5.png>
 File: ./fig/2Dver5.png Graphic file (type bmp)
 <./fig/2Dver5.png>
-[45]
+[47]
 
-LaTeX Warning: Reference `fig:' on page 46 undefined on input line 154.
-
-
-LaTeX Warning: Reference `fig:' on page 46 undefined on input line 154.
-
-[46] [47]
-
-LaTeX Warning: Reference `fig:' on page 48 undefined on input line 161.
+LaTeX Warning: Reference `fig:' on page 48 undefined on input line 154.
 
 
-LaTeX Warning: Reference `fig:' on page 48 undefined on input line 161.
+LaTeX Warning: Reference `fig:' on page 48 undefined on input line 154.
 
-[48]
+[48] [49]
+
+LaTeX Warning: Reference `fig:' on page 50 undefined on input line 161.
+
+
+LaTeX Warning: Reference `fig:' on page 50 undefined on input line 161.
+
+[50]
 File: ./fig/2Dver5.png Graphic file (type bmp)
 <./fig/2Dver5.png>
 File: ./fig/2Dver5.png Graphic file (type bmp)
@@ -595,36 +600,36 @@ File: ./fig/2Dver5.png Graphic file (type bmp)
 <./fig/2Dver5.png>
 File: ./fig/2Dver5.png Graphic file (type bmp)
 <./fig/2Dver5.png>
-) [49] [50]
+) [51] [52]
 \openout2 = `chapter7.aux'.
 
  (./chapter7.tex
 第 6 章
-[51
+[53
 
 
 
 
-] [52
+] [54
 
-]) [53]
+]) [55]
 \openout2 = `thanks.aux'.
 
- (./thanks.tex [54
+ (./thanks.tex [56
 
 
 
 
-] [55] [56
+] [57] [58
 
-]) [57] (./main.bbl [58
+]) [59] (./main.bbl [60
 
 
-
-] [59]
-[60
 
 ] [61]
+[62
+
+] [63]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 90.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -635,10 +640,10 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 115.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 120.
- [62]
+ [64]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 126.
-) [63] (./main.aux (./chapter1.aux) (./chapter2.aux)
+) [65] (./main.aux (./chapter1.aux) (./chapter2.aux)
 (./chapter5.aux) (./chapter3.aux) (./chapter4.aux) (./chapter7.aux)
 (./thanks.aux))
 
@@ -655,12 +660,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10869 strings out of 479850
- 168315 string characters out of 5887378
- 473233 words of memory out of 5000000
- 28967 multiletter control sequences out of 15000+600000
+ 10887 strings out of 479850
+ 168756 string characters out of 5887378
+ 473401 words of memory out of 5000000
+ 28982 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (63 pages, 141876 bytes).
+Output written on main.dvi (65 pages, 145860 bytes).

@@ -75,8 +75,8 @@
                 \theta&=&90+\arctan{\left(\frac{l_{\mathrm{bz}}}{l_{\mathrm{bx}}}\right)}
                 \end{eqnarray}  
         ここで，グリッパーを閉じる時間を考慮して目標バーの高さに到達する前にグリッパーを閉じ始めると，
-        グリッパーの上側の爪(\figref{}におけるclaw1)がバーに衝突してしまう．そこで，目標バーの高さを超えてから閉じ始め，
-        下側の爪(\figref{}におけるclaw2)が引っかからない状態で目標バーを通り過ぎ，
+        グリッパーの上側の爪(\figref{BarPositionFig.eps}におけるclaw1)がバーに衝突してしまう．そこで，目標バーの高さを超えてから閉じ始め，
+        下側の爪(\figref{BarPositionFig.eps}におけるclaw2)が引っかからない状態で目標バーを通り過ぎ，
         目標バーの高さになったタイミングでグリッパーを閉じ終えるように試みた．
         \figref{noAerialAmp.eps}に示す振幅を用いてバー把持の流れを以下にようにした．
         \begin{enumerate}
@@ -117,7 +117,7 @@
                   \begin{tabular}{c|c}
                     \hline
                     $l_{\mathrm{bx}}$ & 0.74 m \\
-                    $l_{\mathrm{bx}}$ & 0.00 m \\
+                    $l_{\mathrm{bz}}$ & 0.00 m \\
                     $\theta$ & 90 deg \\ 
                     $A_1$ & 108 deg \\
                     $A_0$ & 113 deg \\
@@ -132,7 +132,7 @@
                   \begin{tabular}{c|c}
                     \hline
                     $l_{\mathrm{bx}}$ & 0.72 m \\
-                    $l_{\mathrm{bx}}$ & 0.14 m \\
+                    $l_{\mathrm{bz}}$ & 0.14 m \\
                     $\theta$ & 101 deg \\ 
                     $A_1$ & 120 deg \\
                     $A_0$ & 126 deg \\
@@ -140,4 +140,10 @@
                   \end{tabular}
                 \end{minipage}
               \end{table}
-        また，
+        また，計測データ(角度)とリンク最大長指令値の時間変化を\figref{NoAerial1data.eps}と\figref{NoAerial2data.eps}，
+        実験の様子を\figref{NoAerial.eps}に示す．なお，実験の様子は\figref{NoAerial1data.eps}，\figref{NoAerial2data.eps}において
+        赤線で示した時刻からの様子である．
+        \newpage
+        \fig{NoAerial1data.eps}{width=0.6\hsize}{No aerial phase experiment 1}
+        \fig{NoAerial2data.eps}{width=0.6\hsize}{No aerial phase experiment 2}
+        \fig{NoAerial.eps}{width=0.65\hsize}{No aerial phase experiment flow}

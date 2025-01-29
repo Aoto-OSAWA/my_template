@@ -154,21 +154,31 @@
           \subsection{ブラキエーション実験}
           変更後の目標振幅を用いて，空中過程を含むブラキエーション実験を行った．
           なお，バーリリース条件の角度は正であるため，求めた目標振幅は負の角度範囲における振幅である．
-          目標バーの把持に成功した実験の様子と計測データを\figref{}，\figref{}に示す．
+          目標バーの把持に成功した実験の計測データを\figref{Aerialdata.eps}，目標振幅到達後からの様子を\figref{Aerialflow.eps}(1)に示す．
           最適なバーリリース条件は，バー把持時のバーに対するグリッパーの相対速度が小さくなる条件であるため，
-          実験においても衝撃が小さい把持であることが確認できた．
-          しかし，30回実験を行ったところ成功したのは2回であり成功率は約6.7 $\%$であった．
-          この原因として，
-          振幅条件を満たしても，角速度にならない？グリッパーの引っ掛かりによるリリース時刻のずれによる把持時刻の遅れ
-
-          失敗した実験の様子と計測データを\figref{}，\figref{}に示す．
+          実験においても衝撃が小さい把持であることが確認できた．また，目標振幅到達時の振幅は120.2 deg(誤差1.0 ％)，リリース時の角速度は318.1 deg/s(誤差0.6 ％)であり，
+          提案した振幅調整法により導出した目標振幅に到達し，最適なバーリリース条件を満たしたことが確認できた．
+          なお，30回実験を行ったところ成功したのは2回であり成功率は約6.7 $\%$であった．
+          失敗した実験の計測データを\figref{AerialdataFailed.eps}，目標振幅到達後からの様子を\figref{Aerialflow.eps}(2)に示す．
+          目標振幅到達時の振幅は119.62 deg(誤差0.5 ％)であるため把持失敗に影響していないとみられる．一方で，リリース時の角速度は275.5 deg/s(誤差14 ％)であり，
+          計測データを基にすると目標バーに届かない角速度である．しかし実際は\figref{Aerialflow.eps}(2-6)に示すように目標バーに届いているため，IMUへのノイズなどによる計測値のずれであると考えられる．
+          また，把持できなかった原因としてバーに対するグリッパーの角度が考えられる．グリッパーの構造上，振り子の回転軸方向に振動が発生しているため，
+          目標バーに対して垂直にリリースされない場合がある．
+          そのため、バー把持時のグリッパーの角度が影響して把持できなかったと考えられる．
+          振り子の回転軸方向に振動が発生しにくいグリッパー構造にすることで，より安定した把持が可能となり，成功率増加が期待できる．
           
-
+          
+          \begin{figure}[htbp]
+            \begin{center}
+            \includegraphics[width=100mm,height=100mm]{fig/Aerialdata.eps}
+            \caption{Aerial Brachiation experiment data(Succeeded)}
+            \end{center}
+            \end{figure}
           \newpage
-          \fig{2Dver5.png}{width=0.7\hsize}{Aerial Brachiation experiment flow(succeeded)}
-          \fig{2Dver5.png}{width=0.7\hsize}{Aerial Brachiation experiment data(succeeded)}
-          \fig{2Dver5.png}{width=0.7\hsize}{Aerial Brachiation experiment flow(failed)}
-          \fig{2Dver5.png}{width=0.7\hsize}{Aerial Brachiation experiment data(failed)}
+          % \fig{Aerialdata.eps}{width=0.7\hsize}{Aerial Brachiation experiment data(Succeeded)}
+          \fig{AerialdataFailed.eps}{width=0.7\hsize}{Aerial Brachiation experiment data(Failed)}
+          \fig{Aerialflow.eps}{width=0.7\hsize}{Aerial Brachiation experiment flow}
+          
 
 
 

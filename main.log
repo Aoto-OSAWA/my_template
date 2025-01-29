@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  29 JAN 2025 14:53
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  29 JAN 2025 18:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -340,17 +340,7 @@ File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
 \g__pdf_backend_link_sf_int=\count293
 )
 (./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter5.aux) (./chapter3.aux)
-(./chapter4.aux
-
-LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
-
-
-LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
-
-
-LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
-
-) (./chapter7.aux) (./thanks.aux))
+(./chapter4.aux) (./chapter7.aux) (./thanks.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
@@ -573,56 +563,51 @@ File: ./fig/releaseflow.eps Graphic file (type eps)
 <./fig/releaseflow.eps>
  [47] [48] [49]
 
-LaTeX Warning: Reference `fig:' on page 50 undefined on input line 157.
-
-
-LaTeX Warning: Reference `fig:' on page 50 undefined on input line 157.
-
-
-LaTeX Warning: Reference `fig:' on page 50 undefined on input line 164.
-
-
-LaTeX Warning: Reference `fig:' on page 50 undefined on input line 164.
+LaTeX Warning: Reference `fig:Aerialdata.eps' on page 50 undefined on input lin
+e 157.
 
 [50]
-File: ./fig/2Dver5.png Graphic file (type bmp)
-<./fig/2Dver5.png>
-File: ./fig/2Dver5.png Graphic file (type bmp)
-<./fig/2Dver5.png>
-File: ./fig/2Dver5.png Graphic file (type bmp)
-<./fig/2Dver5.png>
-File: ./fig/2Dver5.png Graphic file (type bmp)
-<./fig/2Dver5.png>
-) [51] [52]
+File: fig/Aerialdata.eps Graphic file (type eps)
+<fig/Aerialdata.eps>
+ [51]
+File: ./fig/AerialdataFailed.eps Graphic file (type eps)
+<./fig/AerialdataFailed.eps>
+File: ./fig/Aerialflow.eps Graphic file (type eps)
+<./fig/Aerialflow.eps>
+
+
+LaTeX Warning: Float too large for page by 54.5042pt on input line 180.
+
+) [52] [53]
 \openout2 = `chapter7.aux'.
 
- (./chapter7.tex
+ (./chapter7.tex [54
+
+
+
+
+]
 第 6 章
-[53
+[55] [56
 
-
-
-
-] [54
-
-]) [55]
+]) [57]
 \openout2 = `thanks.aux'.
 
- (./thanks.tex [56
+ (./thanks.tex [58
 
 
 
 
-] [57] [58
+] [59] [60
 
-]) [59] (./main.bbl [60
+]) [61] (./main.bbl [62
 
 
-
-] [61]
-[62
 
 ] [63]
+[64
+
+] [65]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 90.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
@@ -633,17 +618,14 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 115.
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 120.
- [64]
+ [66]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 126.
-) [65] (./main.aux (./chapter1.aux) (./chapter2.aux)
+) [67] (./main.aux (./chapter1.aux) (./chapter2.aux)
 (./chapter5.aux) (./chapter3.aux) (./chapter4.aux) (./chapter7.aux)
 (./thanks.aux))
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2F6EAABD60A8355EE5B8ECB571456355;3003.
@@ -653,12 +635,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10914 strings out of 479850
- 169356 string characters out of 5887378
- 473754 words of memory out of 5000000
- 29004 multiletter control sequences out of 15000+600000
+ 10925 strings out of 479850
+ 169680 string characters out of 5887378
+ 473776 words of memory out of 5000000
+ 29013 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (65 pages, 151792 bytes).
+Output written on main.dvi (67 pages, 154336 bytes).

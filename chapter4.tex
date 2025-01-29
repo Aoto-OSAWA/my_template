@@ -85,17 +85,21 @@
           よって\equref{Approximation Model}，\equref{Approximation Angular velocity}における振幅増加率$\lambda$は
           \equref{length relation}で$l_{\mathrm{max}}=0.56$ mとすることで$\lambda=-0.04$と求まる．
           これを基に，半周期の間に評価関数$J_{\mathrm{e}}$を最小にする振幅$A$と時間$t$を求めた．
-          評価関数の最小化には\chapref{chapter4}と同様にNewton-CG法を用いた．
-          これにより\tabref{optimizedRelease}のリリース条件では振幅は98 degと求まった．
+          評価関数の最小化にはNewton-CG法を用いた．
+          これにより\tabref{optimizedRelease}のリリース条件では目標振幅は98 degと求まった．
           
           \subsection{リリース実験}
 
           ここで，求めた振幅においてリリース実験を行った．
-          角度・角速度・リンク長の時間変化を\figref{}，実験の様子を\figref{}に示す．
-          また，グリッパーを開くために要する時間は0.183 sであり，
+          グリッパーを開くために要する時間は0.183 sであり，
           \equref{Approximation Model}，\equref{Approximation Angular velocity}を用いて
           振幅を98 degとした時の角度0 degからリリース条件角度56 deg間の平均角速度を求めたところ300 deg/sであったため，
           リリース条件角度においてグリッパーを開き終わるために，$300\times0.183\approx$55 deg前にモータへ指令を行った．
+          角度・角速度・リンク長の時間変化を\figref{release.eps}，目標振幅到達後の実験の様子を\figref{releaseflow.eps}に示す．
+          赤線はリリース条件角度に到達した時刻を示している．
+          目標振幅到達時の計測振幅は99.1 degであり，導出した目標振幅98 degとの誤差は1.1 ％となった．
+          また，リリース時の角度・角速度はそれぞれ55．5 deg，254.1 deg/sであり，\tabref{optimizedRelease}に示したリリース条件との誤差はそれぞれ
+          0.9 ％，2.3 ％であった．
           \begin{table}[tb]
             \begin{center}
               \caption{Experiment conditions}
@@ -133,10 +137,9 @@
               \end{tabular}
             \end{center}
           \end{table}
-          \fig{2Dver5.png}{width=0.7\hsize}{Release experiment data}
-          \fig{2Dver5.png}{width=0.7\hsize}{Release experiment flow}
-
-          実験において，求めた振幅でのリリース条件の実現を確認することができた．
+          \fig{release.eps}{width=0.6\hsize}{Release experiment data}
+          \fig{releaseflow.eps}{width=0.65\hsize}{Release experiment flow}
+          以上より，求めた振幅でのリリース条件の実現が可能であること確認することができた．
           しかし，リリース後に高さが足りないため目標のバーには到達できなかった．
           原因として，リリース時のグリッパーとバーの接触や，リリース後の空気抵抗，ケーブルの干渉などにより
           角速度が理論値よりも減少してしまったためであると考えた．

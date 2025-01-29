@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  29 JAN 2025 02:47
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  29 JAN 2025 14:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -350,12 +350,6 @@ LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
 LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
 
-
-LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
-
-
-LaTeX Warning: Label `fig:2Dver5.png' multiply defined.
-
 ) (./chapter7.aux) (./thanks.aux))
 \openout1 = `main.aux'.
 
@@ -573,29 +567,22 @@ File: ./fig/bar-gripper.jpg Graphic file (type bmp)
 File: ./fig/ReleaseFig2.eps Graphic file (type eps)
 <./fig/ReleaseFig2.eps>
  [46]
+File: ./fig/release.eps Graphic file (type eps)
+<./fig/release.eps>
+File: ./fig/releaseflow.eps Graphic file (type eps)
+<./fig/releaseflow.eps>
+ [47] [48] [49]
 
-LaTeX Warning: Reference `fig:' on page 47 undefined on input line 94.
-
-
-LaTeX Warning: Reference `fig:' on page 47 undefined on input line 94.
-
-File: ./fig/2Dver5.png Graphic file (type bmp)
-<./fig/2Dver5.png>
-File: ./fig/2Dver5.png Graphic file (type bmp)
-<./fig/2Dver5.png>
-[47]
-
-LaTeX Warning: Reference `fig:' on page 48 undefined on input line 154.
+LaTeX Warning: Reference `fig:' on page 50 undefined on input line 157.
 
 
-LaTeX Warning: Reference `fig:' on page 48 undefined on input line 154.
-
-[48] [49]
-
-LaTeX Warning: Reference `fig:' on page 50 undefined on input line 161.
+LaTeX Warning: Reference `fig:' on page 50 undefined on input line 157.
 
 
-LaTeX Warning: Reference `fig:' on page 50 undefined on input line 161.
+LaTeX Warning: Reference `fig:' on page 50 undefined on input line 164.
+
+
+LaTeX Warning: Reference `fig:' on page 50 undefined on input line 164.
 
 [50]
 File: ./fig/2Dver5.png Graphic file (type bmp)
@@ -666,12 +653,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10902 strings out of 479850
- 169090 string characters out of 5887378
- 473654 words of memory out of 5000000
- 28994 multiletter control sequences out of 15000+600000
+ 10914 strings out of 479850
+ 169356 string characters out of 5887378
+ 473754 words of memory out of 5000000
+ 29004 multiletter control sequences out of 15000+600000
  519351 words of font info for 104 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (65 pages, 150824 bytes).
+Output written on main.dvi (65 pages, 151792 bytes).

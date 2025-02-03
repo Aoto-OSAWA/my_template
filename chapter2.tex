@@ -9,14 +9,17 @@
         \section{ブラキエーションの流れ}
 
           \figref{brachiationFig-4.eps}に本研究で目的とする空中過程を含んだブラキエーション動作を示す．
-          ロボットの両端のグリッパーがバーを掴んだ状態(\figref{brachiationFig-4.eps}(1))から，
-          片方のバーを離して振子過程(\figref{brachiationFig-4.eps}(2))に移る．
-          目標のバーまでの距離がロボットの最大長以下である場合，バーの距離に合わせてロボットを伸縮させることで
+          ロボットの両端のグリッパーがそれぞれbar1，bar2を掴んだ状態(\figref{brachiationFig-4.eps}(1))から，
+          bar1を離して振子過程(\figref{brachiationFig-4.eps}(2))に移る．
+          目標とするbar3までの距離がロボットの最大長以下である場合，bar2からbar3までの距離に合わせてロボットを伸縮させることで
           空中過程を含まないブラキエーション(\figref{brachiationFig-4.eps}(3-1))を行う．
-          一方，目標のバーまでの距離がロボットの最大長以上である場合，適切なタイミングでもう一方のバーも離し(\figref{brachiationFig-4.eps}(3-2))，
-          空中過程を経て，最後に目標のバーを掴む(\figref{brachiationFig-4.eps}(4))．
-          これらの動きを繰り返すことで連続したブラキエーションを行う．
+          一方，目標とするbar3までの距離がロボットの最大長以上である場合，適切なタイミングでbar2を離し(\figref{brachiationFig-4.eps}(3-2))，
+          空中過程を経て，最後にbar3を掴む(\figref{brachiationFig-4.eps}(4))．
+          bar3を把持した後，bar3の次のバーの位置を基に，ここまでの流れと同様にブラキエーションを繰り返し行う．
+          異なる位置にあるバーに連続して移動するためには，振子過程においてバーの位置に基づいた振幅調整が望まれる．
+          \fig{brachiationFig-4.eps}{width=0.9\hsize}{Brachiation motions}
 
+        
         \section{伸縮による励振}
           
           目標とするバーの位置が，把持していたバー(\figref{brachiationFig-4.eps}におけるbar1)と同じ，もしくはそれよりも高い場合，
@@ -24,25 +27,20 @@
           そのため，振子過程において外部からのエネルギー投入による振動の拡大が望まれる．
           本研究ではロボットを伸縮することにより，ブランコのように重心位置をロボットの長手方向に変化させることで励振を行う．
           この励振方法は先行研究があり，実機で実現されている\cite{Hijiri:Robomech2024}．
-          
-          \figb{brachiationFig-4.eps}{width=0.9\hsize}{Brachiation motions}
-        
-          % \newpage
-        \section{伸縮する単リンクブラキエーションロボットの実機構成}
-          
-          本研究では\cite{Hijiri:Robomech2024}で使用していた実機を用いた．
-          \figref{robot.eps}に全体図を示す．重さは3.0 kgであり，幅・奥行・高さは
+        % \newpage
+          % \fig{brachiationFig-4.eps}{width=0.9\hsize}{Brachiation motions}
+        \section{伸縮する棒状ブラキエーションロボットの実機構成}
+        \fig{robot.eps}{width=0.7\hsize}{Overall view of extensible brachiation robot}
+        \fig{gripper.eps}{width=0.4\hsize}{Gripper configuration}
+          本研究では\cite{Hijiri:Robomech2024}で使用していた実機を用いた(\figref{robot.eps})．
+          重さは3.0 kg，幅・奥行・高さは
           最も縮めた場合は$150{\times}80{\times}560$ mm，最も伸ばした場合は$150{\times}80{\times}740$ mmである．
           伸縮にはラックピニオン機構が用いられており，中心部のブラシレスDCモータ(MAXON EC22 40W, ギアヘッドギア比128)によって歯車を回転させる．
           ブラシレスDCモータはモータドライバ(EPOS2 24/5)を介してロボット全体の制御を行うArduino Unoに接続されている．
-          また，グリッパーは把持部品がサーボモジュール(双葉電子工業 RS406CB)で駆動する(\figref{gripper.eps})．
-          なお，グリッパーに用いているサーボモータの回転速度は0.11s/60degであり，
-          グリッパー開状態は0 deg，グリッパー閉状態は100 degであるため
-          グリッパーを開く/閉じるために必要なモータ回転量100 degの回転に要する時間は
-          $100/60\times0.11\approx$0.183 sである．
+          また，グリッパーは爪がサーボモジュール(双葉電子工業 RS406CB)で駆動する(\figref{gripper.eps})．
+          開状態が0 deg，閉状態が100 degであり，開く/閉じるために要する時間は0.36 sである．
           ロボット全体の姿勢取得にはIMU(Adafruit BNO055)を用いている．
+          % \newpage
           
-          \fig{robot.eps}{width=0.7\hsize}{Overall view of extensible brachiation robot}
-          \fig{gripper.eps}{width=0.5\hsize}{Gripper configuration}
 
             

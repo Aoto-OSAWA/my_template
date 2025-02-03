@@ -12,10 +12,11 @@
           Lieskovsk{\`y}らの重りを動かすことによる振幅増加率が最大となる重心移動の研究\cite{lieskovsky2023optimal}を，
           伸縮機構に応用して励振を行う．
           
-          \subsection{伸縮する単リンクブラキエーションロボットのモデル化}
-          \figref{modelFig.eps}に伸縮する単リンクブラキエーションロボットを簡略化した，
-          伸縮する振子のモデルを示す．振子の半径方向と鉛直下向き線がなす角を$\varphi [\mathrm{rad}]$，
-          振子の長さを$l [\mathrm{m}]$，振子の質量を$m [\mathrm{kg}]$，振子の重心周りの慣性モーメントを$I [\mathrm{kg}\mathrm{m}^2]$，
+          \subsection{伸縮する棒状ブラキエーションロボットのモデル化}
+          \figref{modelFig.eps}に伸縮する棒状ブラキエーションロボットを簡略化した，
+          伸縮する剛体棒振子のモデルを示す．なお，グリッパーは質量を持たず，メインリンクは一様な一本の剛体棒であり，剛体棒振子の重心は剛体棒の中心にあるとした．
+          振子の半径方向と鉛直下向き線がなす角を$\varphi [\mathrm{rad}]$，
+          振子の長さを$l [\mathrm{m}]$，振子の質量を$m [\mathrm{kg}]$，振子の重心周りの慣性モーメントを$J [\mathrm{kg}\mathrm{m}^2]$，
           重力加速度を$g [\mathrm{m}/\mathrm{s}^2]$とする．
           \fig{modelFig.eps}{width=0.3\hsize}{Model of an extensible pendulum}
           運動方程式を以下のラグランジュの運動方程式で求める．
@@ -25,44 +26,43 @@
             \end{eqnarray} 
           $q_i$と$S_i$はそれぞれ一般化座標と一般化力であり，それぞれ\equref{qq}，\equref{SS}とした．
           ここで，伸縮のために加える力を$u[\mathrm{N}]$とする．
-          $L=T-U$はラグランジアンであり，
-          系の運動エネルギー$T$と位置エネルギー$U$で構成され，本モデルでは\equref{Tequ}，\equref{U_equ}となる．
           \begin{eqnarray}
-              \equlabel{qq}
-              \begin{bmatrix}
-                q_1 \\
-                q_2 \\
-                \end{bmatrix}
-              &=&
-              \begin{bmatrix}
-                \varphi \\
-                l \\
-                \end{bmatrix}\\
-              \equlabel{SS}
-              \begin{bmatrix}
-                S_1 \\
-                S_2 \\
-                \end{bmatrix}
-              &=&
-              \begin{bmatrix}
-                0 \\
-                u \\
-                \end{bmatrix}
-                \end{eqnarray}
-              \begin{eqnarray}
-              \equlabel{Tequ}
-              T &=& \frac{1}{2} m \left(\frac{l}{2} \dot{\varphi} \right)^2 + \frac{1}{2} I \dot{\varphi}^2 + \frac{1}{2} m \dot{l}^2  \\
-              \equlabel{U_equ}
-              U &=& -gm\frac{l}{2}\cos(\varphi)
-              \end{eqnarray}  
-          運動方程式を行列で書き表すと\equref{Matrix}となる．
-          \begin{eqnarray}
-            \equlabel{Matrix}
-            \underbrace{\frac{\partial^2 L}{\partial \dot{\bm{q}}^2}}_{\bm{M}} \ddot{\bm{q}}^2 +\underbrace{\frac{\partial^2 L}{\partial \dot{\bm{q}} \partial \bm{q}} \dot{\bm{q}} - \frac{\partial L}{\partial \bm{q}}}_{\bm{c}} = 
+            \equlabel{qq}
+            \bm{q}&=&
+            \begin{bmatrix}
+              q_1 \\
+              q_2 \\
+              \end{bmatrix}
+            =
+            \begin{bmatrix}
+              \varphi \\
+              l \\
+              \end{bmatrix}\\
+            \equlabel{SS}
+            \bm{S}&=&
+            \begin{bmatrix}
+              S_1 \\
+              S_2 \\
+              \end{bmatrix}
+            =
             \begin{bmatrix}
               0 \\
               u \\
               \end{bmatrix}
+              \end{eqnarray}
+          $L=T-U$はラグランジアンであり，
+          系の運動エネルギー$T$と位置エネルギー$U$で構成され，本モデルでは\equref{Tequ}，\equref{U_equ}となる．
+          \begin{eqnarray}
+              \equlabel{Tequ}
+              T &=& \frac{1}{2} m \left(\frac{l}{2} \dot{\varphi} \right)^2 + \frac{1}{2} J \dot{\varphi}^2 + \frac{1}{2} m \dot{l}^2  \\
+              \equlabel{U_equ}
+              U &=& -gm\frac{l}{2}\cos(\varphi)
+              \end{eqnarray}  
+          運動方程式を行列で書き表すと\equref{Matrix}となる．
+          本モデル伸縮力$u$によって伸縮量$l(t)$が変化する，ノンホロノミックな系である．
+          \begin{eqnarray}
+            \equlabel{Matrix}
+            \underbrace{\frac{\partial^2 L}{\partial \dot{\bm{q}}^2}}_{\bm{M}} \ddot{\bm{q}}^2 +\underbrace{\frac{\partial^2 L}{\partial \dot{\bm{q}} \partial \bm{q}} \dot{\bm{q}} - \frac{\partial L}{\partial \bm{q}}}_{\bm{c}} = \bm{S}
             \end{eqnarray} 
           ここで，$\bm{M}(l)$，$\bm{c}(\varphi,l,\dot{\varphi},\dot{l})$は以下のようになる．
             \begin{eqnarray}
@@ -79,7 +79,7 @@
                 c_{2}(\varphi,l,\dot{\varphi}) \\
                 \end{bmatrix}\\
               \equlabel{M11}
-              M_{11}(l) &=& \frac{1}{4}m{l(t)}^2 + I\\
+              M_{11}(l) &=& \frac{1}{4}m{l(t)}^2 + J\\
               \equlabel{M22}
               M_{22} &=& \frac{m}{4}\\
               \equlabel{C1}
@@ -87,12 +87,13 @@
               \equlabel{C2}
               c_{2}(\varphi,l,\dot{\varphi}) &=& -\frac{1}{4}ml(t){\dot{\varphi}(t)}^2 - \frac{1}{2}gm\cos{(\varphi(t))}
             \end{eqnarray} 
+          伸縮が時刻$t$秒から$t^{+}$秒の間に瞬間的に行われると仮定する．ここで，長さは$l$から$l^{+}$，角度は$\phi$から$\phi^{+}$，角速度は$\dot{\phi}$から$\dot{\phi}^{+}$と変化するとする．
           本モデルの力積は\equref{Si}で計算され，系の運動量$p_i = \frac{\partial L}{\partial \dot{q}_i}$との関係は\equref{pi}である．
           \begin{eqnarray}
             \equlabel{Si}
-            \hat{S}_i = \lim_{t^{+}\to t} \int_{t}^{t^{+}} S_i (\tau) \mathrm{d}\tau\\
+            \hat{I}_i = \lim_{t^{+}\to t} \int_{t}^{t^{+}} S_i (\tau) \mathrm{d}\tau\\
             \equlabel{pi}
-            p_i(t^{+})-p_i(t)=\hat{S}_i
+            p_i(t^{+})-p_i(t)=\hat{I}_i
             \end{eqnarray}
           本モデルにおいて，$\varphi$方向の運動量は保存されるため，\equref{impulse}が満たされる．
           \begin{eqnarray}
@@ -129,8 +130,8 @@
               \begin{pmatrix}
                 x_3\\
                 x_4\\
-                -M_{11}^{-1}(x_2)c_1(x_{1-4})\\
-                -M_{22}^{-1}c_2(x_{1-3})+M_{22}^{-1}u\\
+                -M_{11}^{-1}(x_2)c_1(x_{1,2,3,4})\\
+                -M_{22}^{-1}c_2(x_{1,2,3})+M_{22}^{-1}u\\
                 \end{pmatrix}
             \end{eqnarray}
           となる．
@@ -176,8 +177,11 @@
           また，伸縮時の最大長$l_{\mathrm{max}}$を0.59 mから0.74 mまで3 cm刻みで
           変化させた場合の励振シミュレーションを\figref{changingLengthExcitation.eps}に示す．
           横軸は時間，縦軸は力学的エネルギーと角度を示している．
+          シミュレーションでは，瞬間的に伸縮量$l$を変化させるために\equref{l_change}に基づいて直接伸縮量を上書きしている．
+          そのため，シミュレーションにおける伸縮力$u$は瞬間的な伸縮が可能な力を想定している．
           このシミュレーション結果から，伸縮量を大きくするほど振幅増加量が大きくなり，伸縮量を小さくするほど伸縮増加量が小さくなることが分かる．
           ゆえに，伸縮量調整によって励振時の振幅操作が可能であると考えられる．
+          なお，実際は伸縮量によって伸縮時間，加減速の影響が異なるが，それらの影響を含めた励振計測データから伸縮量調整法を検討した．
           \begin{table}[tb]
             \begin{center}
               \caption{Simulation parameters}
@@ -193,8 +197,8 @@
                 $g$ $\mathrm{[m/s^2]}$ & 9.81 \\
                 $\varphi_{\mathrm{ini}}$ [rad] & 0.3 \\
                 $l_{\mathrm{ini}}$ [m]& $l_{\mathrm{max}}$ \\
-                $\dot{\varphi}_{\mathrm{ini}}$ & 0.0 \\
-                $\dot{l}_{\mathrm{ini}}$ & 0.0 \\
+                $\dot{\varphi}_{\mathrm{ini}}$ [rad/s] & 0.0 \\
+                $\dot{l}_{\mathrm{ini}}$ [m/s] & 0.0 \\
                 \hline
               \end{tabular}
             \end{center}
@@ -219,13 +223,22 @@
           \section{伸縮量制御}
 
           まず，半周期後の振幅の変化率と伸縮量の関係式を求める．
-          実機の振動を，振幅が微小であるとみなした近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
-          ここで現在振幅，振幅増加率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
+          重心が剛体中心にある剛体振子の運動方程式は通常，角度$\varphi$，長さ$l$，質量$m$，回転軸周りの慣性モーメント$J$，重力加速度$g$，減衰係数$c$を用いて
+          \equref{equation}で表される．
+          \begin{eqnarray}
+            \equlabel{equation}
+            J \frac{\mathrm{d}^2 \varphi}{\mathrm{d} t^2} +c \frac{\mathrm{d}\varphi}{\mathrm{d} t}+\frac{1}{2}mgl \sin{(\varphi)}=0
+          \end{eqnarray}
+          この運動方程式を用いて半周期後の振幅を求める場合，ルンゲ・クッタ法などを用いて数値的に解く必要があり時間がかかる．
+          振子過程で半周期ごとに次の半周期後の振幅を調整するためにはより速く振幅を計算することが望まれる．
+          そこで，本研究では実機の振動を振幅が微小である($\sin{(\varphi)}\approx \varphi$)とみなして運動方程式を解いて得た近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
+          ここで現在振幅，振幅増加率，角振動数，初期位相をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$，$\phi$として
           $t$秒後の変位$\varphi(t)$を表す．
-          また，半周期後の振幅を$A_{\mathrm{next}}$とすると，\equref{amp rate}となる．
+          この近似式を用いることで解析的に半周期後の振幅$A_{\mathrm{next}}$を\equref{amp rate}のように求めることが可能となる．
+          なお，\equref{amp rate}において初期位相は$\phi = 0$とした．
           \begin{eqnarray}
             \equlabel{Approximation Model}
-            \varphi(t)&=&A_{\mathrm{now}}e^{\lambda t}\cos{(\omega t)}\\
+            \varphi(t)&=&A_{\mathrm{now}}e^{\lambda t}\cos{(\omega t + \phi)}\\
             \equlabel{amp rate}
             A_{\mathrm{next}}&=&\left|\varphi\left(\frac{\pi}{\omega}\right)\right|=A_{\mathrm{now}}e^{\lambda \frac{\pi}{\omega}}
           \end{eqnarray}
@@ -241,7 +254,7 @@
           伸縮時の最小長は0.56 mで固定し，
           最大長のみ0.74 m，0.72 m，0.70 m，0.68 m，0.66 m，0.56 mと変化させた． 計測データ(角度・角速度)を\figref{excitationdata.eps}に示す．    
           \fig{excitationdata.eps}{width=1\hsize}{Excitation experiment data}
-          なお，微小角近似ができない振幅になると周期は振幅に依存し，非線形効果が現れる．
+          なお，微小角近似ができない振幅になると周期は振幅に依存し，\equref{equation}において$\sin{(\varphi)}$が残り，非線形効果が現れる．
           そこで，近似モデルをフィッティングさせるために振幅と角振動数の関係式を求めた．
           最大長0.74 mでの励振データから，半周期ごとの経過時間$t_{\mathrm{half}}$ [s]と振幅$A$ [deg]を求め，
           \equref{T2omega}で示すように角振動数$\omega$を求め，\figref{OmegaAmp.eps}に示すようにプロットして線形近似を行った．
@@ -266,7 +279,7 @@
               \vspace{2mm}
               \begin{tabular}{c|c}
                 \hline
-                Length $l_{\mathrm{max}}$ [m] & $\lambda$ [1/s] \\
+                 $l_{\mathrm{max}}$ [m] & $\lambda$ [1/s] \\
                 \hline
                 0.74 &  0.132\\
                 0.72 &  0.123\\
@@ -287,46 +300,52 @@
             \dot{\varphi(t)}=A_{\mathrm{now}}e^{\lambda t}\{\lambda\cos{(\omega t)}-\omega\sin{(\omega t)}\}
           \end{eqnarray}
           \newpage
-          フィッティング結果より，リンク最大長が短くなるほど計測データとの誤差が生じている．
-          原因として，リンク最大長を0.74 mとしたときの計測データを基に角振動数と振幅の関係式を決定していることが挙げられる．
-          リンク最大長が異なることにより伸縮に要する時間が異なり，実際は角振動数と振幅の関係式もリンク最大長によって変わると考えられる．
-          特にリンク最大長0.56 mにおけるフィッティング結果は，時間が経つにつれて大幅なずれが見られる．
-          しかし，本研究では振動の半周期分の値のみを振幅調整に用いるため，適用できるとみなした．
+          フィッティング結果より，ロボット最大長が短くなるほど計測データとの誤差が生じている．
+          原因として，ロボット最大長を0.74 mとしたときの計測データを基に角振動数と振幅の関係式を決定していることが挙げられる．
+          ロボット最大長が異なることにより伸縮に要する時間が異なり，実際は角振動数と振幅の関係式もロボット最大長によって変わると考えられる．
+          特にロボット最大長0.56 mにおけるフィッティング結果は，時間が経つにつれて大幅なずれが見られる．
+          しかし，本研究では振動の半周期分の値のみを振幅調整に用いるため，適用できると考えた．
 
-          次に\figref{RateLength.eps}に示すように，縦軸をリンク最大長，横軸を振幅増加率として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
-          \fig{RateLength.eps}{width=0.7\hsize}{Relationship between maximum link length and amplitude increase rate}
+          次に\figref{RateLength.eps}に示すように，縦軸をロボット最大長，横軸を振幅増加率として\tabref{ExcitationRate}のデータをプロットし，線形近似した．
+          \fig{RateLength.eps}{width=0.65\hsize}{Relationship between maximum link length and amplitude increase rate}
           近似式は\equref{length relation}となった．
           \begin{eqnarray}
             \equlabel{length relation}
             l_{\mathrm{max}}=0.99\lambda+0.60
           \end{eqnarray}
           \equref{lambda}，\equref{A2ome}\equref{length relation}をまとめると\equref{l status}となり，
-          半周期後に現在振幅から目標振幅に到達するために必要なリンク最大長$l_{\mathrm{max}}$は振幅から求めることができる．
+          半周期後に現在振幅から目標振幅に到達するために必要なロボット最大長$l_{\mathrm{max}}$は振幅から求めることができる．
           \begin{eqnarray}
             \equlabel{l status}
             l_{\mathrm{max}}=\frac{0.99(-0.0126A_{\mathrm{now}}+4.64)}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}+0.60
           \end{eqnarray}
-          
+        \newpage  
         \subsection{振幅調整実験}
         
         現在の振幅と目標振幅の値を基に伸縮量制御し，励振調整を行った．
-        ここで，\equref{l status}において求められたリンク最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長0.74 m，
-        伸縮可能最小長0.56 mを下回った場合は最大長0.56 mとし，
+        ここで，\equref{l status}において求められたロボット最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長$l_{\mathrm{max}} =$0.74 m，
+        伸縮可能最小長0.56 mを下回った場合は最大長$l_{\mathrm{max}} =$ 0.56 mとし，
         次の半周期で目標振幅への到達を試みる．
-        なお，リンク最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
-        実験では目標角度を-120 deg，すなわち振子角度の負の範囲での目標振幅が120 degになるように振幅調整を行った．
-        また，目標振幅との許容誤差を2 degとし，目標振幅到達後はリンク最大長を0.68 mになるように指令し，
-        計測した角度と最大長指令値の時間変化データを\figref{Adjust41.eps}(実験1)，\figref{Adjust42.eps}(実験2)に示す．
+        なお，ロボット最大長をロボットの伸縮可能最小長0.56 mとすることにより，励振を含まない単純な減衰となる．
+        実験では目標角度-120 deg，すなわち振子角度の負の範囲での目標振幅$A_{\mathrm{ref}} =$ 120 degとなるように振幅調整を行った．
+        また，目標振幅との許容誤差を3 degとし，目標振幅到達後はロボット最大長指令値を$l_{\mathrm{max}} =$0.68 mとした．
+        実験は計20回行った．振幅調整終了時の振幅データより，20回の実験の平均は119.37 deg，標準偏差は1.47であった．
+        \figref{AdjustDataAnalysis.eps}に振幅調整終了時の振幅データを箱ひげ図として示す．赤色破線は平均値，緑色線は中央値を示す．
+        目標振幅に対して，実験での平均値が近い値を示しており，さらに標準偏差が小さいためばらつきが少ないことが確認できた．
+        目標振幅との誤差の平均は0.52 ％，最大で2.19 ％であり，最大誤差2.19 ％でも振子過程における角速度の誤差は3 deg/s程であるため，
+        後の章で述べるバーリリース条件到達への影響は小さいと考えられる．
+        また，計測したデータのうち抜粋して2つの実験の角度と最大長指令値の時間変化データを\figref{Adjust41.eps}(実験1)，\figref{Adjust42.eps}(実験2)に示す．
         なお，黒色一点鎖線は目標角度，赤色一点鎖線は目標振幅到達時刻を示す．
         振幅調整終了時の振幅はそれぞれ，実験1は118.1 deg，実験2は120.3 degであり，
-        誤差はそれぞれ1.6 $\%$，0.25 $\%$であるため許容できると考えた．また，目標振幅との許容誤差をより小さくすることで，
+        誤差はそれぞれ1.6 ％，0.25 ％であった．また，目標振幅との許容誤差をより小さくすることで，
         振幅調整精度を上げることができるが，目標振幅到達までの時間が長くなると考えられる．
         実験1は一回の伸縮量調整で目標振幅に到達したが，
         実験2では複数回の伸縮量調整が行われた．
-        これは，実験2では計算上の振幅変化と実際の振幅変化の間のずれが大きくなったことを示しており，
+        これは，実験2では計算上と実際の振幅変化の間のずれが大きいことを示しており，
         その原因としてグリッパーとバーの摩擦や，ロボットの構造上のずれやケーブルなどの干渉といった可能性が考えられる．
         一方で，複数回の伸縮量調整によって最終的には目標振幅に到達することができているため，
         ロバスト性が高いことが確認できた．
+        \fig{AdjustDataAnalysis.eps}{width=0.7\hsize}{Amplitude adjustment experiment boxplot}
         \fig{Adjust41.eps}{width=0.7\hsize}{Amplitude adjustment experiment 1}
         \fig{Adjust42.eps}{width=0.7\hsize}{Amplitude adjustment experiment 2}
         

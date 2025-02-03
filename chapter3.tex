@@ -3,7 +3,7 @@
         \chaplabel{chapter3}
         \section{はじめに}
         
-        伸縮する単リンクブラキエーションロボットは，その「伸縮する」という特徴を活用することで，
+        伸縮する棒状ブラキエーションロボットは，その「伸縮する」という特徴を活用することで，
         目標のバーまでの距離に合わせてリンクの長さを調整して移動することが可能となる．
         これにより，おもりを動かすことで励振するブラキエーションロボット\cite{akahane2022single}よりも
         自在な移動が実現できる．
@@ -11,11 +11,13 @@
         しかし，伸ばすタイミングや長さが適切ではない場合，バーを把持できないだけでなく，
         バーとロボットが衝突することで不具合が生じたり，破損してしまう．
         また，目標バーを異なる位置にした場合，再び実験的にリンクを伸ばすタイミングを模索しなければならない．
-        そこで，本章ではバーの位置に基づいた空中過程を含まないブラキエーション動作について述べる．
+        そこで，本研究ではバーの位置に基づいて振幅を調整し，リンクを伸ばすタイミングを決定し，空中過程を含まないブラキエーション動作を行った．
           
         \section{伸縮タイミングの検討}
 
         リンクを伸ばして次のバーを把持する場合，伸ばすタイミングは\figref{noAerialBrachiationFig.eps}に示すように以下の4通りの方法が考えられる．
+        なお\figref{gripper.eps}に示すように，グリッパーは開いた状態では爪がリンクの先端からはみ出さない構造になっているため，メインボディがbar1やbar3に接触しない場合は
+        グリッパーも接触することなく通過することが可能である．
 
         \begin{itemize}
         \item 方法1 (\figref{noAerialBrachiationFig.eps}(1))：
@@ -36,7 +38,7 @@
         
         最高点においてリンクを目標の長さまで伸ばし終えた状態で上側からバーに近づく．
         
-        振子の最高点に達したときに伸縮するため，伸縮制御が容易であるが，
+        振子の最高点に達したときに伸び始めるため，制御が容易であるが，
         最高点が目標のバーから離れている場合，バー把持時のグリッパーに対する回転方向の負荷が大きくなる．
         
         \item 方法4 (\figref{noAerialBrachiationFig.eps}(4))：
@@ -44,13 +46,14 @@
         最高点においてリンクを目標の長さまで伸ばし終えた状態で下側からバーに近づく．
 
         方法3と同様に伸縮制御が容易であるが，
-        把持していたバー(\figref{noAerialBrachiationFig.eps}におけるbar 1)と衝突する可能性がある．
+        バー把持時のグリッパーに対する回転方向の負荷が大きくなる．
+        また，把持していたバー(\figref{noAerialBrachiationFig.eps}におけるbar 1)と衝突する可能性がある．
 
         \end{itemize}
 
         ここで，振動の最高点においてリンクを伸ばし始めた場合を考えた．
         ロボットが最小長0.56 mから最大長0.74 mまで伸びるためにかかる時間を計測したところ
-        0.37 sであり，\equref{Approximation Model}を用いて伸び終えるまでの減衰量を求めたところ，
+        0.37 sであり，\equref{Approximation Model}を用いて伸び終えるまでの角度変化量を求めたところ，
         振幅によって少なくとも約40 deg，多い場合だと約70 degであることが分かった．
         すなわち，方法2・方法3では伸び終える前に目標バーを通り過ぎてしまう可能性がある．
         そこで，本研究では伸縮のための時間が十分あり，伸縮制御が容易である方法4を採用し，bar1を通り過ぎた後に目標長さに変えることでバーとの衝突を回避することを想定した．
@@ -59,11 +62,12 @@
         \section{空中過程を含まないブラキエーション実験}
 
         \subsection{目標振幅の決定}
+        \seclabel{mokuhyou}
         \figref{BarPositionFig.eps}に目標とするバーの位置の概略図を示す．
         座標軸は左向きを$x$軸の正方向，上向きを$z$軸の正方向に設定し，
         ロボットが把持しているバーの座標を原点$(0,0)$，
         目標バーの座標を$(l_{\mathrm{bx}},l_{\mathrm{bz}})$とし，原点と結んだ線分が$z$軸となす角度を$\theta$とする．
-        また，ロボットは角度$\varphi$，角速度$\dot{\varphi}$とボディの全長$l_{\mathrm{r}}$で表す．
+        また，ロボット姿勢は角度$\varphi$，角速度$\dot{\varphi}$とボディの全長$l_{\mathrm{r}}$で表す．
         グリッパーが届く範囲にあるバーであれば，空中過程を含まないブラキエーションが可能である．
         ゆえに，ロボットの最大の長さを$l_{\mathrm{rMax}}$，最小の長さを$l_{\mathrm{rMin}}$とすると
         目標とするバーの条件は\equref{barRange}となる．
@@ -77,35 +81,65 @@
         ここで，グリッパーを閉じる時間を考慮して目標バーの高さに到達する前にグリッパーを閉じ始めると，
         グリッパーの上側の爪(\figref{BarPositionFig.eps}におけるclaw1)がバーに衝突してしまう．そこで，目標バーの高さを超えてから閉じ始め，
         下側の爪(\figref{BarPositionFig.eps}におけるclaw2)が引っかからない状態で目標バーを通り過ぎ，
-        目標バーの高さになったタイミングでグリッパーを閉じ終えるように試みた．
+        目標バーの高さになったタイミングでグリッパーが目標バーに引っかかる状態まで閉じているようにした．
         \figref{noAerialAmp.eps}に示す振幅を用いてバー把持の流れを以下にようにした．
         \begin{enumerate}
                 \item 振幅$A_0$になるように振幅調整
                 \item 目標リンク長(目標バーまでの距離)に伸縮調整
                 \item 角速度の正負が入れ替わるタイミング(振幅$A_1$)でグリッパーを閉じ始める
-                \item 目標バーの位置$\theta$でグリッパーを閉じ終える
+                \item 目標バーの位置$\theta$でグリッパーが目標バーに引っかかる
+                \item グリッパーを閉じ終える
         \end{enumerate}      
         グリッパーを閉じる時間と\equref{Approximation Model}を基に目標振幅となる$A_0$を求めた．
-        振幅$A_0$に到達した後は単純な減衰振動となると仮定すると，
-        \equref{Approximation Model}における振幅増加率$\lambda$はリンク最大長$l_{\mathrm{max}}=0.56$として$\lambda=-0.04$とみなせる．
-        グリッパーを閉じるために要する時間は0.183 sであるため，閉じ終わりが目標バー位置$\theta$であるために必要な振幅$A_1$は\equref{A1}となる．
+        振幅$A_0$に到達した後は単純な減衰振動となると仮定した．
+        ここで，異なるロボット長$l_{\mathrm{r}}$で単純な減衰振動データを計測し，それぞれ\figref{damping.eps}に示すように\equref{edamp}の形で指数関数近似することで，
+        振幅$A$の減衰率$\gamma$を求めた．いずれの長さでも減衰率は近い値であった\tabref{damprate}にそれぞれの減衰率とその平均を示す．
+        さらに，その平均値は\equref{length relation}において単純な減衰運動となる$l_{\mathrm{max}} =$ 0.56 mとした時の振幅増加率$\lambda =$ -0.04とほとんど同じであったため，
+        本研究のロボット長の変化範囲では減衰率は長さに依存せずに一定値として扱った．
+        よって$A_0$から$A_1$までの単純な減衰振動は，\equref{Approximation Model}において振幅増加率$\lambda=-0.04$として考えた．
+        グリッパーを閉じるために要する時間が0.36 s であり，バーに対して引っかかることができる状態(グリッパーモジュール回転量50 deg)までは$t_{\mathrm{gripper}} =$0.18 sであることから，閉じ終わりが目標バー位置$\theta$であるために必要な振幅$A_1$は\equref{A1}となる．
         また，半周期後に振幅$A_1$であるために必要な振幅$A_0$は\equref{A0}となる．
         なお，$\omega_{(A)}$は振幅$A$を基に求めた角振動数を表す．
         これにより，振幅$A_0$を空中過程を含まないブラキエーションのための目標振幅とした．
         \begin{eqnarray}
+                \equlabel{edamp}
+                A(t)=A e^{\gamma t}
+        \end{eqnarray}
+        \begin{eqnarray}
                 \equlabel{A1}
-                A_1&=&\theta e^{-(-0.04)\times0.183}\cos{(\omega_{(A_1)}\times0.183)}\\
+                A_1&=&\theta e^{-(\lambda)\times t_{\mathrm{gripper}}}\cos{(\omega_{(A_1)}\times t_{\mathrm{gripper}})}\\
                 \equlabel{A0}
-                A_0&=&A_1 e^{-(-0.04)\times\pi/\omega_{(A_0)}}\cos{(\omega_{(A_0)}\times\pi/\omega_{(A_0)})}
+                A_0&=&A_1 e^{-(\lambda)\times\pi/\omega_{(A_0)}}\cos{(\omega_{(A_0)}\times\pi/\omega_{(A_0)})}
                 \end{eqnarray}
-        \fig{BarPositionFig.eps}{width=0.8\hsize}{Schematic diagram of bar position}
+        \begin{table}[bh]
+                \begin{center}
+                        \caption{Damping rate data}
+                        \tablabel{damprate}
+                        \vspace{2mm}
+                        \begin{tabular}{c|c}
+                        \hline
+                        $l_{\mathrm{r}}$ [m] & $\gamma$ [1/s]\\
+                        \hline
+                        0.56 & -0.0386\\ 
+                        0.62 & -0.0471\\ 
+                        0.68 & -0.0393\\
+                        0.74 & -0.0356\\                         
+                        \hline
+                        \hline
+                        Average & -0.0402\\                      
+                        \hline
+                        \end{tabular}
+                \end{center}
+                \end{table}
+        \fig{BarPositionFig.eps}{width=0.7\hsize}{Schematic diagram of bar position}
         \fig{noAerialAmp.eps}{width=0.8\hsize}{Schematic diagram of amplitude}
-
+        \fig{damping.eps}{width=1.0\hsize}{Schematic diagram of amplitude}
+        
         \newpage
         \subsection{ブラキエーション実験}
 
         空中過程を含まないブラキエーション動作の実験として，もともと把持しているバーと
-        同じ高さ(実験1)・異なる高さ(実験2)の2種類の位置に目標バーを設置して実験を行った．
+        同じ高さ(実験1)・異なる高さ(実験2)の2種類の位置に目標バーを設置して実験を各10回行った．
         目標バーの位置$(l_{\mathrm{bx}},l_{\mathrm{bz}})$，$\theta$，振幅$A_1$，目標振幅$A_0$を
         それぞれ\tabref{ex1}\tabref{ex2}に示す．
         \begin{table}[t]
@@ -140,18 +174,23 @@
                   \end{tabular}
                 \end{minipage}
               \end{table}
-        また，計測データ(角度)とリンク最大長指令値の時間変化を\figref{NoAerial1data.eps}と\figref{NoAerial2data.eps}，
+        
+        また，各10回の計測のうち，それぞれ1つずつ成功データを抜粋し，計測データ(角度)とロボット最大長指令値の時間変化を\figref{NoAerial1data.eps}と\figref{NoAerial2data.eps}，
         実験の様子を\figref{NoAerial.eps}に示す．なお，実験の様子は\figref{NoAerial1data.eps}，\figref{NoAerial2data.eps}において
         赤線で示した時刻からの様子である．振幅$A_1$，目標振幅$A_0$は実験結果では\tabref{A0A1}に示すように
         それぞれ$A_{\mathrm{1Real}}$，$A_{\mathrm{0Real}}$となった．なお，\tabref{ex1}\tabref{ex2}に示した振幅との誤差を括弧の数字で表す．
         目標振幅の誤差は実験1，実験2ともに小さく，提案した振幅調整法の有効性を確認できた．
         一方で，振幅$A_1$との誤差はかなり大きく，バーとの摩擦により想定よりも減衰したと考えられる．
         
-        ブラキエーション実験の成功率としては実験1，実験2のどちらの条件においても約60％であった．
+        ブラキエーション実験の成功率としては実験1，実験2のどちらの条件においても60％であった．
         実験1の条件における失敗時の角度データと振幅$A_1$・目標振幅$A_0$の実験結果をそれぞれ\figref{NoAerialFailed.eps}，\tabref{failed}に示す．
-        \tabref{failed}より，振幅$A_{\mathrm{1Real}}$が目標バーの位置$\theta$よりも小さく，グリッパーが閉じ始めた時には目標バーを下回っていたとみられる．
+        また，10回の計測のうち，成功時・失敗時のそれぞれの振幅$A_1$・目標振幅$A_0$の平均，標準偏差を\tabref{dataanalysis}に示す．
+        \tabref{dataanalysis}より，失敗時のほうが振幅$A_1$・目標振幅$A_0$の標準偏差が大きく，ばらつきがあることが分かった．
+        一方で，平均値に関しては，目標振幅$A_0$は成功時・失敗時共に近い値となったが，振幅$A_1$は成功時と失敗時の値の差が大きく，失敗時は小さいことが分かった．
+        このことから，失敗の要因として実験ごとに目標振幅$A_0$から振幅$A_1$に到達するまでの間の振幅減衰量に影響を無視できないほどのばらつきがあると考えられる．
+        また，\tabref{failed}より，振幅$A_{\mathrm{1Real}}$が目標バーの位置$\theta$よりも小さいことが確認でき，グリッパーが閉じ始めた時には目標バーを下回っていたとみられる．
         その原因として，目標バーとの接触が挙げられる．\figref{NoAerialFailed.eps}において目標バーと衝突した時刻を赤線で示した．
-        グリッパーの構造上，振り子の回転軸方向に振動が発生しているため，
+        グリッパーの構造上，振子の回転軸方向に振動が発生しているため，
         \figref{bar-gripper.jpg}に示すように，グリッパーの歯車部分が目標バーと接触してしまう状態であったと考えられる．
         \begin{table}[bh]
                 \begin{center}
@@ -164,6 +203,23 @@
                     \hline
                     $A_{\mathrm{1Real}}$ & 94.1 (12.9％)& 100.8 (16％)\\
                     $A_{\mathrm{0Real}}$ & 112.9 (0.0％)& 128.7 (2.1％)\\                      
+                    \hline
+                  \end{tabular}
+                \end{center}
+              \end{table}
+              \begin{table}[bh]
+                \begin{center}
+                  \caption{Measurement data(Experiment 1)}
+                  \tablabel{dataanalysis}
+                  \vspace{2mm}
+                  \begin{tabular}{c|cc}
+                    \hline
+                     & Average & Standard deviation\\
+                    \hline
+                    $A_0$(Succeeded)& 113.72& 1.59\\
+                    $A_1$(Succeeded)& 100.59& 0.31\\
+                    $A_0$(Failed)& 113.87& 5.65\\
+                    $A_1$(Failed)& 94.30& 3.03\\                      
                     \hline
                   \end{tabular}
                 \end{center}

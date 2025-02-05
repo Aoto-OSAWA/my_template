@@ -3,8 +3,8 @@
 #========
 
 # TARGET += soturon-chukan-template  #卒論中間前刷
-TARGET += main			   #卒論本体
-# TARGET += soturon-maezuri-template #卒論前刷
+# TARGET += main			   #卒論本体
+TARGET += soturon-maezuri-template #卒論前刷
 # TARGET += master-chukan-template   #修論中間前刷
 # TARGET += Paper_Intro #論文紹介
 

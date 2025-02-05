@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  24 MAY 2024 14:25
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  6 FEB 2025 00:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -335,10 +335,10 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip62
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 26.
-Package hyperref Info: Option `colorlinks' set `true' on input line 27.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 35.
-Package hyperref Info: Option `colorlinks' set `false' on input line 38.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 27.
+Package hyperref Info: Option `colorlinks' set `true' on input line 28.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 36.
+Package hyperref Info: Option `colorlinks' set `false' on input line 39.
 \vs=\dimen185
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
@@ -379,29 +379,29 @@ File: l3backend-dvipdfmx.def 2022-01-12 L3 backend support: dvipdfmx
 ) (./soturon-maezuri-template.aux)
 \openout1 = `soturon-maezuri-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-Package hyperref Info: Link coloring OFF on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+Package hyperref Info: Link coloring OFF on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -414,89 +414,127 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count297
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
+LaTeX Info: Redefining \ref on input line 16.
+LaTeX Info: Redefining \pageref on input line 16.
+LaTeX Info: Redefining \nameref on input line 16.
 
 (./soturon-maezuri-template.out) (./soturon-maezuri-template.out)
 \@outlinefile=\write3
 \openout3 = `soturon-maezuri-template.out'.
 
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 20.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 20.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 20.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 20.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 20.
+(Font)              No change on input line 25.
 
-Underfull \hbox (badness 10000) in alignment at lines 20--20
+Underfull \hbox (badness 10000) in alignment at lines 25--25
 [][]
  []
 
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 23.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 23.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 28.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 43.
+(hyperref)                removing `math shift' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern 1.54198pt
-(hyperref)                removed on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\cdot' on input line 43.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 43.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.54198pt
-(hyperref)                removed on input line 43.
+(hyperref)                removed on input line 58.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 43.
+(hyperref)                removing `\cdot' on input line 58.
 
-File: ./fig/fig1.eps Graphic file (type eps)
-<./fig/fig1.eps>
-File: ./fig/photo.jpg Graphic file (type bmp)
-<./fig/photo.jpg>
-File: ./fig/fig1.eps Graphic file (type eps)
-<./fig/fig1.eps>
-File: ./fig/photo2.jpg Graphic file (type bmp)
-<./fig/photo2.jpg>
-(./soturon-maezuri-template.bbl
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.54198pt
+(hyperref)                removed on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.54198pt
+(hyperref)                removed on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\cdot' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.54198pt
+(hyperref)                removed on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 87.
+
+File: fig/brachiationFig-4.eps Graphic file (type eps)
+<fig/brachiationFig-4.eps>
+File: fig/FittingAngle3.eps Graphic file (type eps)
+<fig/FittingAngle3.eps>
+
+Overfull \hbox (29.59024pt too wide) in paragraph at lines 112--114
+ [][] 
+ []
+
+File: fig/AdjustForMaezuri.eps Graphic file (type eps)
+<fig/AdjustForMaezuri.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: fig/NoAerialForMaezuri.eps Graphic file (type eps)
+<fig/NoAerialForMaezuri.eps>
+File: fig/AerialForMaezuri.eps Graphic file (type eps)
+<fig/AerialForMaezuri.eps>
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 12.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 149.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 12.
-
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 149.
 
 Package fancyhdr Warning: \headheight is too small (0.0pt): 
 (fancyhdr)                Make it at least 15.0pt, for example:
@@ -508,20 +546,21 @@ Package fancyhdr Warning: \headheight is too small (0.0pt):
 [1
 
 
-]) [2
-
-] (./soturon-maezuri-template.aux)
+] (./soturon-maezuri-template.bbl
+LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
+(Font)              No change on input line 17.
+) [2] (./soturon-maezuri-template.aux)
 Package rerunfilecheck Info: File `soturon-maezuri-template.out' has not change
 d.
-(rerunfilecheck)             Checksum: 6FB41100159059D1700958769BB42A37;266.
+(rerunfilecheck)             Checksum: 1B1EE55D3E2F7869FBFE5A6984A780E9;680.
  ) 
 Here is how much of TeX's memory you used:
- 10831 strings out of 479850
- 164824 string characters out of 5887378
- 470228 words of memory out of 5000000
- 28966 multiletter control sequences out of 15000+600000
- 517695 words of font info for 98 fonts, out of 8000000 for 9000
+ 10829 strings out of 479850
+ 165195 string characters out of 5887378
+ 486302 words of memory out of 5000000
+ 28969 multiletter control sequences out of 15000+600000
+ 515453 words of font info for 89 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 65i,17n,70p,682b,759s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,17n,70p,622b,638s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on soturon-maezuri-template.dvi (2 pages, 12148 bytes).
+Output written on soturon-maezuri-template.dvi (2 pages, 22676 bytes).

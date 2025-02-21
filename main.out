@@ -7,13 +7,13 @@
 \BOOKMARK [1][-]{section.2.2}{ブラキエーションの流れ}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.3}{伸縮による励振}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.4}{伸縮する棒状ブラキエーションロボットの実機構成}{chapter.2}% 8
-\BOOKMARK [0][-]{chapter.3}{伸縮量制御による振幅調整}{}% 9
+\BOOKMARK [0][-]{chapter.3}{伸縮量操作による振幅調整}{}% 9
 \BOOKMARK [1][-]{section.3.1}{はじめに}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.2}{伸縮による励振のメカニズム}{chapter.3}% 11
 \BOOKMARK [2][-]{subsection.3.2.1}{伸縮する棒状ブラキエーションロボットのモデル化}{section.3.2}% 12
 \BOOKMARK [2][-]{subsection.3.2.2}{励振シミュレーション}{section.3.2}% 13
 \BOOKMARK [1][-]{section.3.3}{振幅調整の流れ}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.4}{伸縮量制御}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.4}{伸縮量操作}{chapter.3}% 15
 \BOOKMARK [2][-]{subsection.3.4.1}{近似モデルの励振データへのフィッティング}{section.3.4}% 16
 \BOOKMARK [2][-]{subsection.3.4.2}{振幅調整実験}{section.3.4}% 17
 \BOOKMARK [0][-]{chapter.4}{バーの位置に基づく空中過程を含まないブラキエーション動作}{}% 18
@@ -36,4 +36,4 @@
 \BOOKMARK [1][-]{section.6.1}{結論}{chapter.6}% 35
 \BOOKMARK [1][-]{section.6.2}{今後の展望}{chapter.6}% 36
 \BOOKMARK [0][-]{section.6.2}{謝辞}{}% 37
-\BOOKMARK [0][-]{chapter*.2}{参考文献}{}% 38
+\BOOKMARK [0][-]{chapter*.40}{参考文献}{}% 38

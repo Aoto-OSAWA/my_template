@@ -54,16 +54,16 @@ bar3がロボットの伸縮可能最大長以下の距離にある場合，リ�
 bar3が伸縮可能最大長より離れている場合，適切なタイミングでbar2を離し(\figref{brachiation}(3‐2))，
 空中過程を経てbar3を掴む(\figref{brachiation}(4))．この一連の流れを繰り返すことにより，bar3以降も連続してブラキエーションをすることができる．
 
-ここで，先行研究ではリンクを伸ばすタイミング，bar2を離すタイミングを実験的に決定していたため，バーが異なる位置にある場合や連続ブラキエーションにより初期振幅がずれた場合，ブラキエーション動作の継続が困難となる．
+ここで，先行研究では\figref{brachiation}(3‐1)まで達成したが，リンクを伸ばすタイミングを実験的に決定していたため，バーが異なる位置にある場合や連続ブラキエーションにより初期振幅がずれた場合，ブラキエーション動作の継続が困難となる．
 空中過程を含まない場合は，目標バーを把持するために必要な振幅まで励振し，
 空中過程を含む場合は，適切なリリース条件になるための振幅まで励振することが望まれる．
-そこで，本研究では振子過程で振幅を調整することで，バーの位置に基づいたブラキエーション動作を目指した．
+本研究では振子過程で振幅を調整することで，バーの位置に基づいたブラキエーション動作を目指した．
 
 \section{伸縮量制御による振幅調整法}
 \vspace{-2mm}
 \subsection{振幅に基づくロボット最大長の決定}
 伸縮する機構を活かし，振子過程において角速度が0になるタイミングで最大長$l_{\mathrm{max}}$，角速度が最大になるタイミングで最小長$l_{\mathrm{min}}$のように伸縮量を操作することで励振が可能であり，
-本研究では$l_{\mathrm{min}}$は固定し，$l_{\mathrm{max}}$を変化させることで振幅増加率を変化させた．
+本研究では最小長は固定し，最大長を操作することで振幅増加率を変化させた．
 ここで，ロボットを長さ可変の一本の剛体棒であるとみなすと，単純な減衰振動はロボットの角度$\varphi$(\figref{brachiation})，長さ$l$，質量$m$，把持しているバー周りの慣性モーメント$J$，重力加速度$g$，減衰係数$c$を用いて
 \equref{equation}で表される．
 \vspace{-2mm}
@@ -73,7 +73,7 @@ bar3が伸縮可能最大長より離れている場合，適切なタイミン�
 \end{eqnarray}
 しかし，\equref{equation}は非線形な項を含むため，振動の振幅が微小である($\sin{(\varphi)}\approx \varphi$)とみなした近似\equref{Approximation Model}
 でのモデル化を試みた．
-なお，角振動数を$\omega$とし，本研究において時刻$t=0$での位相は$B=0$とした．
+なお，角振動数を$\omega$とし，時刻$t=0$での位相は$B=0$とした．
 励振を含む振動では$l_{\mathrm{max}}$を変化させることにより減衰量が変化すると考え，減衰率を励振率も含めた振幅増加率とすることで，励振を含む振動を減衰振動の近似式で表せると考えた．
 これにより，現在振幅$A_{\mathrm{now}}$から半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な振幅増加率$\lambda$は\equref{lambda}で表せる．
 $\lambda$が負である場合は減衰し，正である場合は励振する．
@@ -84,7 +84,7 @@ $\lambda$が負である場合は減衰し，正である場合は励振する�
   \equlabel{lambda}
             \lambda&=&\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}
 \end{eqnarray}
-ここで，微小角近似ができない振幅になると周期は振幅に依存するため，実験データより振幅$A$と角振動数$\omega$の関係を
+ここで，微小角近似ができない振幅になると周期は振幅に依存するため，実験データより振幅$A$ [deg]と角振動数$\omega$ [rad/s]の関係を
 $\omega=-0.0126A+4.64$と近似した．
 これらを基に，ロボット最大長$l_{\mathrm{max}}$が異なる実験データごとに振幅増加率を調整し，
 フィッティングした．フィッティング結果のうち$l_{\mathrm{max}}=$0.74, 0.68mの結果を\figref{Fitting}に示す．
@@ -96,7 +96,7 @@ $\omega=-0.0126A+4.64$と近似した．
   l_{\mathrm{max}}=\frac{0.99(-0.0126A_{\mathrm{now}}+4.64)}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}+0.60 \nonumber
 \end{eqnarray}
 \subsection{振幅調整実験}
-目標振幅を$A_{\mathrm{ref}}=$‐120 deg(振子において振幅に達する点は角度が正・負の2か所ある)とし，振幅調整実験を行った．
+目標振幅を$A_{\mathrm{ref}}=‐120$ deg(振子において振幅に達する点は角度が正・負の2か所ある)とし，振幅調整実験を行った．
 角度変化とロボット最大長指令値を\figref{Adjust}に示す．黒線は目標振幅，赤線は目標振幅到達時刻を表す．
 なお，ロボット最大長はリンク伸縮可能範囲内($0.56\mathrm{m}\le l_{\mathrm{max}} \le 0.74\mathrm{m}$)で半周期ごとに決定した．
 これにより伸縮量制御による振幅調整法の有用性を確認した．
@@ -120,21 +120,21 @@ $\omega=-0.0126A+4.64$と近似した．
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.35\textwidth]{fig/AdjustForMaezuri.eps} % 画像のパスを指定
-  \vspace{-7mm}
+  \vspace{-4mm}
   \caption{Amplitude adjustment experiment}
   \figlabel{Adjust}
 \end{figure}
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.35\textwidth]{fig/NoAerialForMaezuri.eps} % 画像のパスを指定
-  \vspace{-5mm}
+  \vspace{-4mm}
   \caption{No aerial phase experiment}
   \figlabel{NoAerial}
 \end{figure}
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.35\textwidth]{fig/AerialForMaezuri.eps} % 画像のパスを指定
-  \vspace{-5mm}
+  \vspace{-4mm}
   \caption{Aerial phase experiment}
   \figlabel{Aerial}
 \end{figure}
@@ -159,7 +159,7 @@ $\omega=-0.0126A+4.64$と近似した．
 $J$を最小とするリリース時角度・角速度・ロボット長を最適なバーリリース条件とした．
 その条件になるように，単純減衰であるとして必要な目標振幅を求め，振幅調整を行った．
 実験の様子を\figref{Aerial}に示す．成功率は6.7％程とかなり低かった．
-その原因として，バー把持時のグリッパー角度が挙げられる．
+原因の一つとして，バー把持時のグリッパー角度が挙げられる．
 グリッパーの構造上，振子の回転軸方向に振動が発生してしまうため，バーに対して垂直にリリースされない場合がある．
 回転軸方向に振動が発生しにくい構造にすることでより安定した把持が可能となり，成功率増加が期待できる．
 また，空中過程における軌道のずれも考えられ，空中過程での軌道修正などによるロバスト性向上が望まれる．
@@ -191,7 +191,7 @@ $J$を最小とするリリース時角度・角速度・ロボット長を最�
 %% \end{thebibliography}
 
 {
-% \scriptsize %%←どうしても入らない時は，このコメントをはずすと少し小さくなる．
+\scriptsize %%←どうしても入らない時は，このコメントをはずすと少し小さくなる．
 \bibliographystyle{junsrt}
 \bibliography{reference}
 }

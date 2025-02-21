@@ -1,10 +1,10 @@
-\chapter[伸縮量制御による振幅調整]%
-{伸縮量制御による振幅調整}
+\chapter[伸縮量操作による振幅調整]%
+{伸縮量操作による振幅調整}
         \section{はじめに}
 
         目標バーの位置に基づいて伸縮タイミングやリリースの条件を決定する場合，
         振子過程においてその条件を実現することが望まれる．
-        本章では，伸縮量を制御することによる振幅調整システムについて述べる．．
+        本章では，伸縮量を操作することによる振幅調整システムについて述べる．．
           
         \section{伸縮による励振のメカニズム}
 
@@ -210,17 +210,17 @@
         \newpage
         \section{振幅調整の流れ}
 
-          本研究では振幅を基に伸縮量を制御し，振幅調整を行う．
+          本研究では振幅を基に伸縮量を操作し，振幅調整を行う．
           以下に振幅調整の流れを示す．
           \begin{enumerate}
             \item 目標振幅を決定
             \item IMUを用いてロボットの角度・角速度を計測
             \item 角速度の正負が入れ替わる時の角度を現在振幅とする
-            \item 目標振幅に到達するまで現在振幅に基づく伸縮量制御を行う
-            \item 目標振幅に到達したら伸縮量制御を終了
+            \item 目標振幅に到達するまで現在振幅に基づく伸縮量操作を行う
+            \item 目標振幅に到達したら伸縮量操作を終了
           \end{enumerate}
 
-          \section{伸縮量制御}
+          \section{伸縮量操作}
 
           まず，半周期後の振幅の変化率と伸縮量の関係式を求める．
           重心が剛体中心にある剛体振子の運動方程式は通常，角度$\varphi$，長さ$l$，質量$m$，回転軸周りの慣性モーメント$J$，重力加速度$g$，減衰係数$c$を用いて
@@ -230,22 +230,25 @@
             J \frac{\mathrm{d}^2 \varphi}{\mathrm{d} t^2} +c \frac{\mathrm{d}\varphi}{\mathrm{d} t}+\frac{1}{2}mgl \sin{(\varphi)}=0
           \end{eqnarray}
           この運動方程式を用いて半周期後の振幅を求める場合，ルンゲ・クッタ法などを用いて数値的に解く必要があり時間がかかる．
+          さらに，励振が含まれると右辺に励振のための外力項が加わるためより複雑になる．
           振子過程で半周期ごとに次の半周期後の振幅を調整するためにはより速く振幅を計算することが望まれる．
-          そこで，本研究では実機の振動を振幅が微小である($\sin{(\varphi)}\approx \varphi$)とみなして運動方程式を解いて得た近似式である\equref{Approximation Model}に示す形式での近似モデル化を試みた．
-          ここで現在振幅，振幅増加率，角振動数，初期位相をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$，$\phi$として
-          $t$秒後の変位$\varphi(t)$を表す．
-          この近似式を用いることで解析的に半周期後の振幅$A_{\mathrm{next}}$を\equref{amp rate}のように求めることが可能となる．
-          なお，\equref{amp rate}において初期位相は$\phi = 0$とした．
+          そこで，本研究ではネイピア数を底とした指数関数近似式である\equref{Approximation Model1}に示す形式での近似モデル化を試みた．
+          ここで現在振幅，振幅増加率，角振動数をそれぞれ$A_{\mathrm{now}}$，$\lambda$，$\omega$として
+          半周期後の振幅$A_{\mathrm{next}}$を表す．
           \begin{eqnarray}
-            \equlabel{Approximation Model}
-            \varphi(t)&=&A_{\mathrm{now}}e^{\lambda t}\cos{(\omega t + \phi)}\\
-            \equlabel{amp rate}
-            A_{\mathrm{next}}&=&\left|\varphi\left(\frac{\pi}{\omega}\right)\right|=A_{\mathrm{now}}e^{\lambda \frac{\pi}{\omega}}
+            \equlabel{Approximation Model1}
+            A_{\mathrm{next}}=A_{\mathrm{now}}e^{\lambda \frac{\pi}{\omega}}
           \end{eqnarray}
           よって，現在振幅$A_{\mathrm{now}}$から半周期後に目標振幅$A_{\mathrm{ref}}$になるために必要な振幅増加率は\equref{lambda}で表される．
           \begin{eqnarray}
             \equlabel{lambda}
             \lambda=\frac{\omega}{\pi}\ln{\left(\frac{A_{\mathrm{ref}}}{A_{\mathrm{now}}}\right)}
+          \end{eqnarray}
+          また，各時刻において振動の近似を行うために，\equref{Approximation Model}の形で振動を表現した．
+          なお，時刻$t$における変位を$\varphi(t)$で表す．
+          \begin{eqnarray}
+            \equlabel{Approximation Model}
+            \varphi(t)=A_{\mathrm{now}}e^{\lambda t}\cos{(\omega t)}
           \end{eqnarray}
 
         \subsection{近似モデルの励振データへのフィッティング}
@@ -322,7 +325,7 @@
         \newpage  
         \subsection{振幅調整実験}
         
-        現在の振幅と目標振幅の値を基に伸縮量制御し，励振調整を行った．
+        現在の振幅と目標振幅の値を基に伸縮量操作し，励振調整を行った．
         ここで，\equref{l status}において求められたロボット最大長がロボットの伸縮可能最大長0.74 mを超えた場合は最大長$l_{\mathrm{max}} =$0.74 m，
         伸縮可能最小長0.56 mを下回った場合は最大長$l_{\mathrm{max}} =$ 0.56 mとし，
         次の半周期で目標振幅への到達を試みる．

@@ -6,13 +6,13 @@
 \contentsline {section}{\numberline {2.2}ブラキエーションの流れ}{13}{section.2.2}%
 \contentsline {section}{\numberline {2.3}伸縮による励振}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}伸縮する棒状ブラキエーションロボットの実機構成}{14}{section.2.4}%
-\contentsline {chapter}{\numberline {第3章}伸縮量制御による振幅調整}{15}{chapter.3}%
+\contentsline {chapter}{\numberline {第3章}伸縮量操作による振幅調整}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}はじめに}{17}{section.3.1}%
 \contentsline {section}{\numberline {3.2}伸縮による励振のメカニズム}{17}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}伸縮する棒状ブラキエーションロボットのモデル化}{17}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}励振シミュレーション}{19}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}振幅調整の流れ}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}伸縮量制御}{23}{section.3.4}%
+\contentsline {section}{\numberline {3.4}伸縮量操作}{23}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}近似モデルの励振データへのフィッティング}{24}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}振幅調整実験}{29}{subsection.3.4.2}%
 \contentsline {chapter}{\numberline {第4章}バーの位置に基づく空中過程を含まないブラキエーション動作}{33}{chapter.4}%
@@ -35,4 +35,4 @@
 \contentsline {section}{\numberline {6.1}結論}{61}{section.6.1}%
 \contentsline {section}{\numberline {6.2}今後の展望}{61}{section.6.2}%
 \contentsline {chapter}{謝辞}{62}{section.6.2}%
-\contentsline {chapter}{参考文献}{66}{chapter*.2}%
+\contentsline {chapter}{参考文献}{66}{chapter*.40}%

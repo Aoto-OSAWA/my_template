@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  3 FEB 2025 16:00
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2024.3.27)  21 FEB 2025 22:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -327,45 +327,73 @@ LaTeX hooks Warning: Generic hook 'package/after/otf' is deprecated.
 (/usr/share/texlive/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty
 Package: bxjatoucs 2019/10/20 v0.2
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 11.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen185
+\captionmargin@=\dimen186
+\captionwidth=\dimen187
+\caption@tempdima=\dimen188
+\caption@indent=\dimen189
+\caption@parindent=\dimen190
+\caption@hangindent=\dimen191
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \iftdir \sbox \@tempboxa {#1\hskip 1zw#2}\else \sbox \@tempboxa {#1: #2}\fi \
+ifdim \wd \@tempboxa >\hsize \iftdir #1\hskip 1zw#2\relax \par \else #1: #2\rel
+ax \par \fi \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempboxa
+ \hfil }\fi \vskip \belowcaptionskip  on input line 1139.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count290
+\c@continuedfloat=\count291
+Package caption Info: hyperref package is loaded.
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 12.
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2022-01-12 L3 backend support: dvips
 \l__pdf_internal_box=\box70
-\g__pdf_backend_object_int=\count290
+\g__pdf_backend_object_int=\count292
 \l__pdf_backend_content_box=\box71
 \l__pdf_backend_model_box=\box72
-\g__pdf_backend_annotation_int=\count291
-\g__pdf_backend_link_int=\count292
-\g__pdf_backend_link_sf_int=\count293
+\g__pdf_backend_annotation_int=\count293
+\g__pdf_backend_link_int=\count294
+\g__pdf_backend_link_sf_int=\count295
 )
 (./main.aux (./chapter1.aux) (./chapter2.aux) (./chapter5.aux) (./chapter3.aux)
 (./chapter4.aux) (./chapter7.aux) (./thanks.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-Package hyperref Info: Link coloring ON on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+Package hyperref Info: Link coloring ON on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -376,24 +404,26 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count294
+\c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 42.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 42.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 42.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 42.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
  [1
 
 
@@ -452,6 +482,10 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 ]
 File: ./fig/brachiationFig-4.eps Graphic file (type eps)
 <./fig/brachiationFig-4.eps>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 20.
  [13]
 File: ./fig/robot.eps Graphic file (type eps)
 <./fig/robot.eps>
@@ -538,7 +572,7 @@ File: ./fig/NoAerial.eps Graphic file (type eps)
 <./fig/NoAerial.eps>
 
 
-LaTeX Warning: Float too large for page by 54.66548pt on input line 230.
+LaTeX Warning: Float too large for page by 49.03632pt on input line 230.
 
 [43] [44]
 File: ./fig/NoAerialFailed.eps Graphic file (type eps)
@@ -576,7 +610,7 @@ File: ./fig/Aerialflow.eps Graphic file (type eps)
 <./fig/Aerialflow.eps>
 
 
-LaTeX Warning: Float too large for page by 54.5042pt on input line 190.
+LaTeX Warning: Float too large for page by 48.87503pt on input line 190.
 
 ) [56] [57]
 \openout2 = `chapter7.aux'.
@@ -625,19 +659,19 @@ LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (./chapter5.aux) (./chapter3.aux) (./chapter4.aux) (./chapter7.aux)
 (./thanks.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B55AF59915B4DEE0D49A0F7F01A9B15D;3111.
+(rerunfilecheck)             Checksum: 8CD142EFE6540B1640A0073F31E2C6E4;3112.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 5 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10942 strings out of 479850
- 170059 string characters out of 5887378
- 472212 words of memory out of 5000000
- 29028 multiletter control sequences out of 15000+600000
- 519351 words of font info for 104 fonts, out of 8000000 for 9000
+ 12176 strings out of 479850
+ 194464 string characters out of 5887378
+ 495063 words of memory out of 5000000
+ 30256 multiletter control sequences out of 15000+600000
+ 519659 words of font info for 105 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 62i,15n,70p,529b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,15n,70p,529b,587s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.dvi (71 pages, 168688 bytes).
+Output written on main.dvi (71 pages, 169276 bytes).
